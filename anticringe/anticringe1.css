@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+  
+
+h1 {
+    text-align: center;
+    color: #f2f2f2;
+    font-family: 'Lato';
+    font-weight: 700;
+}
+p {
+    font-family: 'Lato'; 
+    text-align: center;
+    color: #f2f2f2;
+    font-weight: 100;
+}
+li {
+  font-family: 'Lato';
+  //text-transform: uppercase;
+}
+.doLado li {
+    display: inline-block;
+    align-content: center;
+  }
+.aviso {
+    height: 100px;
+    width: 100px;
+    display: block;
+    margin: auto;
+    border-radius: 90%;
+}
+.bloco{
+    text-align: center;
+}
+body {
+background-color: #FF9900;
+}

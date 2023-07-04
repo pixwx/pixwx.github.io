@@ -1,37 +1,244 @@
+/* Incluir Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-  
+:root {
+  --black: #000000ff;
+  --tomato: #F4664Dff;
+  --black-2: #010000ff;
+  --tangerine: #EF8832ff;
+  --black-3: #010100ff;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #f2f2f2;
+  background-color: #fd9f11;
+  scroll-behavior: smooth;
+}
 
 h1 {
-    text-align: center;
-    color: #f2f2f2;
-    font-family: 'Lato';
-    font-weight: 700;
+  color: var(--tangerine);
+  font-family: 'Mr Dafoe', cursive;
+  font-size: 2.5rem;
 }
+
 p {
-    font-family: 'Lato'; 
-    text-align: center;
-    color: #f2f2f2;
-    font-weight: 100;
+  font-size: 1rem;
 }
-li {
-  font-family: 'Lato';
-  //text-transform: uppercase;
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(180deg, var(--tangerine) 0%, var(--tomato) 100%);
+  transition: background 0.5s;
+  height: 70px;
 }
-.doLado li {
-    display: inline-block;
-    align-content: center;
+
+.navbar img {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+  width: 50px;
+  height: 50px;
+}
+
+.navbar img:hover {
+  transform: scale(1.2);
+}
+
+.navbar .logo-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-family: 'Mr Dafoe', cursive;
+  font-size: 10px;
+  color: #f2f2f2;
+  opacity: 0;
+  animation: slideIn 3s forwards;
+}
+
+.navbar-brand {
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-100%);
   }
-.aviso {
-    height: 100px;
-    width: 100px;
-    display: block;
-    margin: auto;
-    border-radius: 90%;
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50%) translateX(100%);
+  }
 }
-.bloco{
-    text-align: center;
+
+.container {
+  margin: 200px auto;
+  text-align: center;
 }
-body {
-background-color: #FF9900;
+
+.container a {
+  display: block;
+  margin-bottom: 50px;
+}
+
+
+.container p {
+  color: var(--tangerine);
+  font-size: 20px;
+}
+
+.container h1 {
+  margin-bottom: 50px;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background: linear-gradient(180deg, var(--tangerine) 0%, var(--tomato) 100%);
+  color: #f2f2f2;
+  padding: 10px 0;
+  font-family: 'Lato';
+  font-size: 9px;
+  animation: glow 2s infinite;
+}
+
+
+@keyframes glow {
+  0% { text-shadow: 0 0 5px var(--tangerine), 0 0 10px var(--tangerine), 0 0 15px var(--tangerine), 0 0 20px var(--tangerine); }
+  100% { text-shadow: 0 0 10px var(--tangerine), 0 0 20px var(--tangerine), 0 0 30px var(--tangerine), 0 0 40px var(--tangerine); }
+}
+
+/* CSS para os ícones */
+
+.social-section {
+  margin-top: 10px; /* Novo */
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  margin-left: 5px;
+  margin-right: 5px;
+  text-decoration: none;
+  color: #f2f2f2;
+  font-size: 40px;
+  align-items: center;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: var(--tangerine);
+}
+
+.perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.profile-image {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.nome-perfil {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-family: 'Lato';
+  font-weight: 700;
+  color: #f2f2f2;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+.icone-verificado {
+  height: 16px; /* Ajuste o tamanho do ícone de acordo com o necessário */
+  width: 16px; /* Ajuste o tamanho do ícone de acordo com o necessário */
+  margin-left: 5px; /* Adicione um pouco de margem à esquerda para dar espaço entre o texto e o ícone */
+}   
+
+.logo-img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.desc-do-perfil {
+  margin-top: 20px;
+  font-size: 16px;
+  font-family: 'Lato';
+  font-weight: 550;
+  text-align: center;
+  color: #f2f2f2;
+  text-rendering: optimizeLegibility;
+}
+.menu-btn {
+  position: absolute;
+  color: #f2f2f2;
+  left: 10px;
+}
+.menu-btn:hover {
+  color: var(--tangerine);
+  text-decoration: underline;
+  text-decoration-line: underline;
+  text-decoration-thickness: initial;
+  text-decoration-style: initial;
+  text-decoration-color: initial;
+}
+.notification-btn {
+  position: absolute;
+  color: #f2f2f2;
+  right: 10px;
+}
+.notification-btn:hover {
+  color: var(--tangerine);
+  text-decoration: underline;
+  text-decoration-line: underline;
+  text-decoration-thickness: initial;
+  text-decoration-style: initial;
+  text-decoration-color: initial;
+}
+@font-face {
+  font-family: 'Lato-Bold';
+  src: url('fontes/Lato-Bold.ttf');
+  font-family: 'Lato-Regular';
+  src: url('fontes/Lato-Regular.ttf');
+
 }

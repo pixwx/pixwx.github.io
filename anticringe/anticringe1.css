@@ -16,7 +16,7 @@ p {
 }
 li {
   font-family: 'Lato';
-  //text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 .doLado li {
     display: inline-block;

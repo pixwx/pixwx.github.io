@@ -36,7 +36,7 @@ p {
   width: 100%;
   display: flex;
   justify-content: center;
-  background: linear-gradient(180deg, var(--tangerine) 0%, var(--tomato) 100%);
+  background: linear-gradient(180deg, var(--tomato) 0%, var(--tangerine) 100%);
   transition: background 0.5s;
   height: 70px;
 }

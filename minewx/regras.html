@@ -3,66 +3,211 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Regras do Servidor</title>
+  <title>Regras — MineWx</title>
+  <!-- Fontes Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
+    .minecraft-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5rem; /* ajuste conforme necessário */
+    color: var(--pink);
+    }
+    :root {
+      --pink: #e35e8e;
+      --yellow: #e1e812;
+      --black: #1b1b1b;
+      --dark-bg: #262626;
+      --light-text: #e4e4e4;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      background-color: #111;
-      color: #eee;
-      font-family: 'Segoe UI', sans-serif;
-      padding: 2rem;
+      font-family: 'Montserrat', sans-serif;
+      background: var(--black);
+      color: var(--light-text);
       line-height: 1.6;
-      max-width: 800px;
-      margin: auto;
+    }
+    a { color: var(--pink); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Header fixo com gradiente */
+    header {
+      position: fixed;
+      top: 0; width: 100%;
+      background: linear-gradient(90deg, var(--pink), var(--yellow));
+      padding: 0.75rem 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+      z-index: 100;
+    }
+    .navbar {
+      max-width: 1200px; margin: auto;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      padding: 0 1rem;
+    }
+    .logo img { height: 48px; }
+    .nav-links { list-style: none; display: flex; gap: 1.5rem; }
+    .nav-links a {
+      font-weight: 600; color: #fff;
+      transition: color 0.3s;
+    }
+    .nav-links a.active,
+    .nav-links a:hover { color: var(--black); }
+
+    /* Espaço para conteúdo */
+    main {
+      margin-top: 80px;
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin-left: auto; margin-right: auto;
     }
 
-    h1 {
-      color: gold;
+ 
+    /* Título da seção estilizado com fonte prime */
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: 2.75rem;
+      color: var(--pink);
       text-align: center;
-      margin-bottom: 2rem;
+      margin: 3rem 0 1.5rem;
+      position: relative;
     }
-
-    .regra {
-      margin-bottom: 1.5rem;
+    
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 120px;
+      height: 5px;
+      background: var(--yellow);
+      margin: 0.75rem auto 0;
+      border-radius: 3px;
     }
-
-    .num {
-      color: #ffaa00;
-      font-weight: bold;
+    /* Estilo das regras */
+    .rule {
+      background: var(--dark-bg);
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border-left: 6px solid var(--yellow);
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+      transition: transform 0.2s;
     }
-
-    .bullet {
-      color: #ffaa00;
-      margin-right: 0.5rem;
+    .rule:hover { transform: translateX(4px); }
+    .rule h3 {
+      font-size: 1.25rem;
+      color: var(--yellow);
+      margin-bottom: 0.5rem;
     }
+    .rule p { font-size: 1rem; color: #ddd; }
 
-    .texto {
-      color: #ffff55;
-    }
-
-    .alerta {
-      color: #ff5555;
+    /* Alerta final */
+    .alert {
+      background: #200;
+      border-left: 6px solid var(--pink);
+      padding: 1.25rem;
+      color: #ff7777;
       margin-top: 2rem;
-      font-weight: bold;
+      border-radius: 6px;
+      font-weight: 600;
     }
 
-    a {
-      color: #55ccff;
-      text-decoration: none;
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #111;
+      color: #555;
+      font-size: 0.9rem;
     }
 
-    a:hover {
-      text-decoration: underline;
+    /* Responsividade */
+    @media (max-width: 600px) {
+      .section-title { font-size: 1.75rem; }
+      .nav-links { gap: 1rem; }
+      .rule { padding: 1rem; }
+    }
+    .section-title.minecraft-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    color: var(--pink);
     }
   </style>
 </head>
 <body>
-  <h1>Regras do MineWx</h1>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html"><img src="imgs\topo.png" alt="MineWx Logo"></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="jogar.html">Jogar</a></li>
+        <li><a href="regras.html" class="active">Regras</a></li>
+        <li><a href="loja.html">Loja</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <div class="regra"><span class="num">1 ∘</span> <span class="texto">Não destrua ou modifique áreas construídas sem permissão.</span></div>
-  <div class="regra"><span class="num">2 ∘</span> <span class="texto">Não roube. É fácil saber o histórico.</span></div>
-  <div class="regra"><span class="num">3 ∘</span> <span class="texto">Não faça buracos, minas, estruturas aleatórias ou semelhantes em áreas públicas ou vilas.</span></div>
-  <div class="regra"><span class="num">4 ∘</span> <span class="texto">Respeito sempre: convivência e bom senso são prioridade.</span></div>
+  <main>
+    <h2 class="section-title minecraft-title">Regras do MineWx</h2>
 
-  <div class="alerta">Viu coisa errada? Denuncie com provas e o culpado será banido.<br>[SEM SEGUNDAS CHANCES]</div>
+    <div class="rule">
+      <h3>1 ∘ Não destrua ou modifique áreas construídas sem permissão.</h3>
+      <p>Respeite o esforço dos outros jogadores. Cada bloco conta.
+    </div>
+
+    <div class="rule">
+      <h3>2 ∘ Não roube.</h3>
+      <p>Todo histórico de ações fica registrado. Quem rouba será identificado.</p>
+    </div>
+
+    <div class="rule">
+      <h3>3 ∘ Nada de buracos ou estruturas aleatórias em áreas públicas.</h3>
+      <p>Preserve a estética e funcionalidade das vilas, estradas e praças.</p>
+    </div>
+
+    <div class="rule">
+      <h3>4 ∘ Respeito acima de tudo.</h3>
+      <p>Convivência, empatia e bom senso são prioridades absolutas.</p>
+    </div>
+
+    <div class="rule">
+      <h3>5 ∘ Sistema de Terrenos (Claims).</h3>
+      <p>Proteja sua área com ferramentas de proteção. Quantidade limitada e expansão planejada após contribuições.</p>
+    </div>
+
+    <div class="rule">
+      <h3>6 ∘ Estilo e Harmonia.</h3>
+      <p>Siga o guia arquitetônico e a paleta oficial para manter coesão visual em cada bairro.</p>
+    </div>
+
+    <div class="rule">
+      <h3>7 ∘ Preservação do Mundo.</h3>
+      <p>Proibido mineração excessiva em trilhas principais. Refloreste áreas impactadas.</p>
+    </div>
+
+    <div class="rule">
+      <h3>8 ∘ Comunidade e Colaboração.</h3>
+      <p>Participe de projetos coletivos e eventos sazonais para desbloquear melhorias de terreno.</p>
+    </div>
+
+    <div class="rule">
+      <h3>9 ∘ Justiça e Equilíbrio.</h3>
+      <p>Sem hacks. Grief será revertido em 48h e resultará em punição. Apelações via Discord.</p>
+    </div>
+
+    <div class="rule">
+      <h3>10 ∘ Manutenção e Limpeza.</h3>
+      <p>Áreas inativas por 60 dias podem ser reclamadas pelo servidor. Logs públicos acessíveis via /log.</p>
+    </div>
+
+    <div class="alert">
+      Viu algo errado? Denuncie com provas — o culpado será banido.<br>[Por IP, sem expectativa de perdão e sem previsão para voltar.]
+    </div>
+  </main>
+
+  <footer>&copy; 2025 MineWx. Todos os direitos reservados.</footer>
 </body>
 </html>

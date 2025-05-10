@@ -42,17 +42,17 @@ p {
 }
 
 .navbar img {
-  animation: shake 0.5s;
-  animation-iteration-count: infinite;
-  width: 50px;
-  height: 50px;
+  /* animation: shake 0.5s; */
+  /* animation-iteration-count: infinite; */
+  width: 40px;
+  height: 40px;
 }
 
 .navbar img:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
-.navbar .logo-text {
+/* .navbar .logo-text {
   position: absolute;
   left: 0;
   right: 0;
@@ -62,7 +62,7 @@ p {
   color: #f2f2f2;
   opacity: 0;
   animation: slideIn 3s forwards;
-}
+} */
 
 .navbar-brand {
 position: absolute;
@@ -117,6 +117,16 @@ transform: translateX(-50%);
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
+.linha-wx-sepadora {
+  border: 0;                        /* remove bordas padrão */
+  height: 0.1px;                      /* espessura da linha */
+  background-color: #ffffff;           /* cor */
+  margin: 2rem 0;                   /* espaço acima e abaixo */
+  width: 100vw;                     /* ocupa a largura da viewport */
+  position: center;
+  left: 50%;
+ /*  transform: translateX(-50%);      /* centraliza compensando scroll */
+}
 
 .footer {
   position: fixed;
@@ -125,9 +135,9 @@ transform: translateX(-50%);
   text-align: center;
   background: linear-gradient(180deg, var(--tangerine) 0%, var(--tomato) 100%);
   color: #f2f2f2;
-  padding: 10px 0;
+  padding: 20px 0;
   font-family: 'Lato';
-  font-size: 9px;
+  font-size: 10px;
   animation: glow 2s infinite;
 }
 
@@ -147,7 +157,7 @@ transform: translateX(-50%);
 .social-icons {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .social-icons a {
@@ -156,7 +166,7 @@ transform: translateX(-50%);
   margin-right: 5px;
   text-decoration: none;
   color: #f2f2f2;
-  font-size: 40px;
+  font-size: 60px;
   align-items: center;
   transition: color 0.3s;
   background-image: none;
@@ -263,4 +273,91 @@ transform: translateX(-50%);
   font-family: 'Lato-Regular';
   src: url('fontes/Lato-Regular.ttf');
 
+}
+/* SÓ O EMBED DO DISCORD */
+
+.discord-embed-custom {
+  /* gradiente horizontal + gradiente vertical */
+  background-image: 
+    linear-gradient(to bottom, #1b1b1b, #1b1b1b #1b1b1b);
+  background-blend-mode: overlay;
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 4px;
+  max-width: 900px;
+  width: 100%;
+}
+
+.discord-embed-custom .titulo {
+  font-size: 4.25rem;
+  margin-bottom: .25rem;
+}
+
+.discord-embed-custom .subtitulo {
+  font-size: .9rem;
+  margin-bottom: 1rem;
+}
+
+.member-list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.member .avatar {
+  width: 32px;
+  height: 32px;
+}
+
+.member span {
+  font-weight: 500;
+  font-size: .95rem;
+}
+
+/* botão de convite */
+.btn-entrar {
+  background: #e1e812;
+  color: #e35e8e;
+  font-weight: bold;
+  padding: .5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background .2s, color .2s;
+}
+
+.btn-entrar:hover {
+  background: #e35e8e;
+  color: #c03965;
+}
+
+.minewx-call-to-action .cta-link {
+  display: inline-block;      /* permite hover na área inteira */
+  text-decoration: none;      /* remove sublinhado padrão */
+  cursor: pointer;            /* muda o cursor ao passar por cima */
+  transition: transform .2s;  /* animação suave */
+}
+
+.minewx-call-to-action .cta-image {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border: 0px solid #e1e812;
+  border-radius: 2px;
+  transition: filter .2s, transform .2s;
+}
+
+.minewx-call-to-action .cta-text {
+  margin: .5rem 0 0;
+  color: #e4e4e4;
+  font-weight: 600;
+  font-family: 'Special Elite';
+}
+
+.minewx-call-to-action .cta-link:hover .cta-image {
+  transform: scale(1.03);     /* leve zoom */
+  filter: brightness(1.1);     /* clareia um pouco */
+}
+
+.minewx-call-to-action .cta-link:hover .cta-text {
+  color: #fff;                 /* destaca o texto */
 }

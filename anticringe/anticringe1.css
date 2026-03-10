@@ -1265,14 +1265,14 @@ footer {
     perspective: 75vh;
   }
   .sw-content {
-    font-size: clamp(1.8rem, 4vw, 3rem);
-    width: 90%;
+    font-size: clamp(1.2rem, 3.5vw, 2rem);
+    width: 95%;
   }
   .sw-title {
-    font-size: clamp(3rem, 6vw, 4rem);
+    font-size: clamp(2rem, 5vw, 3.5rem);
   }
   .sw-subtitle {
-    font-size: clamp(3.5rem, 8vw, 5rem);
+    font-size: clamp(2.5rem, 6vw, 4rem);
   }
 }
 
@@ -1500,3 +1500,71 @@ footer {
     height: 28px;
   }
 }
+
+/* 📱 MOBILE / TOUCH DEVICES 2026 UX FIXES (NO-HOVER FALLBACK) */
+@media (hover: none) and (pointer: coarse) {
+  
+  /* 1. Goodreads Books: Show info persistently without touching */
+  .grunge-book-hover {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    background: transparent !important;
+    margin-bottom: 1.5rem;
+  }
+  .grunge-book-tooltip {
+    opacity: 1 !important;
+    position: static !important;
+    transform: none !important;
+    background: transparent !important;
+    color: var(--text-primary) !important;
+    border: none !important;
+    box-shadow: none !important;
+    font-size: 0.85rem !important;
+    padding: 10px 4px 0 4px !important;
+    white-space: normal !important;
+    transition: none !important;
+    max-width: 160px;
+    z-index: 1 !important;
+  }
+  .grunge-book-tooltip .fw-bold {
+    font-size: 1.1rem !important;
+    margin-bottom: 2px;
+  }
+  .grunge-book-hover:hover img {
+    border-color: var(--text-primary) !important;
+    box-shadow: 6px 6px 0 var(--text-primary) !important;
+    filter: none;
+  }
+
+  /* 2. Discord Members: Trigger Moshpit and Tooltip on Tap/Focus */
+  .discord-stick-figure {
+    outline: none; /* Removes nasty browser default tap blue box */
+  }
+  .discord-stick-figure:active,
+  .discord-stick-figure:focus {
+    z-index: 99;
+    transform: scale(1.5) translateY(-20px) !important;
+    filter: drop-shadow(0px 10px 0 var(--accent-primary));
+  }
+  .discord-stick-figure:active .stick-tooltip,
+  .discord-stick-figure:focus .stick-tooltip {
+    opacity: 1 !important;
+    visibility: visible !important;
+    top: -30px !important;
+  }
+  .discord-stick-figure:active .stick-head,
+  .discord-stick-figure:active .stick-body,
+  .discord-stick-figure:active .stick-arm-l,
+  .discord-stick-figure:active .stick-arm-r,
+  .discord-stick-figure:active .stick-leg-l,
+  .discord-stick-figure:active .stick-leg-r,
+  .discord-stick-figure:focus .stick-head,
+  .discord-stick-figure:focus .stick-body,
+  .discord-stick-figure:focus .stick-arm-l,
+  .discord-stick-figure:focus .stick-arm-r,
+  .discord-stick-figure:focus .stick-leg-l,
+  .discord-stick-figure:focus .stick-leg-r {
+    animation-duration: 0.1s !important;
+  }
+}

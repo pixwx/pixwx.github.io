@@ -1,7 +1,7 @@
 const fs = require('fs');
 const xml2js = require('xml2js');
 
-async function fetchShelf(url) {
+async function fetchShelf(url, limit = 3) {
     const res = await fetch(url);
     const text = await res.text();
     const parser = new xml2js.Parser({ explicitArray: false });
@@ -11,10 +11,10 @@ async function fetchShelf(url) {
     if (!items) return [];
 
     const books = Array.isArray(items) ? items : [items];
-    return books.slice(0, 3).map(b => ({
+    return books.slice(0, limit).map(b => ({
         title: b.title,
         link: b.link,
-        image: b.book_image_url ? b.book_image_url.replace(/\._S[A-Z0-9]+_/i, '') : '',
+        image: b.book_image_url ? b.book_image_url.replace(/\._S[A-Z0-9_]+_/i, '') : '',
         author: b.author_name || '',
         year: b.book_published || ''
     }));
@@ -22,8 +22,8 @@ async function fetchShelf(url) {
 
 async function main() {
     try {
-        const lendo = await fetchShelf('https://www.goodreads.com/review/list_rss/100645513?shelf=currently-reading');
-        const lidos = await fetchShelf('https://www.goodreads.com/review/list_rss/100645513?shelf=read&sort=date_read&order=d');
+        const lendo = await fetchShelf('https://www.goodreads.com/review/list_rss/100645513?shelf=currently-reading', 3);
+        const lidos = await fetchShelf('https://www.goodreads.com/review/list_rss/100645513?shelf=read&sort=date_read&order=d', 6);
 
         const data = { lendo, lidos };
         fs.writeFileSync('goodreads-data.json', JSON.stringify(data, null, 2));

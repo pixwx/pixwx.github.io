@@ -929,6 +929,7 @@
             const randomClass = stickClasses[Math.floor(Math.random() * stickClasses.length)];
             const animDelay = (Math.random() * 2).toFixed(2) + 's';
             div.className = 'discord-stick-figure ' + randomClass;
+            div.setAttribute('tabindex', '0');
             div.style.animationDelay = animDelay;
             div.innerHTML = `
               <div class="stick-tooltip">${m.username}</div>
@@ -1153,6 +1154,16 @@
             </a>
            `;
         });
+        
+        if (currentGoodreadsTab === 'lidos') {
+          html += `
+            <div class="w-100 mt-2 d-flex justify-content-center">
+              <a href="https://www.goodreads.com/user/show/100645513-gabriel-alcantara-de-albuquerque" target="_blank" class="btn btn-sm fw-bold px-3 py-2 text-uppercase d-flex align-items-center gap-1" style="background-color: var(--text-primary); color: var(--bg-primary); border: 2px solid var(--text-primary); border-radius: 0; box-shadow: 4px 4px 0 var(--accent-primary); font-family: 'Space Grotesk', sans-serif; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
+                <i class="ph-bold ph-books"></i> Ver todos os meus livros
+              </a>
+            </div>
+          `;
+        }
         container.innerHTML = html;
       } else {
         container.innerHTML = `<span class="text-muted small">Nenhum livro nessa estante (Vazio local no '${currentGoodreadsTab}').</span>`;
@@ -1178,11 +1189,11 @@
             }
           };
 
-          const getShelfBooks = async (shelf) => {
+          const getShelfBooks = async (shelf, limit = 3) => {
             const t = await tryProxy(`https://www.goodreads.com/review/list_rss/100645513?shelf=${shelf}&sort=date_read&order=d`);
             const itemsStr = t.split('<item>');
             itemsStr.shift();
-            return itemsStr.slice(0, 3).map(item => {
+            return itemsStr.slice(0, limit).map(item => {
               const titleMatch = item.match(/<title>(?:<!\[CDATA\[)?(.*?)(?:\]\]>)?<\/title>/i);
               const linkMatch = item.match(/<link><!\[CDATA\[(.*?)\]\]><\/link>/i) || item.match(/<link>(.*?)<\/link>/i);
               const imgMatch = item.match(/<book_image_url><!\[CDATA\[(.*?)\]\]><\/book_image_url>/i) || item.match(/<book_image_url>(.*?)<\/book_image_url>/i);
@@ -1191,14 +1202,14 @@
               return {
                 title: titleMatch ? titleMatch[1] : '',
                 link: linkMatch ? linkMatch[1] : '',
-                image: imgMatch ? imgMatch[1].replace(/\._S[A-Z0-9]+_/i, '') : '',
+                image: imgMatch ? imgMatch[1].replace(/\._S[A-Z0-9_]+_/i, '') : '',
                 author: authorMatch ? authorMatch[1] : '',
                 year: yearMatch ? yearMatch[1] : ''
               };
             }).filter(b => b.title);
           };
-          const lendo = await getShelfBooks('currently-reading');
-          const lidos = await getShelfBooks('read');
+          const lendo = await getShelfBooks('currently-reading', 3);
+          const lidos = await getShelfBooks('read', 6);
           if (lendo.length === 0 && lidos.length === 0) throw new Error("No data extracted from XML proxy");
           goodreadsData = { lendo, lidos };
           renderGoodreadsBooks();

@@ -25,6 +25,10 @@ async function main() {
 
         const data = { lendo, lidos };
         fs.writeFileSync('goodreads-data.json', JSON.stringify(data, null, 2));
+
+        const jsContent = `window.GOODREADS_DATA = ${JSON.stringify(data, null, 2)};\nif(typeof window.renderGoodreadsBooks === 'function') window.renderGoodreadsBooks();`;
+        fs.writeFileSync('goodreads-data.js', jsContent);
+
         console.log("Goodreads data saved!");
     } catch (err) {
         console.error("Goodreads error:", err);

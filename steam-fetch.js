@@ -26,23 +26,42 @@ async function fetchSteamXML() {
                 throw new Error('Falha ao processar XML da Steam');
             }
 
-            if (result && result.profile && result.profile.mostPlayedGames && result.profile.mostPlayedGames.mostPlayedGame) {
-                let games = result.profile.mostPlayedGames.mostPlayedGame;
+            if (result && result.profile) {
+                const p = result.profile;
+                const profileData = {
+                    name: p.steamID || 'Desconhecido',
+                    realname: p.realname || '',
+                    avatar: p.avatarFull || '',
+                    state: p.onlineState || 'offline',
+                    stateMessage: p.stateMessage || '',
+                    url: `https://steamcommunity.com/id/${p.customURL || p.steamID64}/`,
+                    id: p.customURL || p.steamID64,
+                    memberSince: p.memberSince || '',
+                    location: p.location || '',
+                    hours2Wk: p.hoursPlayed2Wk || '0'
+                };
 
-                // Ensure array when there's only 1 item
-                if (!Array.isArray(games)) {
-                    games = [games];
+                let gamesData = [];
+                if (p.mostPlayedGames && p.mostPlayedGames.mostPlayedGame) {
+                    let games = p.mostPlayedGames.mostPlayedGame;
+                    if (!Array.isArray(games)) games = [games];
+
+                    gamesData = games.map(g => ({
+                        name: g.gameName,
+                        hours: g.hoursOnRecord || '0',
+                        logo: g.gameLogo ? g.gameLogo.replace('media.steampowered.com', 'cdn.akamai.steamstatic.com') : '',
+                        link: g.gameLink
+                    }));
                 }
 
-                const data = games.map(g => ({
-                    name: g.gameName,
-                    hours: g.hoursOnRecord || '0',
-                    logo: g.gameLogo ? g.gameLogo.replace('media.steampowered.com', 'cdn.akamai.steamstatic.com') : '',
-                    link: g.gameLink
-                }));
+                const data = { profile: profileData, games: gamesData };
 
                 fs.writeFileSync('steam-data.json', JSON.stringify(data, null, 2), 'utf8');
-                console.log('Dados da Steam atualizados com sucesso ({steam-data.json})');
+
+                const jsContent = `window.STEAM_DATA = ${JSON.stringify(data, null, 2)};\nif(typeof window.renderSteamGames === 'function') window.renderSteamGames();`;
+                fs.writeFileSync('steam-data.js', jsContent, 'utf8');
+
+                console.log('Dados da Steam atualizados com sucesso');
             } else {
                 console.log('Nenhum jogo recente ou perfil privado.');
             }

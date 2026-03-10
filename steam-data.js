@@ -1,4 +1,4 @@
-{
+window.STEAM_DATA = {
   "profile": {
     "name": "Pixwx",
     "realname": "Gabriel A. A. de A.",
@@ -43,4 +43,5 @@
       "link": "https://steamcommunity.com/app/282070"
     }
   ]
-}
+};
+if(typeof window.renderSteamGames === 'function') window.renderSteamGames();

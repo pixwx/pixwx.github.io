@@ -15,8 +15,9 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="PixWx – Criador de conteúdo de jogos e entusiasta. Leia meus  textos, participe do servidor Minecraft, e confira os vídeos. Ocasionalmente em hiato.">
-  <meta name="keywords" content="PixWx, servidor Minecraft, Substack, textos, conteúdo, youtube, discord">
+    content="Gabriel Albuquerque (PixWx) – Gestor de Projetos, Game Dev e Escritor. Acesso aos textos no Substack, arquitetura de sistemas virtuais, servidor Minecraft e Game Dev.">
+  <meta name="keywords"
+    content="PixWx, Gabriel Albuquerque, Game Dev, Engenharia Civil, gestor de projetos, Substack, servidor Minecraft, arquitetura de sistemas, rpg creator, discord bots">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -28,7 +29,7 @@
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <!-- Custom CSS -->
@@ -42,14 +43,15 @@
     <div class="container-fluid px-4 px-md-5 d-flex justify-content-between align-items-center">
       <button class="btn btn-link link-dark text-decoration-none p-0 d-md-block fw-bold" data-bs-toggle="offcanvas"
         data-bs-target="#menuLateral">
-        <i class="bi bi-justify fs-4"></i>
+        <i class="ph-bold ph-list fs-4"></i>
       </button>
       <div class="navbar-brand m-0" style="position: relative;" id="dmc-logo-container">
-        <img src="img/logodp.png" alt="Logo PixWx" id="dmc-shoot-target">
+        <img src="img/logodp.png" alt="Logo PixWx" id="dmc-shoot-target" style="cursor: crosshair;"
+          onclick="playGunShot()">
       </div>
       <button class="btn btn-link link-dark text-decoration-none p-0 fw-bold" data-bs-toggle="modal"
         data-bs-target="#sinoModal">
-        <i class="bi bi-bell-fill fs-5"></i>
+        <i class="ph-fill ph-bell-ringing fs-5"></i>
       </button>
     </div>
   </nav>
@@ -72,19 +74,20 @@
         </span>
       </div>
       <p class="profile-desc">
-        Escritor, gestor de projetos, inimigo das trends e esquisito com amor. <br>
-        De Belém/PA e vivendo em Portugal desde 2019.
-        <a href="#sobreOffcanvas" data-bs-toggle="offcanvas" class="saber-mais-link"
-          style="opacity: 0.6; font-size: 0.85rem; margin-left: 5px;">saber mais...</a>
+        Inimigo de trends e esquisito com amor.<br>
+        Nativo de Belém/PA morando temp. em Portugal desde 2019.
+        <a href="javascript:void(0)" onclick="startStarWars()" class="saber-mais-link"
+          style="opacity: 0.8; font-size: 0.85rem; margin-left: 5px; font-weight: bold; text-decoration: underline;">[
+          biografia completa? ]</a>
       </p>
       <span class="profile-hiatus">Em hiato criativo (mas volto no futuro)</span>
       <div class="mt-4">
         <a href="mailto:xenopus361@barbarbu.fr" class="btn text-white fw-bold rounded-0 px-4 py-2"
           style="background-color: var(--text-primary); border: 4px solid var(--text-primary); box-shadow: 4px 4px 0 var(--accent-secondary); text-transform: uppercase;">
-          <i class="bi bi-envelope-at-fill me-2"></i>Contato Profissional
+          <i class="ph-fill ph-envelope-simple me-2"></i>Contato Profissional
         </a>
         <p class="small text-muted mt-2 fw-bold" style="font-size: 0.75rem; letter-spacing: 0.5px;">(Email blindado
-          alternativo via SurfShark)</p>
+          alternativo via VPN)</p>
       </div>
     </div>
 
@@ -95,30 +98,58 @@
     <div class="bento-grid">
 
       <!-- Social Links -->
-      <div class="bento-item col-social glass-panel" data-aos="fade-right" data-aos-delay="100">
-        <h3 class="panel-title"><i class="bi bi-link-45deg"></i> Conexões</h3>
-        <div class="social-links">
-          <a href="https://www.youtube.com/@PixWx" target="_blank" class="social-btn" title="YouTube">
-            <i class="bi bi-youtube"></i>
+      <div class="bento-item col-social glass-panel d-flex flex-column" data-aos="fade-right" data-aos-delay="100">
+        <h3 class="panel-title align-self-start"><i class="ph-bold ph-link"></i> Conexões</h3>
+        <div class="radial-menu-container">
+          <div class="radial-center" title="PixWx Hub" onclick="this.parentElement.classList.toggle('active')">
+            <i class="ph-bold ph-asterisk"></i>
+          </div>
+          <a href="https://www.youtube.com/@PixWx" target="_blank" class="radial-btn" data-title="YouTube"
+            style="--rot:0deg; --rev:0deg;">
+            <i class="ph-fill ph-youtube-logo" style="color:#ff0000;"></i>
           </a>
-          <a href="https://discord.gg/sH7dKb6M6N" target="_blank" class="social-btn" title="Discord">
-            <i class="bi bi-discord"></i>
+          <a href="https://discord.gg/sH7dKb6M6N" target="_blank" class="radial-btn" data-title="Discord"
+            style="--rot:40deg; --rev:-40deg;">
+            <i class="ph-fill ph-discord-logo" style="color:#5865F2;"></i>
           </a>
-          <a href="https://www.instagram.com/pixwxx" target="_blank" class="social-btn" title="Instagram">
-            <i class="bi bi-instagram"></i>
+          <a href="https://www.instagram.com/pixwxx" target="_blank" class="radial-btn" data-title="Instagram"
+            style="--rot:80deg; --rev:-80deg;">
+            <i class="ph-fill ph-instagram-logo" style="color:#E1306C;"></i>
           </a>
-          <a href="https://twitch.tv/pixwx" target="_blank" class="social-btn" title="Twitch">
-            <i class="bi bi-twitch"></i>
+          <a href="https://twitch.tv/pixwx" target="_blank" class="radial-btn" data-title="Twitch"
+            style="--rot:120deg; --rev:-120deg;">
+            <i class="ph-fill ph-twitch-logo" style="color:#9146FF;"></i>
           </a>
-          <a href="https://open.spotify.com/user/albgabs" target="_blank" class="social-btn" title="Spotify">
-            <i class="bi bi-spotify"></i>
+          <a href="https://open.spotify.com/user/albgabs" target="_blank" class="radial-btn" data-title="Spotify"
+            style="--rot:160deg; --rev:-160deg;">
+            <i class="ph-fill ph-spotify-logo" style="color:#1DB954;"></i>
+          </a>
+          <a href="https://pixwx.substack.com" target="_blank" class="radial-btn" data-title="Substack"
+            style="--rot:200deg; --rev:-200deg;">
+            <i class="ph-fill ph-article"></i>
+          </a>
+          <a href="https://steamcommunity.com/id/pixwx/" target="_blank" class="radial-btn" data-title="Steam"
+            style="--rot:240deg; --rev:-240deg;">
+            <i class="ph-fill ph-steam-logo"></i>
+          </a>
+          <a href="https://www.goodreads.com/user/show/100645513-gabriel-alcantara-de-albuquerque" target="_blank"
+            class="radial-btn" data-title="Goodreads" style="--rot:280deg; --rev:-280deg;">
+            <i class="ph-fill ph-book-open-text"></i>
+          </a>
+          <a href="https://www.duolingo.com/profile/pixwx" target="_blank" class="radial-btn" data-title="Duolingo"
+            style="--rot:320deg; --rev:-320deg;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#58CC02" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-12h2v6h-2zM9 16c1.66 0 3 .89 3 2s-1.34 2-3 2-3-.89-3-2 1.34-2 3-2zm6 0c1.66 0 3 .89 3 2s-1.34 2-3 2-3-.89-3-2 1.34-2 3-2z" />
+            </svg>
           </a>
         </div>
       </div>
 
       <!-- YouTube Video Embed -->
       <div class="bento-item col-yt glass-panel" data-aos="fade-up" data-aos-delay="200">
-        <h3 class="panel-title"><i class="bi bi-play-btn-fill"></i> Último Vídeo</h3>
+        <h3 class="panel-title"><i class="ph-fill ph-play-circle"></i> Último Vídeo</h3>
         <div class="yt-wrapper" style="border: 4px solid var(--text-primary); border-radius: 0;">
           <iframe id="yt-iframe" src="" frameborder="0" allowfullscreen></iframe>
         </div>
@@ -145,7 +176,7 @@
       <!-- Discord Embed -->
       <div class="bento-item col-discord glass-panel" data-aos="zoom-in" data-aos-delay="400">
         <div class="discord-widget text-center">
-          <i class="bi bi-discord mb-2" style="font-size: 2.5rem; color: #5865F2;"></i>
+          <i class="ph-fill ph-discord-logo mb-2" style="font-size: 2.5rem; color: var(--accent-primary);"></i>
           <div class="discord-status" style="color: var(--text-primary);">
             <span id="online-count">--</span> Membros Online
           </div>
@@ -162,12 +193,12 @@
 
       <!-- Donate & Support -->
       <div class="bento-item col-donate glass-panel" data-aos="zoom-in" data-aos-delay="500">
-        <h3 class="panel-title"><i class="bi bi-suit-heart-fill"></i> Apoiar o Projeto</h3>
+        <h3 class="panel-title"><i class="ph-fill ph-heart"></i> Apoiar o Projeto</h3>
         <p class="text-secondary small mb-3 fw-bold">Suporte direto sem taxas furtivas.</p>
         <button class="btn w-100 mb-2 pix-btn fw-bold"
           style="background: var(--text-primary); color: var(--bg-primary); border-radius: 0; box-shadow: 4px 4px 0 var(--accent-primary);"
           onclick="navigator.clipboard.writeText('pixwx5097@gmail.com'); alert('Chave PIX (E-mail) copiada!')">
-          <i class="bi bi-clipboard"></i> Copiar Chave PIX
+          <i class="ph-bold ph-clipboard-text"></i> Copiar Chave PIX
         </button>
         <a href="https://livepix.gg/pixwx" class="btn w-100 text-dark fw-bold"
           style="background-color: var(--accent-secondary); border: 3px solid var(--text-primary); border-radius: 0; box-shadow: 4px 4px 0 var(--text-primary);"
@@ -178,12 +209,12 @@
       <div class="bento-item col-agenda glass-panel position-relative pb-4" data-aos="fade-up" data-aos-delay="600"
         style="min-height: 250px;">
         <h3 class="panel-title d-flex justify-content-between align-items-center">
-          <span><i class="bi bi-calendar-event"></i> Agenda Pública</span>
+          <span><i class="ph-bold ph-calendar-blank"></i> Agenda Pública</span>
           <button class="btn btn-sm btn-outline-dark"
             style="border: 3px solid var(--text-primary); border-radius:0; box-shadow: 2px 2px 0 var(--text-primary);"
             onclick="window.open('https://calendar.google.com/calendar/u/0?cid=M2Q0Yzk0NTVlOWM5Nzk2NWYxZjBhZWZiODViY2YyZDgxZWJjYTZiNTg2NDBjNTE4NDNiMGM5YTQ0YzgwMjI3N0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t', '_blank')"
             title="Ver mês inteiro">
-            <i class="bi bi-arrows-fullscreen"></i>
+            <i class="ph-bold ph-corners-out"></i>
           </button>
         </h3>
         <ul id="custom-agenda" class="agenda-list list-unstyled mb-0 w-100" style="font-weight: 600;">
@@ -197,16 +228,69 @@
       <!-- Clipes da Twitch -->
       <div
         class="bento-item col-clips glass-panel d-flex flex-column justify-content-center align-items-center text-center px-0 py-0"
-        style="background: linear-gradient(135deg, rgba(145, 70, 255, 0.05), rgba(0,0,0,0.5));" data-aos="fade-down"
-        data-aos-delay="700">
-        <div class="w-100 py-4 px-3" style="backdrop-filter: blur(5px);">
-          <i class="bi bi-film fs-1 mb-2 d-block" style="color: var(--accent-primary);"></i>
-          <h4 class="mb-2" style="font-family: 'Permanent Marker', cursive;">Clipes em Alta</h4>
-          <p class="text-white-50 small mb-4">Momentos caóticos e esquisitos na Twitch.</p>
-          <a href="https://www.twitch.tv/pixwx/clips?filter=clips&range=all" target="_blank"
-            class="btn btn-outline-light rounded-pill px-4 text-white"
-            style="border-color: var(--accent-primary); background-color: rgba(145, 70, 255, 0.2);">
+        style="background: var(--text-primary);" data-aos="fade-down" data-aos-delay="700">
+        <div class="w-100 py-4 px-3"
+          style="background: repeating-linear-gradient(45deg, rgba(27, 27, 27, 0.03) 25%, transparent 25%, transparent 75%, rgba(27, 27, 27, 0.03) 75%, rgba(27, 27, 27, 0.03)), repeating-linear-gradient(45deg, rgba(27, 27, 27, 0.03) 25%, var(--text-primary) 25%, var(--text-primary) 75%, rgba(27, 27, 27, 0.03) 75%, rgba(27, 27, 27, 0.03)); background-size: 20px 20px;">
+          <i class="ph-fill ph-film-strip fs-1 mb-2 d-block" style="color: var(--accent-primary);"></i>
+          <h4 class="mb-2" style="font-family: 'Permanent Marker', cursive; color: var(--bg-primary);">Clipes em Alta
+          </h4>
+          <p class="small mb-4 text-white">Momentos caóticos e esquisitos na Twitch.</p>
+          <a href="https://www.twitch.tv/pixwx/clips?filter=clips&range=all" target="_blank" class="btn px-4 fw-bold"
+            style="color: var(--text-primary); border: 4px solid var(--text-primary); background-color: var(--accent-secondary); box-shadow: 4px 4px 0 var(--accent-primary); border-radius: 0;">
             Assistir Melhores Clipes
+          </a>
+        </div>
+      </div>
+
+      <!-- Steam Profile -->
+      <div
+        class="bento-item col-steam glass-panel d-flex flex-column justify-content-center align-items-center text-center px-0 py-0"
+        style="background: var(--accent-secondary);" data-aos="zoom-in" data-aos-delay="620">
+        <div class="w-100 py-4 px-3" style="min-height: 250px;">
+          <h4 class="mb-2" style="font-family: 'Permanent Marker', cursive; color: var(--text-primary);">
+            <i class="ph-fill ph-steam-logo me-2"></i> Jogos Recentes
+          </h4>
+          <div id="steam-games" class="d-flex flex-column align-items-center justify-content-center gap-2 my-3"
+            style="min-height: 120px;">
+            <div class="spinner-border spinner-border-sm" role="status" style="color: var(--text-primary);"></div>
+          </div>
+          <a href="https://steamcommunity.com/id/pixwx/" target="_blank" class="btn px-4 fw-bold"
+            style="color: var(--bg-primary); border: 4px solid var(--text-primary); background-color: var(--text-primary); box-shadow: 4px 4px 0 var(--accent-primary); border-radius: 0;">
+            Acessar Perfil
+          </a>
+        </div>
+      </div>
+
+      <!-- Leaderboard StreamElements -->
+      <div class="bento-item col-leaderboard glass-panel" data-aos="fade-up" data-aos-delay="650">
+        <h3 class="panel-title mb-1"><i class="ph-bold ph-trophy"></i> Elite da Live</h3>
+        <p class="text-secondary small mb-3 fw-bold" style="font-size: 0.8rem;">Top 3 mais ativos na Twitch (Pixels)</p>
+        <div id="se-leaderboard" class="d-flex flex-column gap-2 w-100 justify-content-center"
+          style="min-height: 120px;">
+          <div class="spinner-border spinner-border-sm mx-auto" role="status" style="color: var(--accent-primary);">
+          </div>
+        </div>
+        <a href="https://streamelements.com/pixwx/leaderboard" target="_blank" class="btn w-100 fw-bold mt-3"
+          style="background: var(--bg-secondary); color: var(--text-primary); border: 4px solid var(--text-primary); border-radius: 0; box-shadow: 4px 4px 0 var(--text-primary);">
+          Placar Completo
+        </a>
+      </div>
+
+      <!-- Goodreads Currently Reading -->
+      <div
+        class="bento-item col-books glass-panel d-flex flex-column justify-content-center align-items-center text-center px-0 py-0"
+        style="background: var(--bg-primary);" data-aos="zoom-in" data-aos-delay="630">
+        <div class="w-100 py-4 px-3">
+          <i class="ph-fill ph-book-open-text fs-1 mb-2 d-block" style="color: var(--text-primary);"></i>
+          <h4 class="mb-2" style="font-family: 'Permanent Marker', cursive; color: var(--text-primary);">Estante Atual
+          </h4>
+          <div id="goodreads-books" class="d-flex flex-wrap justify-content-center gap-3 my-3">
+            <div class="spinner-border spinner-border-sm" role="status" style="color: var(--accent-primary);"></div>
+          </div>
+          <a href="https://www.goodreads.com/user/show/100645513-gabriel-alcantara-de-albuquerque" target="_blank"
+            class="btn px-4 fw-bold"
+            style="color: var(--bg-primary); border: 4px solid var(--text-primary); background-color: var(--text-primary); box-shadow: 4px 4px 0 var(--accent-primary); border-radius: 0;">
+            Sigo Lendo
           </a>
         </div>
       </div>
@@ -214,13 +298,13 @@
       <!-- Spotiy Playlists -->
       <div class="bento-item col-spotify glass-panel d-flex flex-column align-items-center justify-content-center"
         data-aos="zoom-in" data-aos-delay="650">
-        <h3 class="panel-title w-100 text-center"><i class="bi bi-spotify" style="color: #1DB954;"></i> vida sem música
-          = erro</h3>
+        <h3 class="panel-title w-100 text-center"><i class="ph-fill ph-spotify-logo" style="color: #1DB954;"></i> vida
+          sem música = 1 erro</h3>
 
         <!-- Preview Single Spotify -->
         <div class="w-100 mt-3"
-          style="border: 4px solid var(--text-primary); border-radius: 0; box-shadow: 4px 4px 0 var(--text-primary);">
-          <iframe style="border-radius:0"
+          style="border: 4px solid var(--text-primary); border-radius: 0; box-shadow: 4px 4px 0 var(--text-primary); background: var(--text-primary); display: flex;">
+          <iframe style="border-radius:0; display: block;"
             src="https://open.spotify.com/embed/playlist/0PCu7Ns1IXcYBmAM6jWeLM?utm_source=generator&theme=0"
             width="100%" height="152" frameBorder="0" allowfullscreen=""
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -231,7 +315,7 @@
           <button type="button" class="btn btn-dark fw-bold px-4 py-3 rounded-0 w-100"
             style="background-color: var(--text-primary); border: 4px solid var(--text-primary); box-shadow: 4px 4px 0 var(--accent-primary); font-family: 'Permanent Marker', cursive; font-size: 1.2rem;"
             data-bs-toggle="modal" data-bs-target="#spotifyModal">
-            Explorar Acervo de Playlists <i class="bi bi-arrows-fullscreen ms-2"></i>
+            Explorar Acervo de Playlists <i class="ph-bold ph-corners-out ms-2"></i>
           </button>
         </div>
       </div>
@@ -265,7 +349,7 @@
         <div class="modal-header border-0"
           style="border-bottom: 4px solid var(--text-primary) !important; background: var(--text-primary); color: #fff;">
           <h2 class="modal-title m-0" style="font-family: 'Permanent Marker', cursive; color: var(--accent-secondary);">
-            <i class="bi bi-spotify me-2"></i>Acervo Musical
+            <i class="ph-fill ph-spotify-logo me-2"></i>Acervo Musical
           </h2>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
@@ -284,7 +368,7 @@
           <button type="button" class="btn fw-bold px-5 py-3 rounded-0"
             style="background-color: var(--accent-primary); color: #fff; border: 4px solid var(--text-primary); box-shadow: 4px 4px 0 var(--text-primary); font-family: 'Permanent Marker', cursive; font-size: 1.2rem; text-transform: uppercase;"
             data-bs-dismiss="modal">
-            <i class="bi bi-x-square-fill me-2"></i> Fechar Acervo
+            <i class="ph-fill ph-x-square me-2"></i> Fechar Acervo
           </button>
         </div>
       </div>
@@ -298,7 +382,7 @@
         style="border: 4px solid var(--text-primary); border-radius: 0; box-shadow: 8px 8px 0 var(--accent-primary); background-color: var(--bg-primary);">
         <div class="modal-header border-0">
           <h4 class="modal-title m-0" style="font-family: 'Permanent Marker', cursive;"><i
-              class="bi bi-bell-fill me-2 text-warning"></i>Notificações Rápidas</h4>
+              class="ph-fill ph-bell-ringing me-2 text-warning"></i>Notificações Rápidas</h4>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body text-center py-4"
@@ -318,21 +402,21 @@
     <div class="offcanvas-header border-bottom border-dark"
       style="border-bottom: 4px solid var(--text-primary) !important;">
       <h4 class="offcanvas-title m-0" id="menuLateralLabel" style="font-family: 'Permanent Marker', cursive;"><i
-          class="bi bi-list fs-3 me-2"></i>Navegação Estrutural</h4>
+          class="ph-bold ph-list-dashes fs-3 me-2"></i>Navegação Estrutural</h4>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body" style="font-family: 'Zilla Slab', serif; font-size: 1.3rem; font-weight: bold;">
       <ul class="list-unstyled d-flex flex-column gap-3 mt-3">
-        <li><a href="#" class="text-dark text-decoration-none" data-bs-dismiss="offcanvas" data-bs-toggle="offcanvas"
-            data-bs-target="#sobreOffcanvas"><i class="bi bi-person-fill"></i> Biografia Completa</a></li>
+        <li><a href="javascript:void(0)" onclick="closeMenuAndStartStarWars()" class="text-dark text-decoration-none">
+            <i class="ph-fill ph-user"></i> Biografia Completa</a></li>
         <li><a href="https://pixwx.substack.com/" target="_blank" class="text-dark text-decoration-none"><i
-              class="bi bi-journal-text"></i> Meus Artigos</a></li>
+              class="ph-fill ph-article"></i> Meus Artigos</a></li>
         <li><a href="https://www.twitch.tv/pixwx" target="_blank" class="text-dark text-decoration-none"><i
-              class="bi bi-twitch" style="color:#9146FF;"></i> Ao Vivo na Twitch</a></li>
+              class="ph-fill ph-twitch-logo" style="color:#9146FF;"></i> Ao Vivo na Twitch</a></li>
         <li><a href="https://youtube.com/@pixwx" target="_blank" class="text-dark text-decoration-none"><i
-              class="bi bi-youtube" style="color:#ff0000;"></i> Canal YouTube</a></li>
+              class="ph-fill ph-youtube-logo" style="color:#ff0000;"></i> Canal YouTube</a></li>
         <li><a href="https://discord.gg/Q9SStyyUXb" target="_blank" class="text-dark text-decoration-none"><i
-              class="bi bi-discord" style="color:#5865F2;"></i> Comunidade Discord</a></li>
+              class="ph-fill ph-discord-logo" style="color:#5865F2;"></i> Comunidade Discord</a></li>
       </ul>
       <div class="mt-5 text-center px-4">
         <a href="https://livepix.gg/pixwx" target="_blank" class="btn w-100 text-dark fw-bold"
@@ -349,35 +433,86 @@
     </div>
   </footer>
 
-  <!-- Aba Lateral Aba "Saber Mais" (Offcanvas) -->
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="sobreOffcanvas" aria-labelledby="sobreOffcanvasLabel"
-    style="background-color: var(--bg-secondary); border-left: 1px solid var(--border-glass); color: var(--text-primary);">
-    <div class="offcanvas-header" style="border-bottom: 1px solid var(--border-glass);">
-      <h5 class="offcanvas-title" id="sobreOffcanvasLabel" style="font-family: 'Space Grotesk'; font-weight: 700;">
-        <i class="bi bi-info-circle me-2" style="color: var(--accent-primary);"></i>Sobre a trajetória
-      </h5>
-      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  <!-- Modal Estilo Star Wars -->
+  <div id="starwars-container">
+    <audio id="sw-audio" src="anticringe/a-starwars-fart-theme.mp3" preload="auto"></audio>
+    <button id="mute-starwars"
+      class="btn btn-link link-warning fs-3 position-absolute top-0 start-0 m-3 text-decoration-none"
+      onclick="toggleSWAudio()" style="z-index: 1060;">
+      <i id="sw-mute-icon" class="ph-fill ph-speaker-high"></i>
+    </button>
+
+    <div id="easter-egg-container" class="position-absolute"
+      style="opacity: 0; pointer-events: none; z-index: 50; display: flex; align-items: center; justify-content: center;">
+      <div id="easter-egg-hud"
+        style="position: absolute; width: 140px; height: 140px; border: 2px dashed #00ffcc; border-radius: 50%; display: none; transform: scale(1.5);">
+        <div
+          style="position: absolute; top: -15px; left: -10px; color: #00ffcc; font-family: monospace; font-size: 10px; font-weight: bold; text-shadow: 0 0 2px #000;">
+          <span id="hud-v">V(t) = 0</span><br>
+          <span id="hud-a">A(t) = 0</span><br>
+          <span id="hud-x">X(t) = 0</span>
+        </div>
+        <div
+          style="position: absolute; bottom: -15px; right: 0; color: #ff0000; font-family: monospace; font-size: 10px; font-weight: bold; text-shadow: 0 0 2px #000;">
+          [THREAT DETECTED]</div>
+      </div>
+      <div id="easter-egg-sickle" style="font-size: 5rem; color: #ff0000; text-shadow: 0 0 20px red, 0 0 50px red;">☭
+      </div>
     </div>
-    <div class="offcanvas-body" style="color: var(--text-secondary); line-height: 1.7;">
-      <p>
-        Sou naturalmente de <strong>Belém/PA</strong>, tendo passado bons tempos morando em Fortaleza e no Rio de
-        Janeiro. Desde 2019, chamo Portugal de lar.
+
+    <div id="quack-overlay" class="position-absolute top-0 start-0 w-100 h-100 z-3 bg-white"
+      style="display: none; justify-content: center; align-items: center; overflow: hidden; flex-direction: column; background-image: repeating-linear-gradient(45deg, rgba(27, 27, 27, 0.03) 25%, transparent 25%, transparent 75%, rgba(27, 27, 27, 0.03) 75%, rgba(27, 27, 27, 0.03));">
+      <div style="font-size: 8rem; margin-bottom: 2rem;">🦆</div>
+      <h1 class="text-center w-100"
+        style="font-size: 5rem; color: var(--text-primary); text-shadow: 4px 4px 0px var(--accent-secondary); font-family: 'Permanent Marker', cursive;">
+        QUACK</h1>
+      <p class="fs-4 fw-bold mt-3 mb-5 text-center px-4" style="color: var(--text-secondary); max-width: 600px;">
+        Nós sabemos que você não ia ler o letreiro rolante até o final.<br>Quer ler a versão normal de uma vez?
       </p>
-      <p>
-        Minha rota acadêmica e profissional foi um tanto caótica e curiosamente ampla: antes de me alinhar como
-        <strong>gestor de projetos em uma empresa de engenharia civil</strong>, já fui estudante de Engenharia
-        Aeroespacial, Farmácia, Direito e Administração.
-      </p>
-      <p>
-        Durante os saltos acadêmicos, cheguei a realizar <strong>Iniciação Científica na UFRJ</strong>, trabalhando com
-        pesquisa focada em sequenciamento de genoma e glaucoma. Toda essa pluralidade moldou a minha atual percepção das
-        coisas e a forma como eu escrevo.
-      </p>
-      <p>
-        Fora da internet e das corporações, levo a vida num violão encostado no quarto, lembranças de um ex-surfista e
-        skatista, e uma rejeição enorme pelas trends vazias que movem a modernidade líquida.
-      </p>
+      <div class="d-flex flex-wrap gap-3 justify-content-center">
+        <button onclick="readBioNormal()" class="btn px-4 py-3 fw-bold bg-dark text-white"
+          style="border: 4px solid var(--text-primary); border-radius: 0; box-shadow: 4px 4px 0 var(--accent-primary); font-size: 1.2rem;">
+          <i class="ph-bold ph-book-open"></i> Biografia Completa
+        </button>
+        <button onclick="closeStarWars()" class="btn px-4 py-3 fw-bold"
+          style="background: var(--bg-primary); color: var(--text-primary); border: 4px solid var(--text-primary); border-radius: 0; box-shadow: 4px 4px 0 var(--text-primary); font-size: 1.2rem;">
+          Fechar (<span id="quack-timer">5</span>s)
+        </button>
+      </div>
     </div>
+
+    <button id="close-starwars"
+      class="btn btn-link link-light fs-1 position-absolute top-0 end-0 m-3 text-decoration-none"
+      onclick="closeStarWars()" style="z-index: 1060;">
+      <i class="ph-bold ph-x"></i>
+    </button>
+    <div id="sw-controls" class="position-absolute bottom-0 start-0 m-3 text-warning z-3 text-center"
+      style="font-family: 'Space Grotesk', sans-serif;">
+      <label for="speedRange" class="form-label mb-1 small fw-bold"
+        style="letter-spacing: 1px; color: #feda4a;">VELOCIDADE: <span id="speedDisplay">1.0x</span></label>
+      <input type="range" class="form-range" id="speedRange" min="0.5" max="3" step="0.25" value="1"
+        oninput="changeStarWarsSpeed(this.value)" style="width: 150px;">
+    </div>
+    <div class="sw-fade"></div>
+    <section class="sw-board">
+      <div id="sw-content" class="sw-content">
+        <h1 class="sw-title">Episódio I</h1>
+        <h2 class="sw-subtitle">DISTÚRBIO DO EU</h2>
+        <p>Sou o Gabriel, nascido e criado, com muito orgulho, em Belém do Pará, morei em Fortaleza, Rio de Janeiro e
+          Santa Maria (pra estudar na UFSM). Desde 2019, tô morando temporariamente em Portugal.</p>
+        <p>Minha trajetória acadêmica foi uma cagada: pulei de Direito pra Farmácia, voltei pro Direito, Direito pra
+          Administração e depois Engenharia Aeroespacial, tudo isso com o TDAH piorando tudo. No meio disso, fiz
+          Iniciação Científica na UFRJ, com pesquisa sobre sequenciamento de genoma e glaucoma. Essa sopa toda moldou
+          como eu vejo o mundo hoje, alimentando minha cabeça de escritor, game dev e a salvação de tocar um violão
+          quando tá complicado.</p>
+        <p>Profissionalmente, sou gestor de projetos numa empresa de engenharia civil, mas sou fissurado mesmo em criar
+          ecossistemas virtuais do zero. Não é só jogar ou montar um servidor: eu construo bots com economias
+          integradas, arquiteturas complexas de RPG cheios de mecânicas novas, e to usando grande parte do meu tempo
+          livre pra tentar terminar meus livros.</p>
+        <p>Fora do corporativismo tóxico, sou ex-surfista e skatista e prefiro um soco na cara do que a superficialidade
+          dessa modernidade líquida e desse capitalismo tardio.</p>
+      </div>
+    </section>
   </div>
 
   <!-- Modal Leitor de Post -->
@@ -399,7 +534,7 @@
         <div class="modal-footer border-0">
           <a id="postModalLink" href="#" target="_blank" class="btn btn-dark px-4 fw-bold"
             style="border-radius: 0; box-shadow: 4px 4px 0 var(--accent-primary);">
-            Ler no Substack <i class="bi bi-box-arrow-up-right ms-2"></i>
+            Ler no Substack <i class="ph-bold ph-arrow-up-right ms-2"></i>
           </a>
           <button type="button" class="btn btn-primary px-4 fw-bold pt-2"
             style="background-color: var(--accent-primary); border: 2px solid var(--text-primary); border-radius:0; box-shadow: 4px 4px 0 var(--text-primary); color: #fff;"
@@ -410,6 +545,37 @@
   </div>
 
   <!-- Scripts -->
+  <!-- Normal Bio Modal -->
+  <div class="modal fade" id="bioModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content"
+        style="border: 4px solid var(--text-primary); border-radius: 0; background: var(--bg-primary);">
+        <div class="modal-header"
+          style="border-bottom: 4px solid var(--text-primary); background: var(--accent-secondary);">
+          <h5 class="modal-title"
+            style="font-family: 'Permanent Marker', cursive; font-size: 2rem; color: var(--text-primary);">Biografia
+            Completa</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            style="border: 2px solid var(--text-primary); border-radius: 0; background-color: var(--bg-secondary);"></button>
+        </div>
+        <div class="modal-body p-4 bg-white"
+          style="font-family: 'Space Grotesk', sans-serif; font-size: 1.15rem; color: var(--text-secondary); line-height: 1.6;">
+          <p>Sou o Gabriel, nascido e criado, com muito orgulho, em Belém do Pará; morei em Fortaleza, Rio de Janeiro e
+            Santa Maria (pra estudar na UFSM). Desde 2019, tô morando temporariamente em Portugal.</p>
+          <p>Minha trajetória acadêmica foi uma cagada: pulei de Direito pra Farmácia, voltei pro Direito, Direito pra
+            Administração e depois Engenharia Aeroespacial, tudo isso com o TDAH piorando tudo. No meio disso, fiz
+            Iniciação Científica na UFRJ, com pesquisa sobre sequenciamento de genoma e glaucoma. Essa sopa toda moldou
+            como eu vejo o mundo hoje, alimentando minha cabeça de escritor, game dev e a salvação de tocar um violão
+            quando tá complicado.</p>
+          <p>Profissionalmente, sou gestor de projetos numa empresa de engenharia civil, mas sou fissurado mesmo em
+            criar ecossistemas virtuais do zero. Não é só jogar ou montar um servidor: eu construo bots com economias
+            integradas, arquiteturas complexas de RPG cheios de mecânicas novas, e to usando grande parte do meu tempo
+            pra isso e pra aprender coisas novas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://embed.twitch.tv/embed/v1.js"></script>
@@ -417,17 +583,35 @@
     AOS.init({ once: true });
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Gunshot logic
+    function playGunShot() {
+      const shot = new Audio('anticringe/gun-shot-1662.mp3');
+      shot.volume = 0.6;
+      shot.play().catch(e => console.log(e));
+
+      const logo = document.getElementById('dmc-logo-container');
+      logo.style.transform = 'translate(5px, 5px)';
+      setTimeout(() => logo.style.transform = 'translate(-5px, -5px)', 50);
+      setTimeout(() => logo.style.transform = 'translate(5px, -5px)', 100);
+      setTimeout(() => logo.style.transform = 'translate(-5px, 5px)', 150);
+      setTimeout(() => logo.style.transform = 'translate(0, 0)', 200);
+    }
+
     // 1. YouTube Latest Video Fetcher
     async function loadLatestYT() {
       try {
         const CHANNEL_ID = 'UCbbjmqDAMwPENwpnJIjeoOw';
-        const RSS_URL = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
-        const resp = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}`);
-        const data = await resp.json();
-        if (data.items && data.items.length > 0) {
-          let videoId = data.items[0].link.split('v=')[1];
-          if (!videoId && data.items[0].link.includes('youtu.be/')) videoId = data.items[0].link.split('youtu.be/')[1];
-          if (videoId) document.getElementById('yt-iframe').src = `https://www.youtube.com/embed/${videoId}?rel=0`;
+        // Interceptando direto o XML do Youtube e evitando cache antigo de APIs de terceiros
+        const RSS_URL = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}&_cacheBust=${Date.now()}`;
+        const proxyUrl = `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(RSS_URL)}`;
+
+        const resp = await fetch(proxyUrl);
+        const text = await resp.text();
+
+        // Extrai o primeiro (mais recente) video id nativamente da feed atom
+        const match = text.match(/<yt:videoId>([^<]+)<\/yt:videoId>/);
+        if (match && match[1]) {
+          document.getElementById('yt-iframe').src = `https://www.youtube.com/embed/${match[1]}?rel=0`;
         }
       } catch (e) {
         console.error("Yt Load error", e);
@@ -471,11 +655,10 @@
       try {
         // Fetch basic info of posts (archive limit 24)
         const apiArchive = `https://${SUBSTACK_URL}/api/v1/archive?limit=24`;
-        const allOriginsUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(apiArchive)}`;
+        const proxyUrl = `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(apiArchive)}`;
 
-        const res = await fetch(allOriginsUrl);
-        const proxyData = await res.json();
-        const posts = JSON.parse(proxyData.contents);
+        const res = await fetch(proxyUrl);
+        const posts = await res.json();
 
         grid.innerHTML = ''; // Clear loader
 
@@ -507,8 +690,8 @@
                             <h3 class="blog-title">${post.title}</h3>
                             <p class="blog-excerpt">${post.subtitle || 'Leia a postagem completa..'}</p>
                             <div class="blog-footer">
-                                <span><i class="bi bi-calendar-event me-1"></i> ${date}</span>
-                                <span><i class="bi bi-clock me-1"></i> Ler</span>
+                                <span><i class="ph-bold ph-calendar-blank me-1"></i> ${date}</span>
+                                <span><i class="ph-bold ph-clock me-1"></i> Ler</span>
                             </div>
                         </div>
                     `;
@@ -536,11 +719,10 @@
       try {
         // Fetch full HTML
         const apiPost = `https://${SUBSTACK_URL}/api/v1/posts/${postInfo.slug}`;
-        const allOriginsUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(apiPost)}`;
+        const proxyUrl = `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(apiPost)}`;
 
-        const res = await fetch(allOriginsUrl);
-        const proxyData = await res.json();
-        const fullPost = JSON.parse(proxyData.contents);
+        const res = await fetch(proxyUrl);
+        const fullPost = await res.json();
 
         if (fullPost.body_html) {
           bodyDiv.innerHTML = fullPost.body_html;
@@ -623,12 +805,56 @@
     }
     renderClips();
 
-    // 6. Custom Google Calendar Fetcher (Leitor ICS Elegante)
+    // 6. Goodreads Fetcher
+    async function loadGoodreads() {
+      const container = document.getElementById('goodreads-books');
+      if (!container) return;
+      try {
+        const url = "https://www.goodreads.com/user/show/100645513-gabriel-alcantara-de-albuquerque";
+        const proxyUrl = "https://api.codetabs.com/v1/proxy?quest=" + encodeURIComponent(url);
+
+        const res = await fetch(proxyUrl);
+        const text = await res.text();
+
+        const regex = /<a title="([^"]+)" href="(\/book\/show[^"]+)"><img alt="[^"]*" src="([^"]+)"/g;
+        let match;
+        const books = [];
+
+        while ((match = regex.exec(text)) !== null && books.length < 2) {
+          books.push({
+            title: match[1],
+            link: "https://www.goodreads.com" + match[2],
+            image: match[3]
+          });
+        }
+
+        if (books.length > 0) {
+          let html = '';
+          books.forEach(b => {
+            html += `
+              <a href="${b.link}" target="_blank" title="${b.title}" style="transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                <img src="${b.image}" alt="${b.title}" style="height: 120px; border: 3px solid var(--text-primary); box-shadow: 4px 4px 0 var(--text-primary);">
+              </a>
+             `;
+          });
+          container.innerHTML = html;
+        } else {
+          container.innerHTML = '<span class="text-muted small">Descansando a vista.</span>';
+        }
+
+      } catch (err) {
+        console.error("Goodreads load error:", err);
+        container.innerHTML = '<span class="text-muted small">Não foi possível carregar as leituras.</span>';
+      }
+    }
+    loadGoodreads();
+
+    // 7. Custom Google Calendar Fetcher (Leitor ICS Elegante)
     async function loadAgenda() {
       try {
         const icsUrl = "https://calendar.google.com/calendar/ical/3d4c9455e9c97965f1f0aefb85bcf2d81ebca6b58640c51843b0c9a44c802277%40group.calendar.google.com/public/basic.ics";
         // Usage of alternative proxy that allows client side fetches directly
-        const res = await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(icsUrl)}`);
+        const res = await fetch(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(icsUrl)}`);
         if (!res.ok) throw new Error("Proxy error");
         let text = await res.text();
 
@@ -776,7 +1002,7 @@
         html += `
           <div style="border: 4px solid var(--text-primary); border-radius: 0; box-shadow: 8px 8px 0 var(--text-primary); background: var(--text-primary); transition: transform 0.2s; display: flex; flex-direction: column;" onmouseover="this.style.transform='translate(-2px, -2px)'" onmouseout="this.style.transform='none'">
             <iframe style="border-radius:0" src="https://open.spotify.com/embed/playlist/${id}?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            <a href="https://open.spotify.com/playlist/${id}" target="_blank" style="text-decoration:none; color: var(--accent-secondary); background: var(--text-primary); padding: 12px; text-align: center; font-family: 'Permanent Marker', cursive; font-size: 1.1rem; width:100%; border-top: 2px dashed var(--accent-secondary); transition: all 0.2s; cursor: pointer;">Seguir Playlist no App <i class="bi bi-suit-heart-fill ms-2"></i></a>
+            <a href="https://open.spotify.com/playlist/${id}" target="_blank" style="text-decoration:none; color: var(--accent-secondary); background: var(--text-primary); padding: 12px; text-align: center; font-family: 'Permanent Marker', cursive; font-size: 1.1rem; width:100%; border-top: 2px dashed var(--accent-secondary); transition: all 0.2s; cursor: pointer;">Seguir Playlist no App <i class="ph-fill ph-heart ms-2"></i></a>
           </div>
         `;
       });
@@ -799,18 +1025,327 @@
           statusEl.style.backgroundColor = '#1DB954';
           statusEl.style.color = '#fff';
           statusEl.style.transform = 'rotate(1deg)';
-          statusEl.innerHTML = `<i class="bi bi-hdd-network-fill me-2"></i> ONLINE (${data.players.online}/${data.players.max})`;
+          statusEl.innerHTML = `<i class="ph-fill ph-hard-drives me-2"></i> ONLINE (${data.players.online}/${data.players.max})`;
         } else {
           statusEl.style.backgroundColor = 'var(--text-primary)';
           statusEl.style.color = 'var(--accent-primary)';
           statusEl.style.transform = 'rotate(0deg)';
-          statusEl.innerHTML = '<i class="bi bi-exclamation-triangle-fill me-2"></i> OFFLINE TENTANDO RECONECTAR';
+          statusEl.innerHTML = '<i class="ph-fill ph-warning me-2"></i> OFFLINE TENTANDO RECONECTAR';
         }
       } catch (err) {
         statusEl.innerHTML = 'Status Desconhecido';
       }
     }
     checkMinecraftServer();
+
+    // 10. Steam Custom Module (Public profile XML)
+    async function loadSteam() {
+      const container = document.getElementById('steam-games');
+      if (!container) return;
+
+      try {
+        const steamXmlUrl = "https://steamcommunity.com/id/pixwx/?xml=1";
+        const res = await fetch(`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(steamXmlUrl)}`);
+
+        if (!res.ok) throw new Error("Proxy error");
+        const text = await res.text();
+
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(text, "text/xml");
+        const mostPlayed = xmlDoc.getElementsByTagName("mostPlayedGames")[0];
+
+        if (mostPlayed) {
+          const games = mostPlayed.getElementsByTagName("game");
+          let html = '';
+          const maxGames = Math.min(3, games.length);
+
+          for (let i = 0; i < maxGames; i++) {
+            const game = games[i];
+            const name = game.getElementsByTagName("gameName")[0]?.textContent || "Desconhecido";
+            const hours = game.getElementsByTagName("hoursOnRecord")[0]?.textContent || "";
+            let logo = game.getElementsByTagName("gameLogo")[0]?.textContent;
+            const link = game.getElementsByTagName("gameLink")[0]?.textContent || "https://steamcommunity.com/id/pixwx/";
+
+            // convert image path to high res steam cdn
+            if (logo && logo.includes('media.steampowered.com')) {
+              logo = logo.replace('media.steampowered.com', 'cdn.akamai.steamstatic.com');
+            }
+
+            html += `
+              <a href="${link}" target="_blank" class="d-flex w-100 align-items-center text-decoration-none bg-white p-2" title="${name}" style="border: 3px solid var(--text-primary); box-shadow: 2px 2px 0 var(--text-primary); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='none'">
+                <img src="${logo}" alt="${name}" style="height: 40px; border: 2px solid var(--text-primary); background: #000;">
+                <div class="text-start ms-2" style="line-height: 1.2; overflow: hidden;">
+                  <span class="d-block fw-bold text-dark text-truncate" style="max-width: 150px; font-size: 0.9rem;">${name}</span>
+                  <span class="d-block text-secondary" style="font-size: 0.75rem;">${hours} horas</span>
+                </div>
+              </a>
+             `;
+          }
+          container.innerHTML = html;
+        } else {
+          container.innerHTML = '<span class="text-muted small fw-bold">Nenhum histórico aberto.</span>';
+        }
+      } catch (err) {
+        console.error("Steam load error:", err);
+        container.innerHTML = '<span class="text-muted small">Não foi possível carregar a Steam.</span>';
+      }
+    }
+    loadSteam();
+
+    // 11. StreamElements Leaderboard
+    async function loadLeaderboard() {
+      const container = document.getElementById('se-leaderboard');
+      if (!container) return;
+      try {
+        const res = await fetch('https://api.streamelements.com/kappa/v2/points/653d80a7d9e704d45bdcf091/top');
+        if (!res.ok) throw new Error("API error");
+        const data = await res.json();
+        let html = '';
+        const top3 = data.users.slice(0, 3);
+        const medals = ["🥇", "🥈", "🥉"];
+        top3.forEach((u, i) => {
+          html += `
+              <div class="d-flex justify-content-between align-items-center bg-white p-2" style="border: 3px solid var(--text-primary); font-family: 'Space Grotesk', sans-serif;">
+                 <span class="fw-bold fs-6 text-dark text-truncate" style="max-width: 140px;">${medals[i]} ${u.username}</span>
+                 <span class="badge bg-dark rounded-pill fs-6" style="border: 2px solid var(--text-primary); color: var(--accent-primary) !important;">${u.points}</span>
+              </div>
+            `;
+        });
+        container.innerHTML = html;
+      } catch (err) {
+        console.error("Leaderboard load error:", err);
+        container.innerHTML = '<span class="text-muted small fw-bold">Não foi possível carregar os pixels.</span>';
+      }
+    }
+    loadLeaderboard();
+
+    // 12. Star Wars Intro Engine & Controls
+    let swTimeout;
+    let explosionTimeout;
+    let quackIntervalRef;
+
+    function fadeOutAudio(audio, duration) {
+      if (!audio || audio.paused || audio.volume === 0) return;
+      const steps = 20;
+      const stepTime = Math.max(10, duration / steps); // avoid too fast intervals
+      const initialVolume = audio.volume;
+      let currentStep = 0;
+      const fadeTimer = setInterval(() => {
+        currentStep++;
+        const vol = Math.max(0, initialVolume - (initialVolume * (currentStep / steps)));
+        audio.volume = vol;
+        if (currentStep >= steps) {
+          clearInterval(fadeTimer);
+          audio.pause();
+          audio.volume = initialVolume; // Reset volume back for subsequent full plays
+        }
+      }, stepTime);
+    }
+
+    function toggleSWAudio() {
+      const audio = document.getElementById('sw-audio');
+      const icon = document.getElementById('sw-mute-icon');
+      if (audio.muted) {
+        audio.muted = false;
+        icon.className = 'ph-fill ph-speaker-high';
+      } else {
+        audio.muted = true;
+        icon.className = 'ph-fill ph-speaker-slash';
+      }
+    }
+
+    function startStarWars() {
+      const swContainer = document.getElementById('starwars-container');
+      const swContent = document.getElementById('sw-content');
+      const audio = document.getElementById('sw-audio');
+
+      const speedInput = document.getElementById('speedRange');
+      if (speedInput) {
+        speedInput.value = 1;
+        document.getElementById('speedDisplay').innerText = '1.0x';
+      }
+
+      document.getElementById('quack-overlay').style.display = 'none';
+      document.getElementById('close-starwars').style.display = 'block';
+
+      swContainer.style.display = 'block';
+      swContent.style.animation = 'none';
+      void swContent.offsetWidth; // trigger reflow
+
+      clearTimeout(swTimeout);
+      clearTimeout(explosionTimeout);
+      clearInterval(quackIntervalRef);
+
+      // Auto play fart theme
+      if (audio) {
+        audio.volume = 0.4;
+        audio.currentTime = 0;
+        audio.play().catch(() => {
+          console.log("Autoplay blocked. User needs to unmute manually.");
+          audio.muted = true;
+          document.getElementById('sw-mute-icon').className = 'ph-fill ph-speaker-slash';
+          audio.play();
+        });
+      }
+
+      // Easter egg random trigger
+      const eggContainer = document.getElementById('easter-egg-container');
+      const hud = document.getElementById('easter-egg-hud');
+      if (eggContainer) {
+        eggContainer.style.opacity = '0';
+        eggContainer.style.left = '-20%';
+        eggContainer.style.top = (Math.random() * 60 + 20) + '%';
+        eggContainer.style.transform = `scale(1)`;
+        if (hud) hud.style.display = 'none';
+
+        const baseEggWait = 10000;
+        const finalWait = parseFloat(speedInput ? speedInput.value : 1) ? baseEggWait / parseFloat(speedInput ? speedInput.value : 1) : baseEggWait;
+
+        setTimeout(() => {
+          eggContainer.style.opacity = '1';
+          if (hud) hud.style.display = 'block';
+          let startT = null;
+          let eggDuration = 6000; // 6 seconds to cross screen
+
+          function animateEgg(timestamp) {
+            if (!startT) startT = timestamp;
+            let elapsed = timestamp - startT;
+            let progress = elapsed / eggDuration;
+
+            if (progress > 1.2) {
+              eggContainer.style.opacity = '0';
+              if (hud) hud.style.display = 'none';
+              return; // done
+            }
+
+            // Acceleration logic: 
+            let t = progress * 10; // scaled time
+            let a = 9.8 * (1 + t / 5); // increasing acceleration!
+            let v = a * t;
+            let x = 0.5 * a * t * t;
+
+            let visualX = (progress * progress) * 140 - 20; // from -20 to 120 rapidly later
+
+            eggContainer.style.left = visualX + '%';
+            const sickle = document.getElementById('easter-egg-sickle');
+            if (sickle) sickle.style.transform = `rotate(${progress * 1080}deg)`;
+
+            // Update HUD text
+            const hudX = document.getElementById('hud-x');
+            const hudV = document.getElementById('hud-v');
+            const hudA = document.getElementById('hud-a');
+            if (hudX) hudX.innerText = `X(t): ${Math.round(x * 100)} m`;
+            if (hudV) hudV.innerText = `V(t): ${Math.round(v * 100)} m/s`;
+            if (hudA) hudA.innerText = `A(t): ${a.toFixed(2)} m/s²`;
+
+            requestAnimationFrame(animateEgg);
+          }
+          requestAnimationFrame(animateEgg);
+        }, finalWait);
+      }
+
+      swTimeout = setTimeout(() => {
+        swContent.style.animation = 'crawl 60s linear forwards';
+        swContent.style.animationDuration = '60s';
+      }, 50);
+
+      // Changed from 35% to 40% read time before explosive Quack
+      explosionTimeout = setTimeout(triggerExplosion, 60000 * 0.40);
+
+      document.body.style.overflow = 'hidden';
+    }
+
+    function changeStarWarsSpeed(speed) {
+      const swContent = document.getElementById('sw-content');
+      document.getElementById('speedDisplay').innerText = parseFloat(speed).toFixed(1) + 'x';
+      const audio = document.getElementById('sw-audio');
+
+      if (audio) {
+        audio.playbackRate = parseFloat(speed);
+      }
+
+      if (swContent && swContent.style.animationName) {
+        const baseDuration = 60; // Base is 60s for 1x
+        const newDuration = baseDuration / parseFloat(speed);
+        swContent.style.animationDuration = newDuration + 's';
+
+        clearTimeout(explosionTimeout);
+        explosionTimeout = setTimeout(triggerExplosion, (newDuration * 1000) * 0.40);
+      }
+    }
+
+    function triggerExplosion() {
+      const container = document.getElementById('starwars-container');
+      if (container.style.display === 'none') return; // User already closed it
+
+      const overlay = document.getElementById('quack-overlay');
+      document.getElementById('close-starwars').style.display = 'none'; // hide closing button
+
+      const audio = document.getElementById('sw-audio');
+      if (audio) {
+        fadeOutAudio(audio, 1200);
+      }
+
+      let secondsLeft = 10;
+      const timerSpan = document.getElementById('quack-timer');
+      if (timerSpan) timerSpan.innerText = secondsLeft;
+
+      overlay.style.display = 'flex'; // boom
+
+      const boom = new Audio('https://www.myinstants.com/media/sounds/vine-boom.mp3');
+      boom.play().catch(e => console.log(e));
+
+      setTimeout(() => {
+        const quack = new Audio('https://www.myinstants.com/media/sounds/quack_5.mp3');
+        quack.volume = 1;
+        quack.play().catch(e => console.log(e));
+      }, 600);
+
+      clearInterval(quackIntervalRef);
+      quackIntervalRef = setInterval(() => {
+        secondsLeft--;
+        if (timerSpan) timerSpan.innerText = secondsLeft;
+
+        if (secondsLeft <= 0) {
+          clearInterval(quackIntervalRef);
+          closeStarWars();
+        }
+      }, 1000);
+    }
+
+    function closeStarWars() {
+      document.getElementById('starwars-container').style.display = 'none';
+      document.body.style.overflow = 'auto'; // allow scrolling again
+
+      const audio = document.getElementById('sw-audio');
+      if (audio) {
+        fadeOutAudio(audio, 500);
+      }
+
+      const eggContainer = document.getElementById('easter-egg-container');
+      if (eggContainer) eggContainer.style.opacity = '0';
+
+      clearTimeout(explosionTimeout);
+      clearTimeout(swTimeout);
+      clearInterval(quackIntervalRef);
+    }
+
+    function readBioNormal() {
+      closeStarWars();
+      const bioModal = new bootstrap.Modal(document.getElementById('bioModal'));
+      bioModal.show();
+    }
+
+    function closeMenuAndStartStarWars() {
+      const menuEl = document.getElementById('menuLateral');
+      const bsOffcanvas = window.bootstrap ? bootstrap.Offcanvas.getInstance(menuEl) : null;
+      if (bsOffcanvas) {
+        bsOffcanvas.hide();
+        setTimeout(startStarWars, 400); // aguarda fechar o menu esquerdo para exibir
+      } else {
+        startStarWars();
+      }
+    }
 
   </script>
 </body>

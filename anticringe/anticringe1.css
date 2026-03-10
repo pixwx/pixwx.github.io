@@ -240,9 +240,25 @@ a {
 .bento-item {
   position: relative;
   overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+.bento-item:hover {
+  z-index: 10;
 }
 
 .col-social,
+.col-books {
+  overflow: visible !important;
+  /* Allow radial/tooltips to break container limitations */
+}
+
+.col-social:hover {
+  transform: scale(1.1);
+  z-index: 50;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6), 8px 8px 0 var(--text-primary);
+}
+
 .col-discord,
 .col-mine,
 .col-yt,
@@ -251,7 +267,8 @@ a {
 .col-clips,
 .col-spotify,
 .col-steam,
-.col-books {
+.col-books,
+.col-leaderboard {
   grid-column: span 12;
 }
 
@@ -339,7 +356,7 @@ a {
   }
 
   .col-leaderboard {
-    grid-column: span 4;
+    grid-column: span 12;
   }
 }
 
@@ -348,6 +365,91 @@ a {
   width: 250px;
   height: 250px;
   margin: 1rem auto;
+  animation: revolver-click-clack 8s infinite cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes revolver-click-clack {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  2% {
+    transform: rotate(120deg);
+  }
+
+  4% {
+    transform: rotate(120deg);
+  }
+
+  6% {
+    transform: rotate(240deg);
+  }
+
+  8% {
+    transform: rotate(240deg);
+  }
+
+  10% {
+    transform: rotate(360deg);
+  }
+
+  0% {
+    transform: rotate(0deg);
+  }
+
+  2% {
+    transform: rotate(120deg);
+  }
+
+  4% {
+    transform: rotate(120deg);
+  }
+
+  6% {
+    transform: rotate(240deg);
+  }
+
+  8% {
+    transform: rotate(240deg);
+  }
+
+  10% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes revolver-counter-click {
+  0% {
+    transform: rotate(var(--rot)) translateY(-100px) rotate(calc(var(--rev) - 0deg));
+  }
+
+  2% {
+    transform: rotate(var(--rot)) translateY(-100px) rotate(calc(var(--rev) - 120deg));
+  }
+
+  4% {
+    transform: rotate(var(--rot)) translateY(-100px) rotate(calc(var(--rev) - 120deg));
+  }
+
+  6% {
+    transform: rotate(var(--rot)) translateY(-100px) rotate(calc(var(--rev) - 240deg));
+  }
+
+  8% {
+    transform: rotate(var(--rot)) translateY(-100px) rotate(calc(var(--rev) - 240deg));
+  }
+
+  10% {
+    transform: rotate(var(--rot)) translateY(-100px) rotate(calc(var(--rev) - 360deg));
+  }
+
+  100% {
+    transform: rotate(var(--rot)) translateY(-100px) rotate(calc(var(--rev) - 360deg));
+  }
 }
 
 .radial-center {
@@ -364,14 +466,20 @@ a {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  cursor: pointer;
   z-index: 10;
   border: 4px solid var(--text-primary);
   box-shadow: 4px 4px 0 var(--accent-secondary);
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+.radial-menu-container:hover,
+.radial-menu-container:hover .radial-btn {
+  animation-play-state: paused;
+}
+
 .radial-center:hover {
-  transform: translate(-50%, -50%) scale(1.1);
+  scale: 1.1;
   box-shadow: 6px 6px 0 var(--accent-primary);
 }
 
@@ -394,21 +502,21 @@ a {
   justify-content: center;
   align-items: center;
   font-size: 1.4rem;
-  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  scale: 1;
+  transition: scale 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s, background 0.2s, color 0.2s;
   transform: rotate(var(--rot)) translateY(-100px) rotate(var(--rev));
   opacity: 1;
   pointer-events: auto;
   box-shadow: 4px 4px 0 var(--text-primary);
-  z-index: 5;
+  animation: revolver-counter-click 8s infinite cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .radial-btn:hover {
-  transform: rotate(var(--rot)) translateY(-100px) rotate(var(--rev)) scale(1.4) rotate(5deg);
-  background: var(--accent-primary);
-  color: var(--text-primary);
-  border-color: #0ff !important;
-  box-shadow: 0 0 15px #0ff, 4px 4px 0 #000;
-  z-index: 20;
+  scale: 1.4;
+  background: var(--text-primary);
+  color: var(--bg-secondary);
+  box-shadow: 6px 6px 0 var(--accent-primary);
+  z-index: 50;
 }
 
 .radial-btn::after {
@@ -886,11 +994,13 @@ footer {
 .sw-content {
   position: absolute;
   top: 100%;
-  width: 90%;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1400px;
+  padding-left: 10px;
+  padding-right: 10px;
   font-size: clamp(1.5rem, 2.5vw, 3rem);
   font-weight: 600;
-  letter-spacing: clamp(2px, 0.3vw, 6px);
+  letter-spacing: clamp(1px, 0.3vw, 4px);
   line-height: 1.5;
   text-align: justify;
   transform-origin: 50% 100%;
@@ -936,4 +1046,86 @@ footer {
   .sw-board {
     perspective: 50vh;
   }
+}
+
+/* Grunge / Borderlands Hover Effects */
+
+.grunge-book-hover {
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.grunge-book-hover:hover {
+  transform: scale(1.15) rotate(-3deg);
+  z-index: 10;
+}
+
+.grunge-book-hover:hover img {
+  border-color: #0ff !important;
+  box-shadow: 8px 8px 0 #000, 0 0 20px #0ff !important;
+  filter: contrast(1.2) saturate(1.2);
+}
+
+.grunge-book-tooltip {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%) skewX(-5deg);
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  font-family: 'Permanent Marker', cursive;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  border: 2px solid var(--text-primary);
+  z-index: 20;
+}
+
+.grunge-book-hover:hover .grunge-book-tooltip {
+  opacity: 1;
+  bottom: -15px;
+  background: #0ff;
+  color: #000;
+  border: 4px solid #000;
+  box-shadow: 6px 6px 0 var(--accent-primary);
+}
+
+.grunge-board-hover {
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+}
+
+.grunge-board-hover:hover {
+  transform: scale(1.03) translateX(-4px) skewX(-1deg);
+  z-index: 10;
+  border-color: #ff00ff !important;
+  box-shadow: 6px 6px 0 var(--text-primary), 0 0 15px rgba(255, 0, 255, 0.5) !important;
+  background-color: var(--text-primary) !important;
+}
+
+.grunge-board-hover.top-rank {
+  background-color: var(--text-primary) !important;
+}
+
+.grunge-board-hover.top-rank span.text-dark {
+  color: var(--bg-secondary) !important;
+}
+
+.grunge-board-hover.top-rank:hover {
+  border-color: #0ff !important;
+  box-shadow: 8px 8px 0 var(--text-primary), 0 0 20px rgba(0, 255, 255, 0.5) !important;
+}
+
+.grunge-board-hover:hover span.text-dark,
+.grunge-board-hover:hover span.text-secondary {
+  color: var(--bg-primary) !important;
+}
+
+.grunge-board-hover:hover .badge {
+  background-color: var(--accent-primary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--accent-primary) !important;
+  box-shadow: 2px 2px 0 var(--bg-primary);
 }

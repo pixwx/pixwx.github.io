@@ -1,228 +1,818 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <head>
-    <meta charset="utf-8">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#f2f2f2">
 
-    <!-- Meta para coisas legais quando se compartilha no Discord -->
-      <meta charset="utf-8">
-      <title>PixWx | streams diárias, conteúdo gamer e servidor de minecraft 24/7 </title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-      <!-- SEO básico -->
-      <meta name="description" content="PixWx – streamer e criador de conteúdo de jogos. Participe do servidor Minecraft gratuito 24h, assista lives diárias de Minecraft, Project Zomboid e muito mais no YouTube e Twitch.">
-      <meta name="keywords" content="PixWx, servidor Minecraft, Minecraft 24h, streamer, criador de conteúdo, entretenimento, lives diárias, YouTube, Twitch, Project Zomboid">
-    
-      <!-- Open Graph / Facebook -->
-      <meta property="og:type"        content="website">
-      <meta property="og:title"       content="PixWx | Servidor Minecraft 24/7, Streams Diárias e Conteúdo Gamer">
-      <meta property="og:description" content="Junte-se ao servidor Minecraft gratuito online 24h e acompanhe conteúdo de entretenimento gamer ao vivo no YouTube e Twitch com PixWx.">
-      <meta property="og:image"       content="https://i.ibb.co/h1bX9mg/banner-dc-11c-pia.png">
-      <meta property="og:url"         content="https://pixwx.wtf">
-      <meta property="og:site_name"  content="PixWx">
-    
-      <!-- Twitter Card -->
-      <meta name="twitter:card"        content="summary_large_image">
-      <meta name="twitter:site"        content="@PixWx">
-      <meta name="twitter:title"       content="PixWx | Servidor Minecraft 24/7, Streams Diárias">
-      <meta name="twitter:description" content="Participe do servidor Minecraft gratuito e acompanhe lives diárias de conteúdo gamer no YouTube e Twitch.">
-      <meta name="twitter:image"       content="https://i.ibb.co/h1bX9mg/banner-dc-11c-pia.png">
-  
-    
+<head>
+  <meta charset="utf-8">
+  <title>PixWx | Criador de Conteúdo</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PixWx </title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="anticringe/anticringe1.css">
-  </head>
-  <body>
-    <div>
-    <nav class="navbar">
-      <button class="btn btn-link menu-btn"><i class="bi bi-three-dots"></i></button>
-      <a class="navbar-brand">
-        <img class="logo-img" src="img/logodp.png" alt="Logo">
-        <!-- <div class="logo-text">PixWx</div> -->
-      </a>
-      <button class="btn btn-link notification-btn"><i class="bi bi-bell-fill"></i></button>     
-    </div> 
-    </nav>
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#9146FF">
+  <meta name="msapplication-TileColor" content="#0a0a0c">
+  <meta name="theme-color" content="#0a0a0c">
 
-    <main>
-      <div class="container" style="margin: 100px auto;">
-        <div class="perfil">
-          <img src="img/pix.webp" alt="Imagem do Perfil do Pixwx" class="profile-image">
-          <div class="nome-perfil">
-            PixWx 
-            <img class="icone-verificado" src="img/icones-originais/verificado.svg">
-          </div>
-    <!-- Descrição do Perfil --> 
-<div class="desc-do-perfil">
-  <b>Live todos os dias na Twitch</b> <br> <b style="color:#e4e4e4;font-weight:100;">(se não ter é porque morri)</b>
-</div>
-<hr class="linha-wx-sepadora">
-          <!-- Ícones Sociais --> 
-           
-          <div class="row gx-4 gy-4 justify-content-center">
-            <!-- Coluna 1: Redes Sociais -->
-            <div class="col-12 col-md-6">
-              <p class="text-center desc-do-perfil" style="color:#e4e4e4;font-weight:600;">redes sociais</p>
-              <section class="social-section" style="margin: 50px auto;">
-                <div class="social-icons text-white d-flex flex-wrap justify-content-center" style="flex-wrap: wrap;">
-                  <div class="d-flex flex-column align-items-center mx-3">
-                    <a href="https://www.youtube.com/@PixWx?sub_confirmation=1" target="_blank">
-                      <i class="bi bi-youtube fs-1"></i>
-                    </a>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="PixWx – Criador de conteúdo de jogos e entusiasta. Leia meus  textos, participe do servidor Minecraft, e confira os vídeos. Ocasionalmente em hiato.">
+  <meta name="keywords" content="PixWx, servidor Minecraft, Substack, textos, conteúdo, youtube, discord">
 
-                  </div>
-                  <div class="d-flex flex-column align-items-center mx-3">
-                    <a href="https://twitch.tv/pixwx" target="_blank">
-                      <i class="bi bi-twitch fs-1"></i>
-                    </a>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PixWx | Textos e Vídeos">
+  <meta property="og:description" content="Acesse todos os meus textos e conteúdos diretamente por aqui.">
+  <meta property="og:image" content="https://i.ibb.co/h1bX9mg/banner-dc-11c-pia.png">
+  <meta property="og:url" content="https://pixwx.wtf">
 
-                  </div>
-                  <div class="d-flex flex-column align-items-center mx-3">
-                    <a href="https://discord.gg/sH7dKb6M6N" target="_blank">
-                      <i class="bi bi-discord fs-1"></i>
-                    </a>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="anticringe/anticringe1.css">
+</head>
 
-                  </div>
-                  
-                  <div class="w-100 my-3"></div>
-                  
-                  <div class="d-flex flex-column align-items-center mx-3">
-                    <a href="https://www.instagram.com/pixwxx" target="_blank">
-                      <i class="bi bi-instagram fs-1"></i>
-                    </a>
-                  </div>
-                  
-                  <div class="d-flex flex-column align-items-center mx-3">
-                    <a href="https://open.spotify.com/user/albgabs?si=67b977d31615436c&nd=1" target="_blank">
-                      <i class="bi bi-spotify fs-1"></i>
-                    </a>
-                  </div>
-                
-                </div>
-              </section>
-            </div>
-          
-            <!-- Coluna 2: Embed do Discord -->
-            <div class="col-12 col-md-6">
-              <p class="text-center desc-do-perfil" style="color:#e4e4e4;font-weight:600;">Discord</p>
-<!-- DISCORD -->
-<section id="discord-custom" class="discord-embed-custom text-center my-1">
-  <p class="desc-do-perfil" style="color:#e4e4e4;font-weight:900;"><span id="online-count">–</span> online</p>
+<body>
 
-  <div id="member-list" class="member-list mx-auto mb-3"></div>
+  <!-- Navbar Brutalista -->
+  <nav class="navbar sticky-top">
+    <div class="container-fluid px-4 px-md-5 d-flex justify-content-between align-items-center">
+      <button class="btn btn-link link-dark text-decoration-none p-0 d-md-block fw-bold" data-bs-toggle="offcanvas"
+        data-bs-target="#menuLateral">
+        <i class="bi bi-justify fs-4"></i>
+      </button>
+      <div class="navbar-brand m-0" style="position: relative;" id="dmc-logo-container">
+        <img src="img/logodp.png" alt="Logo PixWx" id="dmc-shoot-target">
+      </div>
+      <button class="btn btn-link link-dark text-decoration-none p-0 fw-bold" data-bs-toggle="modal"
+        data-bs-target="#sinoModal">
+        <i class="bi bi-bell-fill fs-5"></i>
+      </button>
+    </div>
+  </nav>
 
-  <!-- Botão de convite -->
-  <a href="https://discord.com/invite/sH7dKb6M6N" target="_blank" class="btn btn-light btn-entrar desc-do-perfil">
-     se incluir
-  </a>
-</section>
+  <div class="container pb-5">
 
-<script>
-  const GUILD_ID = '895053873281134662';
-  async function buildDiscordWidget() {
-    const res = await fetch(
-      `https://discord.com/api/guilds/${GUILD_ID}/widget.json?include_presences=true`
-    );
-    const data = await res.json();
+    <!-- Header Perfil -->
+    <div class="profile-section" data-aos="fade-down" data-aos-duration="1000">
+      <div class="profile-img-wrap">
+        <img src="img/pix.webp" alt="Avatar PixWx">
+      </div>
+      <div class="d-flex flex-column align-items-center mb-3">
+        <h1 class="profile-name profile-realname m-0" data-realname="Gabriel Augusto Alcantara de Albuquerque">
+          Gabriel A. A. de A.
+          <img class="profile-badge" src="img/icones-originais/verificado.svg" alt="Verificado">
+        </h1>
+        <span class="badge text-dark rounded-pill px-3 py-1 mt-2 mb-2"
+          style="background-color: var(--accent-secondary); font-family: 'Space Grotesk'; font-size: 0.9rem;">
+          @pixwx
+        </span>
+      </div>
+      <p class="profile-desc">
+        Escritor, gestor de projetos, inimigo das trends e esquisito com amor. <br>
+        De Belém/PA e vivendo em Portugal desde 2019.
+        <a href="#sobreOffcanvas" data-bs-toggle="offcanvas" class="saber-mais-link"
+          style="opacity: 0.6; font-size: 0.85rem; margin-left: 5px;">saber mais...</a>
+      </p>
+      <span class="profile-hiatus">Em hiato criativo (mas volto no futuro)</span>
+      <div class="mt-4">
+        <a href="mailto:xenopus361@barbarbu.fr" class="btn text-white fw-bold rounded-0 px-4 py-2"
+          style="background-color: var(--text-primary); border: 4px solid var(--text-primary); box-shadow: 4px 4px 0 var(--accent-secondary); text-transform: uppercase;">
+          <i class="bi bi-envelope-at-fill me-2"></i>Contato Profissional
+        </a>
+        <p class="small text-muted mt-2 fw-bold" style="font-size: 0.75rem; letter-spacing: 0.5px;">(Email blindado
+          alternativo via SurfShark)</p>
+      </div>
+    </div>
 
-    // atualiza count
-    document.getElementById('online-count').textContent = data.presence_count;
+    <!-- Espaço reservado para quando estiver Ao Vivo -->
+    <div id="live-container"></div>
 
-    // preenche lista
-    const list = document.getElementById('member-list');
-    data.members.forEach(m => {
-      const div = document.createElement('div');
-      div.className = 'member d-flex align-items-center mb-2';
+    <!-- Bento Grid Principal -->
+    <div class="bento-grid">
 
-      const img = document.createElement('img');
-      img.src = m.avatar_url;
-      img.className = 'avatar rounded-circle me-2';
-
-      const span = document.createElement('span');
-      span.textContent = m.username;
-
-      div.append(img, span);
-      list.append(div);
-    });
-  }
-  buildDiscordWidget();
-</script>
-              </section>
-            </div>
-          </div>
-          
-    
-          <hr class="linha-wx-sepadora">
-          </section>
-          <!-- Chamada para MineWx -->
-          <section class="minewx-call-to-action mb-5 text-center">
-            <a href="https://pixwx.wtf/minewx/regras.html" target="_blank" class="cta-link">
-              <img
-                src="minewx/imgs/topo.png"
-                alt="Entrar no MineWx"
-                class="cta-image"
-              />
-              <p class="cta-text">nosso servidor de minecraft</p>
-            </a>
-          </section>
-   
-
-          <hr class="linha-wx-sepadora">
-<!-- Último vídeo do YouTube -->
-<section class="yt-latest container my-4">
-  <div class="embed-responsive embed-responsive-16by9">
-    <iframe
-      class="embed-responsive-item"
-      src=""
-      id="yt-iframe"
-      frameborder="0"
-      allowfullscreen>
-    </iframe>
-  </div>
-  <div id="yt-latest"></div>
-  
-  
-  <script>
-    const CHANNEL_ID = 'UCbbjmqDAMwPENwpnJIjeoOw';
-    const RSS_URL = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
-  
-    async function loadLatestYT() {
-      const resp = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}`);
-      const data = await resp.json();
-      const latest = data.items[0];
-      const videoId = new URL(latest.link).searchParams.get('v');
-      document.getElementById('yt-iframe').src = `https://www.youtube.com/embed/${videoId}`;
-    }
-  
-    loadLatestYT();
-  </script>
-  <div class="desc-do-perfil" style="color:#e4e4e4;font-weight:600;">video mais recente no youtube</div>
-</section>
-
-
-
-
+      <!-- Social Links -->
+      <div class="bento-item col-social glass-panel" data-aos="fade-right" data-aos-delay="100">
+        <h3 class="panel-title"><i class="bi bi-link-45deg"></i> Conexões</h3>
+        <div class="social-links">
+          <a href="https://www.youtube.com/@PixWx" target="_blank" class="social-btn" title="YouTube">
+            <i class="bi bi-youtube"></i>
+          </a>
+          <a href="https://discord.gg/sH7dKb6M6N" target="_blank" class="social-btn" title="Discord">
+            <i class="bi bi-discord"></i>
+          </a>
+          <a href="https://www.instagram.com/pixwxx" target="_blank" class="social-btn" title="Instagram">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="https://twitch.tv/pixwx" target="_blank" class="social-btn" title="Twitch">
+            <i class="bi bi-twitch"></i>
+          </a>
+          <a href="https://open.spotify.com/user/albgabs" target="_blank" class="social-btn" title="Spotify">
+            <i class="bi bi-spotify"></i>
+          </a>
         </div>
       </div>
-    </main>
-    
 
-    <footer class="footer">
-      Todos os direitos reservados © PixWx 
-    </footer>
-  </body>
+      <!-- YouTube Video Embed -->
+      <div class="bento-item col-yt glass-panel" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="panel-title"><i class="bi bi-play-btn-fill"></i> Último Vídeo</h3>
+        <div class="yt-wrapper" style="border: 4px solid var(--text-primary); border-radius: 0;">
+          <iframe id="yt-iframe" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- Minecraft CTA -->
+      <div class="bento-item col-mine glass-panel px-0 py-0"
+        style="display:flex;align-items:center;background: var(--accent-secondary);" data-aos="fade-left"
+        data-aos-delay="300">
+        <div class="w-100 text-center py-4 px-3">
+          <a href="https://pixwx.wtf/minewx/regras.html" target="_blank" class="text-decoration-none">
+            <h4 class="mt-3 mb-0"
+              style="color: var(--text-primary); font-family: 'Permanent Marker'; font-size: 1.8rem;">Nosso Servidor de
+              Minecraft</h4>
+            <div id="mine-status" class="mt-2 fw-bold"
+              style="font-size: 1rem; color: #fff; background: var(--text-primary); display:inline-block; padding: 4px 12px; border: 3px solid var(--text-primary); box-shadow: 4px 4px 0 var(--text-primary); transform: rotate(-2deg); transition: all 0.2s;">
+              <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Buscando
+              Sinal...
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Discord Embed -->
+      <div class="bento-item col-discord glass-panel" data-aos="zoom-in" data-aos-delay="400">
+        <div class="discord-widget text-center">
+          <i class="bi bi-discord mb-2" style="font-size: 2.5rem; color: #5865F2;"></i>
+          <div class="discord-status" style="color: var(--text-primary);">
+            <span id="online-count">--</span> Membros Online
+          </div>
+          <div id="member-list" class="member-list justify-content-center">
+            <div class="spinner-border spinner-border-sm mx-auto" style="color: var(--accent-primary);" role="status">
+            </div>
+          </div>
+          <a href="https://discord.gg/Q9SStyyUXb" target="_blank" class="discord-btn mt-2 shadow-sm"
+            style="border: 4px solid var(--text-primary); border-radius: 0; box-shadow: 4px 4px 0 var(--text-primary) !important;">
+            Juntar-se à Comunidade
+          </a>
+        </div>
+      </div>
+
+      <!-- Donate & Support -->
+      <div class="bento-item col-donate glass-panel" data-aos="zoom-in" data-aos-delay="500">
+        <h3 class="panel-title"><i class="bi bi-suit-heart-fill"></i> Apoiar o Projeto</h3>
+        <p class="text-secondary small mb-3 fw-bold">Suporte direto sem taxas furtivas.</p>
+        <button class="btn w-100 mb-2 pix-btn fw-bold"
+          style="background: var(--text-primary); color: var(--bg-primary); border-radius: 0; box-shadow: 4px 4px 0 var(--accent-primary);"
+          onclick="navigator.clipboard.writeText('pixwx5097@gmail.com'); alert('Chave PIX (E-mail) copiada!')">
+          <i class="bi bi-clipboard"></i> Copiar Chave PIX
+        </button>
+        <a href="https://livepix.gg/pixwx" class="btn w-100 text-dark fw-bold"
+          style="background-color: var(--accent-secondary); border: 3px solid var(--text-primary); border-radius: 0; box-shadow: 4px 4px 0 var(--text-primary);"
+          target="_blank">Apoiar pelo Live Pix</a>
+      </div>
+
+      <!-- Agenda / Roadmap -->
+      <div class="bento-item col-agenda glass-panel position-relative pb-4" data-aos="fade-up" data-aos-delay="600"
+        style="min-height: 250px;">
+        <h3 class="panel-title d-flex justify-content-between align-items-center">
+          <span><i class="bi bi-calendar-event"></i> Agenda Pública</span>
+          <button class="btn btn-sm btn-outline-dark"
+            style="border: 3px solid var(--text-primary); border-radius:0; box-shadow: 2px 2px 0 var(--text-primary);"
+            onclick="window.open('https://calendar.google.com/calendar/u/0?cid=M2Q0Yzk0NTVlOWM5Nzk2NWYxZjBhZWZiODViY2YyZDgxZWJjYTZiNTg2NDBjNTE4NDNiMGM5YTQ0YzgwMjI3N0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t', '_blank')"
+            title="Ver mês inteiro">
+            <i class="bi bi-arrows-fullscreen"></i>
+          </button>
+        </h3>
+        <ul id="custom-agenda" class="agenda-list list-unstyled mb-0 w-100" style="font-weight: 600;">
+          <li class="text-center w-100 py-4">
+            <div class="spinner-border spinner-border-sm" role="status"
+              style="color: var(--accent-primary) !important;"></div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Clipes da Twitch -->
+      <div
+        class="bento-item col-clips glass-panel d-flex flex-column justify-content-center align-items-center text-center px-0 py-0"
+        style="background: linear-gradient(135deg, rgba(145, 70, 255, 0.05), rgba(0,0,0,0.5));" data-aos="fade-down"
+        data-aos-delay="700">
+        <div class="w-100 py-4 px-3" style="backdrop-filter: blur(5px);">
+          <i class="bi bi-film fs-1 mb-2 d-block" style="color: var(--accent-primary);"></i>
+          <h4 class="mb-2" style="font-family: 'Permanent Marker', cursive;">Clipes em Alta</h4>
+          <p class="text-white-50 small mb-4">Momentos caóticos e esquisitos na Twitch.</p>
+          <a href="https://www.twitch.tv/pixwx/clips?filter=clips&range=all" target="_blank"
+            class="btn btn-outline-light rounded-pill px-4 text-white"
+            style="border-color: var(--accent-primary); background-color: rgba(145, 70, 255, 0.2);">
+            Assistir Melhores Clipes
+          </a>
+        </div>
+      </div>
+
+      <!-- Spotiy Playlists -->
+      <div class="bento-item col-spotify glass-panel d-flex flex-column align-items-center justify-content-center"
+        data-aos="zoom-in" data-aos-delay="650">
+        <h3 class="panel-title w-100 text-center"><i class="bi bi-spotify" style="color: #1DB954;"></i> vida sem música
+          = erro</h3>
+
+        <!-- Preview Single Spotify -->
+        <div class="w-100 mt-3"
+          style="border: 4px solid var(--text-primary); border-radius: 0; box-shadow: 4px 4px 0 var(--text-primary);">
+          <iframe style="border-radius:0"
+            src="https://open.spotify.com/embed/playlist/0PCu7Ns1IXcYBmAM6jWeLM?utm_source=generator&theme=0"
+            width="100%" height="152" frameBorder="0" allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+        <!-- Call to Action Modal Spotify -->
+        <div class="d-flex w-100 flex-column align-items-center justify-content-center text-center mt-3">
+          <button type="button" class="btn btn-dark fw-bold px-4 py-3 rounded-0 w-100"
+            style="background-color: var(--text-primary); border: 4px solid var(--text-primary); box-shadow: 4px 4px 0 var(--accent-primary); font-family: 'Permanent Marker', cursive; font-size: 1.2rem;"
+            data-bs-toggle="modal" data-bs-target="#spotifyModal">
+            Explorar Acervo de Playlists <i class="bi bi-arrows-fullscreen ms-2"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary my-5" style="opacity:0.2;">
+
+    <!-- Blog / Substack Integration -->
+    <section class="blog-section" id="blog" data-aos="fade-up">
+      <div class="blog-header">
+        <h2>Textos & Arquivos</h2>
+        <p>Navegue diretamente por todos os meus posts do Substack.</p>
+      </div>
+
+      <!-- Cards Container -->
+      <div id="blog-grid" class="blog-grid">
+        <!-- Loader será inserido via JS -->
+        <div class="w-100 d-flex justify-content-center" style="grid-column: 1 / -1;">
+          <div class="loader"></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Modal Acervo Spotify Expandido -->
+  <div class="modal fade" id="spotifyModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content" style="background-color: var(--bg-primary); border: none; border-radius: 0;">
+        <div class="modal-header border-0"
+          style="border-bottom: 4px solid var(--text-primary) !important; background: var(--text-primary); color: #fff;">
+          <h2 class="modal-title m-0" style="font-family: 'Permanent Marker', cursive; color: var(--accent-secondary);">
+            <i class="bi bi-spotify me-2"></i>Acervo Musical
+          </h2>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4 p-md-5"
+          style="background-image: repeating-linear-gradient(45deg, rgba(27, 27, 27, 0.03) 25%, transparent 25%, transparent 75%, rgba(27, 27, 27, 0.03) 75%, rgba(27, 27, 27, 0.03)), repeating-linear-gradient(45deg, rgba(27, 27, 27, 0.03) 25%, var(--bg-primary) 25%, var(--bg-primary) 75%, rgba(27, 27, 27, 0.03) 75%, rgba(27, 27, 27, 0.03)); background-position: 0 0, 10px 10px; background-size: 20px 20px;">
+          <!-- Grid Masonry Reativo -->
+          <div class="container-fluid px-0">
+            <div id="spotify-masonry-grid"
+              style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem;">
+              <!-- Injetado por JS -->
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer border-0 d-flex justify-content-center"
+          style="background: var(--bg-primary); border-top: 4px solid var(--text-primary) !important;">
+          <button type="button" class="btn fw-bold px-5 py-3 rounded-0"
+            style="background-color: var(--accent-primary); color: #fff; border: 4px solid var(--text-primary); box-shadow: 4px 4px 0 var(--text-primary); font-family: 'Permanent Marker', cursive; font-size: 1.2rem; text-transform: uppercase;"
+            data-bs-dismiss="modal">
+            <i class="bi bi-x-square-fill me-2"></i> Fechar Acervo
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Notificações (Sino) -->
+  <div class="modal fade" id="sinoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-dark"
+        style="border: 4px solid var(--text-primary); border-radius: 0; box-shadow: 8px 8px 0 var(--accent-primary); background-color: var(--bg-primary);">
+        <div class="modal-header border-0">
+          <h4 class="modal-title m-0" style="font-family: 'Permanent Marker', cursive;"><i
+              class="bi bi-bell-fill me-2 text-warning"></i>Notificações Rápidas</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center py-4"
+          style="font-family: 'Zilla Slab', serif; font-size: 1.2rem; font-weight: bold;">
+          <p>Nenhuma notificação programada.</p>
+          <p class="text-muted fs-6">Se você não está sabendo das novidades por que não leu lá no meu Substack?</p>
+          <a href="https://pixwx.substack.com" target="_blank" class="btn text-white px-4 fw-bold mt-3"
+            style="background-color: var(--text-primary); border-radius: 0;">Checar Newsletter</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menu Lateral Offcanvas -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral" aria-labelledby="menuLateralLabel"
+    style="background-color: var(--bg-primary); border-right: 4px solid var(--text-primary); box-shadow: 8px 0 0 var(--accent-secondary);">
+    <div class="offcanvas-header border-bottom border-dark"
+      style="border-bottom: 4px solid var(--text-primary) !important;">
+      <h4 class="offcanvas-title m-0" id="menuLateralLabel" style="font-family: 'Permanent Marker', cursive;"><i
+          class="bi bi-list fs-3 me-2"></i>Navegação Estrutural</h4>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body" style="font-family: 'Zilla Slab', serif; font-size: 1.3rem; font-weight: bold;">
+      <ul class="list-unstyled d-flex flex-column gap-3 mt-3">
+        <li><a href="#" class="text-dark text-decoration-none" data-bs-dismiss="offcanvas" data-bs-toggle="offcanvas"
+            data-bs-target="#sobreOffcanvas"><i class="bi bi-person-fill"></i> Biografia Completa</a></li>
+        <li><a href="https://pixwx.substack.com/" target="_blank" class="text-dark text-decoration-none"><i
+              class="bi bi-journal-text"></i> Meus Artigos</a></li>
+        <li><a href="https://www.twitch.tv/pixwx" target="_blank" class="text-dark text-decoration-none"><i
+              class="bi bi-twitch" style="color:#9146FF;"></i> Ao Vivo na Twitch</a></li>
+        <li><a href="https://youtube.com/@pixwx" target="_blank" class="text-dark text-decoration-none"><i
+              class="bi bi-youtube" style="color:#ff0000;"></i> Canal YouTube</a></li>
+        <li><a href="https://discord.gg/Q9SStyyUXb" target="_blank" class="text-dark text-decoration-none"><i
+              class="bi bi-discord" style="color:#5865F2;"></i> Comunidade Discord</a></li>
+      </ul>
+      <div class="mt-5 text-center px-4">
+        <a href="https://livepix.gg/pixwx" target="_blank" class="btn w-100 text-dark fw-bold"
+          style="background-color: var(--accent-secondary); border: 4px solid var(--text-primary); border-radius: 0; box-shadow: 4px 4px 0 var(--text-primary);">Apoiar
+          Projeto Diretamente</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p class="m-0">&copy; <span id="year"></span> PixWx. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Aba Lateral Aba "Saber Mais" (Offcanvas) -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="sobreOffcanvas" aria-labelledby="sobreOffcanvasLabel"
+    style="background-color: var(--bg-secondary); border-left: 1px solid var(--border-glass); color: var(--text-primary);">
+    <div class="offcanvas-header" style="border-bottom: 1px solid var(--border-glass);">
+      <h5 class="offcanvas-title" id="sobreOffcanvasLabel" style="font-family: 'Space Grotesk'; font-weight: 700;">
+        <i class="bi bi-info-circle me-2" style="color: var(--accent-primary);"></i>Sobre a trajetória
+      </h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body" style="color: var(--text-secondary); line-height: 1.7;">
+      <p>
+        Sou naturalmente de <strong>Belém/PA</strong>, tendo passado bons tempos morando em Fortaleza e no Rio de
+        Janeiro. Desde 2019, chamo Portugal de lar.
+      </p>
+      <p>
+        Minha rota acadêmica e profissional foi um tanto caótica e curiosamente ampla: antes de me alinhar como
+        <strong>gestor de projetos em uma empresa de engenharia civil</strong>, já fui estudante de Engenharia
+        Aeroespacial, Farmácia, Direito e Administração.
+      </p>
+      <p>
+        Durante os saltos acadêmicos, cheguei a realizar <strong>Iniciação Científica na UFRJ</strong>, trabalhando com
+        pesquisa focada em sequenciamento de genoma e glaucoma. Toda essa pluralidade moldou a minha atual percepção das
+        coisas e a forma como eu escrevo.
+      </p>
+      <p>
+        Fora da internet e das corporações, levo a vida num violão encostado no quarto, lembranças de um ex-surfista e
+        skatista, e uma rejeição enorme pelas trends vazias que movem a modernidade líquida.
+      </p>
+    </div>
+  </div>
+
+  <!-- Modal Leitor de Post -->
+  <div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="postModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content glass-modal text-dark">
+        <div class="modal-header">
+          <div class="d-flex flex-column">
+            <h4 class="modal-title m-0" id="postModalLabel">Carregando...</h4>
+            <div id="postModalDate" class="text-dark small mt-1 fw-bold"></div>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="postModalBody">
+          <div class="d-flex justify-content-center my-5">
+            <div class="loader"></div>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <a id="postModalLink" href="#" target="_blank" class="btn btn-dark px-4 fw-bold"
+            style="border-radius: 0; box-shadow: 4px 4px 0 var(--accent-primary);">
+            Ler no Substack <i class="bi bi-box-arrow-up-right ms-2"></i>
+          </a>
+          <button type="button" class="btn btn-primary px-4 fw-bold pt-2"
+            style="background-color: var(--accent-primary); border: 2px solid var(--text-primary); border-radius:0; box-shadow: 4px 4px 0 var(--text-primary); color: #fff;"
+            data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://embed.twitch.tv/embed/v1.js"></script>
+  <script>
+    AOS.init({ once: true });
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // 1. YouTube Latest Video Fetcher
+    async function loadLatestYT() {
+      try {
+        const CHANNEL_ID = 'UCbbjmqDAMwPENwpnJIjeoOw';
+        const RSS_URL = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
+        const resp = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}`);
+        const data = await resp.json();
+        if (data.items && data.items.length > 0) {
+          let videoId = data.items[0].link.split('v=')[1];
+          if (!videoId && data.items[0].link.includes('youtu.be/')) videoId = data.items[0].link.split('youtu.be/')[1];
+          if (videoId) document.getElementById('yt-iframe').src = `https://www.youtube.com/embed/${videoId}?rel=0`;
+        }
+      } catch (e) {
+        console.error("Yt Load error", e);
+      }
+    }
+    loadLatestYT();
+
+    // 2. Discord Widget Widget
+    async function buildDiscordWidget() {
+      try {
+        const GUILD_ID = '895053873281134662';
+        const res = await fetch(`https://discord.com/api/guilds/${GUILD_ID}/widget.json?include_presences=true`);
+        const data = await res.json();
+
+        document.getElementById('online-count').textContent = data.presence_count;
+
+        const list = document.getElementById('member-list');
+        list.innerHTML = '';
+        if (data.members) {
+          data.members.slice(0, 15).forEach(m => {
+            const div = document.createElement('div');
+            div.className = 'discord-member';
+            div.innerHTML = `<img src="${m.avatar_url}" alt="${m.username}" title="${m.username}"> <span>${m.username}</span>`;
+            list.append(div);
+          });
+        }
+      } catch (e) {
+        console.error("Discord load error", e);
+        document.getElementById('member-list').innerHTML = '<span class="text-muted small">Indisponível</span>';
+      }
+    }
+    buildDiscordWidget();
+
+    // 3. Substack Fetcher and Modal Logic
+    const SUBSTACK_URL = 'pixwx.substack.com';
+    const modalEl = document.getElementById('postModal');
+    const modalInst = new bootstrap.Modal(modalEl);
+
+    async function loadSubstackPosts() {
+      const grid = document.getElementById('blog-grid');
+      try {
+        // Fetch basic info of posts (archive limit 24)
+        const apiArchive = `https://${SUBSTACK_URL}/api/v1/archive?limit=24`;
+        const allOriginsUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(apiArchive)}`;
+
+        const res = await fetch(allOriginsUrl);
+        const proxyData = await res.json();
+        const posts = JSON.parse(proxyData.contents);
+
+        grid.innerHTML = ''; // Clear loader
+
+        if (!posts || posts.length === 0) {
+          grid.innerHTML = '<p class="text-center w-100 text-muted">Nenhum texto encontrado.</p>';
+          return;
+        }
+
+        posts.forEach(post => {
+          const card = document.createElement('div');
+          card.className = 'blog-card';
+          card.setAttribute('data-aos', 'fade-up');
+
+          // Parse Tags
+          let tagsHtml = '';
+          if (post.postTags && post.postTags.length > 0) {
+            tagsHtml = `<div class="blog-tags">` +
+              post.postTags.slice(0, 3).map(t => `<span class="blog-tag">${t.name}</span>`).join('') +
+              `</div>`;
+          }
+
+          const cover = post.cover_image ? post.cover_image : 'https://images.unsplash.com/photo-1542435503-956c469947f6?auto=format&fit=crop&q=80&w=800';
+          const date = new Date(post.post_date).toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' });
+
+          card.innerHTML = `
+                        <img class="blog-cover" src="${cover}" alt="Capa" loading="lazy">
+                        <div class="blog-content">
+                            ${tagsHtml}
+                            <h3 class="blog-title">${post.title}</h3>
+                            <p class="blog-excerpt">${post.subtitle || 'Leia a postagem completa..'}</p>
+                            <div class="blog-footer">
+                                <span><i class="bi bi-calendar-event me-1"></i> ${date}</span>
+                                <span><i class="bi bi-clock me-1"></i> Ler</span>
+                            </div>
+                        </div>
+                    `;
+
+          card.addEventListener('click', () => openReader(post));
+          grid.appendChild(card);
+        });
+
+      } catch (e) {
+        console.error("Substack fetch error:", e);
+        grid.innerHTML = '<div class="alert alert-danger w-100 text-center" style="grid-column: 1 / -1;">Não foi possível carregar os textos no momento. <br> Acesse diretamente: <a href="https://pixwx.substack.com" class="text-white fw-bold">pixwx.substack.com</a></div>';
+      }
+    }
+
+    async function openReader(postInfo) {
+      // Setup Modal basic state
+      document.getElementById('postModalLabel').textContent = postInfo.title;
+      document.getElementById('postModalDate').textContent = new Date(postInfo.post_date).toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' });
+      document.getElementById('postModalLink').href = postInfo.canonical_url;
+      const bodyDiv = document.getElementById('postModalBody');
+      bodyDiv.innerHTML = '<div class="d-flex justify-content-center my-5"><div class="loader"></div></div>';
+
+      modalInst.show();
+
+      try {
+        // Fetch full HTML
+        const apiPost = `https://${SUBSTACK_URL}/api/v1/posts/${postInfo.slug}`;
+        const allOriginsUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(apiPost)}`;
+
+        const res = await fetch(allOriginsUrl);
+        const proxyData = await res.json();
+        const fullPost = JSON.parse(proxyData.contents);
+
+        if (fullPost.body_html) {
+          bodyDiv.innerHTML = fullPost.body_html;
+        } else {
+          bodyDiv.innerHTML = '<div class="alert alert-warning text-dark">Esse conteúdo não pôde ser carregado na íntegra aqui. Acesse pelo Substack para ler.</div>';
+        }
+      } catch (error) {
+        bodyDiv.innerHTML = '<div class="alert alert-danger">Erro ao carregar o conteúdo da postagem.</div>';
+      }
+    }
+
+    // Initialize Call
+    loadSubstackPosts();
+
+    // 4. Live Auto-Detector (Game Changer)
+    async function checkTwitchLive() {
+      try {
+        const res = await fetch('https://decapi.me/twitch/uptime/pixwx');
+        const text = await res.text();
+
+        if (!text.includes('offline') && !text.includes('not found')) {
+          const container = document.getElementById('live-container');
+          container.innerHTML = `
+              <div class="live-wrapper glass-panel mb-5" data-aos="zoom-in" style="border-color: var(--accent-primary); box-shadow: 0 0 30px rgba(145, 70, 255, 0.4); padding: 0; overflow: hidden;">
+                <div class="d-flex justify-content-between align-items-center p-3 border-bottom" style="border-color: var(--border-glass) !important;">
+                  <h2 class="m-0 fs-4" style="color: #ff3366; display:flex; align-items:center; gap:10px; font-family: 'Space Grotesk', sans-serif; font-weight:700;">
+                    <span class="pulse-icon"></span> AO VIVO AGORA
+                  </h2>
+                  <span class="badge" style="background-color: var(--accent-primary); font-size: 0.9rem;">Twitch</span>
+                </div>
+                <div id="twitch-embed" style="width:100%; height:500px; border-radius: 0 0 12px 12px; overflow:hidden;"></div>
+              </div>
+            `;
+
+          new Twitch.Embed("twitch-embed", {
+            width: "100%",
+            height: "100%",
+            channel: "pixwx",
+            layout: "video-with-chat",
+            theme: "dark",
+            parent: ["pixwx.wtf", "pixwx.github.io", "localhost"]
+          });
+
+          const badge = document.querySelector('.profile-hiatus');
+          if (badge) {
+            badge.innerHTML = "💻 Ao Vivo na Twitch!";
+            badge.style.background = "rgba(145, 70, 255, 0.3)";
+            badge.style.color = "#fff";
+            badge.style.borderColor = "var(--accent-primary)";
+          }
+        }
+      } catch (err) {
+        console.error("Twitch live check err:", err);
+      }
+    }
+    checkTwitchLive();
+
+    // 5. Renderizar Twitch Clips Fixos
+    function renderClips() {
+      const container = document.getElementById('twitch-clips-container');
+      if (!container) return;
+
+      // COLE OS IDs DOS SEUS CLIPES AQUI ABAIXO (MÁXIMO 2 NESTE MODELO)
+      const topClipsIds = [
+        "AwkwardHelplessSnakeGargula-F_UuHhP3fXXGj8V3",
+        "CarefulDignifiedPlumageTwitchRPG-f3Lg-j6PInU6uAhR"
+      ]; // <-- Altere esses IDs para os dos seus próprios clipes!
+
+      let html = '';
+      topClipsIds.forEach(id => {
+        html += `
+             <div class="col-12 col-xl-6 p-2">
+                <div class="rounded overflow-hidden shadow" style="height: 250px; background: rgba(0,0,0,0.5);">
+                    <iframe src="https://clips.twitch.tv/embed?clip=${id}&parent=pixwx.wtf&parent=pixwx.github.io&parent=localhost&autoplay=false" frameborder="0" allowfullscreen="true" scrolling="no" width="100%" height="100%"></iframe>
+                </div>
+            </div>
+            `;
+      });
+      container.innerHTML = html;
+    }
+    renderClips();
+
+    // 6. Custom Google Calendar Fetcher (Leitor ICS Elegante)
+    async function loadAgenda() {
+      try {
+        const icsUrl = "https://calendar.google.com/calendar/ical/3d4c9455e9c97965f1f0aefb85bcf2d81ebca6b58640c51843b0c9a44c802277%40group.calendar.google.com/public/basic.ics";
+        // Usage of alternative proxy that allows client side fetches directly
+        const res = await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(icsUrl)}`);
+        if (!res.ok) throw new Error("Proxy error");
+        let text = await res.text();
+
+        let lines = text.split(/\r?\n/);
+        let events = [];
+        let ev = null;
+
+        for (let ln of lines) {
+          if (ln.startsWith('BEGIN:VEVENT')) ev = {};
+          if (ln.startsWith('SUMMARY:')) ev.title = ln.substring(8);
+          if (ln.startsWith('DTSTART')) {
+            let parts = ln.split(':');
+            if (parts.length > 1) {
+              let str = parts[1];
+              if (str.length >= 8) {
+                ev.dateObj = new Date(str.substring(0, 4), parseInt(str.substring(4, 6)) - 1, str.substring(6, 8));
+              }
+            }
+          }
+          if (ln.startsWith('END:VEVENT') && ev && ev.title && ev.dateObj) {
+            // Include today and future only
+            if (ev.dateObj >= new Date(new Date().setHours(0, 0, 0, 0))) {
+              events.push(ev);
+            }
+          }
+        }
+
+        events.sort((a, b) => a.dateObj - b.dateObj);
+
+        let unique = {};
+        let finalEvents = [];
+        events.forEach(e => {
+          let key = e.title + e.dateObj.getTime();
+          if (!unique[key]) {
+            unique[key] = true;
+            finalEvents.push(e);
+          }
+        });
+
+        let listHtml = '';
+        if (finalEvents.length === 0) {
+          listHtml = '<li class="text-secondary text-center py-3" style="font-family: \'Zilla Slab\', serif;">Nenhum evento agendado (Hiato).</li>';
+        } else {
+          finalEvents.slice(0, 4).forEach(e => {
+            let dateFmt = e.dateObj.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short' });
+            listHtml += `
+                  <li class="d-flex align-items-center justify-content-between mb-3 pb-2 border-bottom border-dark" style="border-bottom: 2px dashed var(--text-primary) !important;">
+                      <div>
+                          <strong class="d-block text-dark" style="font-family: 'Zilla Slab', serif; font-size:1.1rem;">${e.title}</strong>
+                      </div>
+                      <span class="badge text-dark" style="background-color: var(--accent-secondary); font-family: 'Permanent Marker', cursive;">${dateFmt}</span>
+                  </li>`;
+          });
+        }
+        document.getElementById('custom-agenda').innerHTML = listHtml;
+      } catch (e) {
+        // Fallback visual error and standard iframe injection
+        document.getElementById('custom-agenda').innerHTML = `
+          <div style="width:100%; border: 4px solid var(--text-primary); filter: grayscale(100%) contrast(120%); overflow:hidden;">
+            <iframe src="https://calendar.google.com/calendar/embed?height=300&wkst=1&bgcolor=%23ffffff&ctz=America%2FSao_Paulo&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&mode=AGENDA&src=M2Q0Yzk0NTVlOWM5Nzk2NWYxZjBhZWZiODViY2YyZDgxZWJjYTZiNTg2NDBjNTE4NDNiMGM5YTQ0YzgwMjI3N0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%239146FF" style="border-width:0" width="100%" height="250" frameborder="0" scrolling="no"></iframe>
+          </div>
+        `;
+      }
+    }
+    loadAgenda();
+
+    // 7. DMC3 Shoot Animation on Logo
+    const targetEl = document.getElementById('dmc-shoot-target');
+    const containerEl = document.getElementById('dmc-logo-container');
+    let shotCount = 0;
+
+    targetEl.addEventListener('click', (e) => {
+      // Easteregg Redirect Trigger
+      shotCount++;
+      if (shotCount === 15) {
+        alert("Que isso, meu mano? Não acha que tá na hora de dar um tempo no tiktok e nas trends?");
+        window.location.href = "easteregg.html";
+        return;
+      }
+
+      // Create bullet hole
+      const hole = document.createElement('div');
+      hole.style.position = 'absolute';
+      hole.style.width = '15px';
+      hole.style.height = '15px';
+      hole.style.backgroundColor = '#1b1b1b';
+      hole.style.borderRadius = '50%';
+      hole.style.boxShadow = 'inset 2px 2px 5px #000, 0 0 5px var(--accent-primary)';
+      // Randomize crack edges via border
+      hole.style.border = '2px dashed var(--accent-secondary)';
+
+      // Setup offset position based on click
+      const rect = targetEl.getBoundingClientRect();
+      const x = e.clientX - rect.left - 7.5; // center offsets
+      const y = e.clientY - rect.top - 7.5;
+
+      hole.style.left = `${x}px`;
+      hole.style.top = `${y}px`;
+      hole.style.pointerEvents = 'none'; // pass clicks through
+
+      containerEl.appendChild(hole);
+
+      // Shake animation + Flash
+      targetEl.animate([
+        { transform: 'translate(2px, 2px) rotate(0deg) scale(0.9)', filter: 'brightness(3) invert(1)' },
+        { transform: 'translate(-2px, -2px) rotate(-5deg) scale(1)' },
+        { transform: 'translate(-3px, 0px) rotate(5deg)' },
+        { transform: 'translate(3px, 2px) rotate(0deg)' },
+        { transform: 'translate(1px, -1px) rotate(0deg)', filter: 'brightness(1) invert(0)' },
+        { transform: 'translate(0px, 0px) rotate(0deg)' }
+      ], {
+        duration: 150,
+        iterations: 1
+      });
+
+      // Shake body slightly
+      document.body.animate([
+        { transform: 'translate(1px, 1px)' },
+        { transform: 'translate(-1px, -2px)' },
+        { transform: 'translate(-3px, 0px)' },
+        { transform: 'translate(0px, 0px)' }
+      ], { duration: 100 });
+    });
+
+    // 8. Spotify Layout Generator (No private keys exposed)
+    function loadSpotify() {
+      const container = document.getElementById('spotify-masonry-grid');
+      if (!container) return;
+
+      const myPlaylists = [
+        "0PCu7Ns1IXcYBmAM6jWeLM", // Playlist 1
+        "5rql73q9zeFaDtyEUq1rPm", // Playlist 2
+        "6pkCNFRfDigOSIC6fb9WaW", // Playlist 3
+        "4yEHgm2bSzW0oS05lj0xZx", // Playlist 4
+        "7riAWWTTYQA34HnBwg6KwO", // Playlist 5
+        "5IqCQ5ocer2OdGhVuehP1N", // Playlist 6
+        "4SSiSGtsV4GKpJdjFtDp2D", // Playlist 7
+        "5uwaDvKEXh79JLxBo8TSvs", // Playlist 8
+        "3N34egpCAqLzl2QbbkCtWa", // Playlist 9
+        "5cyum8ed11HXq3Pqy2xA0c"  // Playlist 10
+      ];
+
+      let html = '';
+      myPlaylists.forEach(id => {
+        html += `
+          <div style="border: 4px solid var(--text-primary); border-radius: 0; box-shadow: 8px 8px 0 var(--text-primary); background: var(--text-primary); transition: transform 0.2s; display: flex; flex-direction: column;" onmouseover="this.style.transform='translate(-2px, -2px)'" onmouseout="this.style.transform='none'">
+            <iframe style="border-radius:0" src="https://open.spotify.com/embed/playlist/${id}?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <a href="https://open.spotify.com/playlist/${id}" target="_blank" style="text-decoration:none; color: var(--accent-secondary); background: var(--text-primary); padding: 12px; text-align: center; font-family: 'Permanent Marker', cursive; font-size: 1.1rem; width:100%; border-top: 2px dashed var(--accent-secondary); transition: all 0.2s; cursor: pointer;">Seguir Playlist no App <i class="bi bi-suit-heart-fill ms-2"></i></a>
+          </div>
+        `;
+      });
+      container.innerHTML = html;
+    }
+    loadSpotify();
+
+    // 9. Minecraft Real-Time Server Checker
+    async function checkMinecraftServer() {
+      const statusEl = document.getElementById('mine-status');
+      if (!statusEl) return;
+
+      const serverIP = "pixwx.wtf"; // Substitua caso o IP mude no futuro
+
+      try {
+        const res = await fetch('https://api.mcsrvstat.us/2/' + serverIP);
+        const data = await res.json();
+
+        if (data.online) {
+          statusEl.style.backgroundColor = '#1DB954';
+          statusEl.style.color = '#fff';
+          statusEl.style.transform = 'rotate(1deg)';
+          statusEl.innerHTML = `<i class="bi bi-hdd-network-fill me-2"></i> ONLINE (${data.players.online}/${data.players.max})`;
+        } else {
+          statusEl.style.backgroundColor = 'var(--text-primary)';
+          statusEl.style.color = 'var(--accent-primary)';
+          statusEl.style.transform = 'rotate(0deg)';
+          statusEl.innerHTML = '<i class="bi bi-exclamation-triangle-fill me-2"></i> OFFLINE TENTANDO RECONECTAR';
+        }
+      } catch (err) {
+        statusEl.innerHTML = 'Status Desconhecido';
+      }
+    }
+    checkMinecraftServer();
+
+  </script>
+</body>
+
 </html>

@@ -1,151 +1,255 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  
+
 <head>
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon-16x16.png">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Meta para coisas legais quando se compartilha no Discord -->
   <meta property="og:title" content="Regras de conduta do MineWx">
-  <meta property="og:description" content="Conheça as regras do servidor MineWx e ajude a manter a comunidade segura e divertida.">
+  <meta property="og:description"
+    content="Conheça as regras do servidor MineWx e ajude a manter a comunidade segura e divertida.">
   <meta property="og:image" content="https://pixwx.wtf/minewx/imgs/og-image-regras.png">
-  <meta property="og:url" content="https://pixwx.wtf/minewx/regras.html">  
+  <meta property="og:url" content="https://pixwx.wtf/minewx/regras.html">
   <meta property="og:type" content="website">
   <title>Regras — MineWx</title>
   <!-- Fontes Google -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
     .minecraft-title {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 1.5rem; /* ajuste conforme necessário */
-    color: var(--pink);
+      font-family: 'Press Start 2P', cursive;
+      font-size: 1.5rem;
+      /* ajuste conforme necessário */
+      color: var(--pink);
     }
+
     :root {
-      --pink: #e35e8e;
-      --yellow: #e1e812;
-      --black: #1b1b1b;
-      --dark-bg: #262626;
+      --pink: #ff007f;
+      --yellow: #ffd700;
+      --cyan: #00f3ff;
+      --black: #0d0614;
+      --dark-bg: rgba(20, 10, 30, 0.85);
       --light-text: #e4e4e4;
+      --grid-color: rgba(255, 0, 127, 0.15);
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Montserrat', sans-serif;
       background: var(--black);
+      background-image:
+        linear-gradient(transparent 95%, var(--grid-color) 96%),
+        linear-gradient(90deg, transparent 95%, var(--grid-color) 96%);
+      background-size: 40px 40px;
+      background-position: center bottom;
       color: var(--light-text);
       line-height: 1.6;
+      position: relative;
     }
-    a { color: var(--pink); text-decoration: none; }
-    a:hover { text-decoration: underline; }
 
-    /* Header fixo com gradiente */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: radial-gradient(circle at center 80%, rgba(255, 0, 127, 0.1) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    a {
+      color: var(--pink);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Header fixo com gradiente synthwave */
     header {
       position: fixed;
-      top: 0; width: 100%;
-      background: linear-gradient(90deg, var(--pink), var(--yellow));
+      top: 0;
+      width: 100%;
+      background: linear-gradient(90deg, #2b0a3d, var(--pink), var(--yellow));
       padding: 0.75rem 0;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+      box-shadow: 0 4px 15px rgba(255, 0, 127, 0.3);
       z-index: 100;
+      border-bottom: 2px solid var(--cyan);
     }
+
     .navbar {
-      max-width: 1200px; margin: auto;
-      display: flex; align-items: center;
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
       justify-content: space-between;
       padding: 0 1rem;
     }
-    .logo img { height: 48px; }
-    .nav-links { list-style: none; display: flex; gap: 1.5rem; }
-    .nav-links a {
-      font-weight: 600; color: #fff;
-      transition: color 0.3s;
+
+    .logo img {
+      height: 48px;
+      filter: drop-shadow(0 0 5px var(--cyan));
     }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+
     .nav-links a.active,
-    .nav-links a:hover { color: var(--black); }
+    .nav-links a:hover {
+      color: var(--cyan);
+      text-shadow: 0 0 10px var(--cyan), 0 0 20px var(--cyan);
+    }
 
     /* Espaço para conteúdo */
     main {
-      margin-top: 80px;
+      margin-top: 100px;
       padding: 2rem 1rem;
       max-width: 900px;
-      margin-left: auto; margin-right: auto;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
     }
 
- 
+
     /* Título da seção estilizado com fonte prime */
     .section-title {
       font-family: 'Cinzel', serif;
       font-size: 2.75rem;
-      color: var(--pink);
+      color: transparent;
+      -webkit-text-stroke: 1px var(--pink);
       text-align: center;
       margin: 3rem 0 1.5rem;
       position: relative;
+      text-shadow: 0 0 15px rgba(255, 0, 127, 0.5), 2px 2px 0px var(--cyan);
     }
-    
+
     .section-title::after {
       content: '';
       display: block;
-      width: 120px;
-      height: 5px;
-      background: var(--yellow);
-      margin: 0.75rem auto 0;
+      width: 150px;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      margin: 1rem auto 0;
       border-radius: 3px;
+      box-shadow: 0 0 10px var(--cyan);
     }
+
     /* Estilo das regras */
     .rule {
       background: var(--dark-bg);
       padding: 1.5rem;
-      margin-bottom: 1rem;
-      border-left: 6px solid var(--yellow);
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
-      transition: transform 0.2s;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid var(--cyan);
+      border-right: 4px solid var(--pink);
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(255, 0, 127, 0.05);
+      backdrop-filter: blur(5px);
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
     }
-    .rule:hover { transform: translateX(4px); }
+
+    .rule:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 8px 25px rgba(0, 243, 255, 0.2), inset 0 0 20px rgba(255, 0, 127, 0.1);
+    }
+
     .rule h3 {
       font-size: 1.25rem;
       color: var(--yellow);
       margin-bottom: 0.5rem;
+      text-shadow: 0 0 5px rgba(255, 215, 0, 0.4);
+      letter-spacing: 0.5px;
     }
-    .rule p { font-size: 1rem; color: #ddd; }
+
+    .rule p {
+      font-size: 1rem;
+      color: #eee;
+    }
 
     /* Alerta final */
     .alert {
-      background: #200;
-      border-left: 6px solid var(--pink);
-      padding: 1.25rem;
-      color: #ff7777;
-      margin-top: 2rem;
-      border-radius: 6px;
+      background: rgba(40, 0, 20, 0.9);
+      border: 2px solid var(--pink);
+      padding: 1.5rem;
+      color: #ff99cc;
+      margin-top: 3rem;
+      border-radius: 8px;
       font-weight: 600;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(255, 0, 127, 0.4);
+      text-shadow: 0 0 5px rgba(255, 100, 150, 0.5);
     }
 
     /* Footer */
     footer {
       text-align: center;
       padding: 2rem 1rem;
-      background: #111;
-      color: #555;
+      background: var(--black);
+      color: var(--cyan);
       font-size: 0.9rem;
+      border-top: 2px solid var(--pink);
+      box-shadow: 0 -5px 20px rgba(255, 0, 127, 0.2);
+      text-shadow: 0 0 5px var(--cyan);
     }
 
     /* Responsividade */
     @media (max-width: 600px) {
-      .section-title { font-size: 1.75rem; }
-      .nav-links { gap: 1rem; }
-      .rule { padding: 1rem; }
+      .section-title {
+        font-size: 1.75rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+        font-size: 0.85rem;
+      }
+
+      .rule {
+        padding: 1rem;
+        border-right: none;
+      }
     }
+
     .section-title.minecraft-title {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 2.5rem;
-    letter-spacing: 1px;
-    color: var(--pink);
+      font-family: 'Press Start 2P', cursive;
+      font-size: 2rem;
+      letter-spacing: 2px;
+      color: #fff;
+      -webkit-text-stroke: 0px;
+      text-shadow: 4px 4px 0px var(--pink), -2px -2px 0px var(--cyan);
     }
   </style>
 </head>
+
 <body>
   <header>
     <nav class="navbar">
@@ -215,10 +319,12 @@
     </div>
 
     <div class="alert">
-      Viu algo errado? Denuncie com provas — o culpado será banido.<br>[Por IP, sem expectativa de perdão e sem previsão para voltar.]
+      Viu algo errado? Denuncie com provas — o culpado será banido.<br>[Por IP, sem expectativa de perdão e sem previsão
+      para voltar.]
     </div>
   </main>
 
   <footer>&copy; 2025 MineWx. Todos os direitos reservados.</footer>
 </body>
+
 </html>

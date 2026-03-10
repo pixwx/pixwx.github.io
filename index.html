@@ -583,6 +583,14 @@
       style="opacity: 0; pointer-events: none; z-index: 50; display: flex; align-items: center; justify-content: center;">
       <div id="easter-egg-hud"
         style="position: absolute; width: 140px; height: 140px; border: 2px dashed #00ffcc; border-radius: 50%; display: none; transform: scale(1.5);">
+
+        <!-- Minigame Progress Bar -->
+        <div id="capture-progress-bg"
+          style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); width: 80px; height: 6px; border: 1px solid #00ffcc; display: none;">
+          <div id="capture-progress-fill" style="width: 0%; height: 100%; background: #ff0000; transition: width 0.2s;">
+          </div>
+        </div>
+
         <div
           style="position: absolute; top: -15px; left: -10px; color: #00ffcc; font-family: monospace; font-size: 10px; font-weight: bold; text-shadow: 0 0 2px #000;">
           <span id="hud-v">V(t) = 0</span><br>
@@ -593,7 +601,9 @@
           style="position: absolute; bottom: -15px; right: 0; color: #ff0000; font-family: monospace; font-size: 10px; font-weight: bold; text-shadow: 0 0 2px #000; white-space: nowrap;">
           [SOLUÇÃO MUNDIAL DETECTADA]</div>
       </div>
-      <div id="easter-egg-sickle" style="font-size: 5rem; color: #ff0000; text-shadow: 0 0 20px red, 0 0 50px red;">☭
+      <div id="easter-egg-sickle" onclick="triggerCommunism()"
+        style="font-size: 5rem; color: #ff0000; text-shadow: 0 0 20px red, 0 0 50px red; pointer-events: auto; cursor: crosshair;">
+        ☭
       </div>
     </div>
 
@@ -1663,10 +1673,10 @@
       // Auto play fart theme
       if (audio) {
         if (withAudio) {
-          audio.volume = 0.05;
+          audio.volume = 0.50;
           const volRange = document.getElementById('volRange');
-          if (volRange) volRange.value = 0.05;
-          document.getElementById('volDisplay').innerText = '5%';
+          if (volRange) volRange.value = 0.50;
+          document.getElementById('volDisplay').innerText = '50%';
           audio.currentTime = 0;
 
           audio.muted = false;
@@ -1690,9 +1700,7 @@
       const hud = document.getElementById('easter-egg-hud');
       if (eggContainer) {
         eggContainer.style.opacity = '0';
-        eggContainer.style.left = '-20%';
-        eggContainer.style.top = (Math.random() * 60 + 20) + '%';
-        eggContainer.style.transform = `scale(1)`;
+        eggContainer.style.transform = `scale(1) translate(-50%, -50%)`;
         if (hud) hud.style.display = 'none';
 
         const baseEggWait = 10000;
@@ -1701,39 +1709,68 @@
         setTimeout(() => {
           eggContainer.style.opacity = '1';
           if (hud) hud.style.display = 'block';
+
+          let mouseX = window.innerWidth / 2;
+          let mouseY = window.innerHeight / 2;
+          const trackMouse = (e) => { mouseX = e.clientX; mouseY = e.clientY; };
+          document.addEventListener('mousemove', trackMouse);
+
           let startT = null;
-          let eggDuration = 6000; // 6 seconds to cross screen
+          let chaseDuration = 15000; // Limits the chase to 15 seconds before flying off
+
+          let currX = -200; // Starts outside
+          let currY = Math.random() * window.innerHeight;
+          let velX = 5;
+          let velY = 0;
 
           function animateEgg(timestamp) {
             if (!startT) startT = timestamp;
             let elapsed = timestamp - startT;
-            let progress = elapsed / eggDuration;
 
-            if (progress > 1.2) {
-              eggContainer.style.opacity = '0';
-              if (hud) hud.style.display = 'none';
-              return; // done
+            if (elapsed > chaseDuration) {
+              // Get away from the screen logic
+              velX += 1.5;
+              currX += velX;
+              currY += velY;
+
+              if (currX > window.innerWidth + 300 || currY > window.innerHeight + 300 || currX < -300 || currY < -300) {
+                eggContainer.style.opacity = '0';
+                if (hud) hud.style.display = 'none';
+                document.removeEventListener('mousemove', trackMouse);
+                return; // done
+              }
+            } else {
+              // Chasing mouse logic
+              let dx = mouseX - currX;
+              let dy = mouseY - currY;
+              let dist = Math.sqrt(dx * dx + dy * dy);
+
+              if (dist > 0) {
+                let speedLimit = 0.5 + (elapsed / 2000); // the longer it chases, the faster it speeds up
+                velX += (dx / dist) * speedLimit;
+                velY += (dy / dist) * speedLimit;
+              }
+
+              // Apply friction for drift effect
+              velX *= 0.94;
+              velY *= 0.94;
+
+              currX += velX;
+              currY += velY;
             }
 
-            // Acceleration logic: 
-            let t = progress * 10; // scaled time
-            let a = 9.8 * (1 + t / 5); // increasing acceleration!
-            let v = a * t;
-            let x = 0.5 * a * t * t;
-
-            let visualX = (progress * progress) * 140 - 20; // from -20 to 120 rapidly later
-
-            eggContainer.style.left = visualX + '%';
+            eggContainer.style.left = currX + 'px';
+            eggContainer.style.top = currY + 'px';
             const sickle = document.getElementById('easter-egg-sickle');
-            if (sickle) sickle.style.transform = `rotate(${progress * 1080}deg)`;
+            if (sickle) sickle.style.transform = `rotate(${elapsed * 0.4}deg)`;
 
             // Update HUD text
             const hudX = document.getElementById('hud-x');
             const hudV = document.getElementById('hud-v');
             const hudA = document.getElementById('hud-a');
-            if (hudX) hudX.innerText = `X(t): ${Math.round(x * 100)} m`;
-            if (hudV) hudV.innerText = `V(t): ${Math.round(v * 100)} m/s`;
-            if (hudA) hudA.innerText = `A(t): ${a.toFixed(2)} m/s²`;
+            if (hudX) hudX.innerText = `X(t): ${Math.round(currX)} m`;
+            if (hudV) hudV.innerText = `V(t): ${Math.round(Math.sqrt(velX * velX + velY * velY) * 10)} m/s`;
+            if (hudA) hudA.innerText = elapsed < chaseDuration ? `Target: MOUSE` : `Target: LEAVING`;
 
             requestAnimationFrame(animateEgg);
           }
@@ -1742,14 +1779,176 @@
       }
 
       swTimeout = setTimeout(() => {
-        swContent.style.animation = 'crawl 60s linear forwards';
-        swContent.style.animationDuration = '60s';
+        swContent.style.animation = 'crawl 100s linear forwards';
+        swContent.style.animationDuration = '100s';
       }, 50);
 
-      // Changed from 35% to 40% read time before explosive Quack
-      explosionTimeout = setTimeout(triggerExplosion, 60000 * 0.40);
+      // Changed from 40% to 40% + 5 seconds before explosive Quack (Relative to 100s base now)
+      explosionTimeout = setTimeout(triggerExplosion, (100000 * 0.40) + 5000);
 
       document.body.style.overflow = 'hidden';
+    }
+
+    // Communism variables
+    let commieClicks = 0;
+    let ussrAudio = new Audio('anticringe/urss.mp3');
+
+    function triggerCommunism() {
+      commieClicks++;
+
+      // Visual feedback and progress
+      const sickle = document.getElementById('easter-egg-sickle');
+      if (sickle) {
+        sickle.style.transition = 'none';
+        sickle.style.transform = `scale(${1 + commieClicks * 0.25}) translate(${Math.random() * 40 - 20}px, ${Math.random() * 40 - 20}px) rotate(${Math.random() * 60 - 30}deg)`;
+        sickle.style.color = '#ffffff';
+        sickle.style.textShadow = '0 0 40px #ffffff, 0 0 80px #ff0000';
+
+        setTimeout(() => {
+          sickle.style.transition = 'transform 0.15s ease-out, color 0.1s';
+          sickle.style.transform = `scale(${1 + commieClicks * 0.25}) rotate(0deg)`;
+          sickle.style.color = '#ff0000';
+          sickle.style.textShadow = '0 0 20px red, 0 0 50px red';
+        }, 60);
+      }
+
+      const progBg = document.getElementById('capture-progress-bg');
+      const progFill = document.getElementById('capture-progress-fill');
+      if (progBg) progBg.style.display = 'block';
+      if (progFill) progFill.style.width = `${(commieClicks / 7) * 100}%`;
+
+      if (commieClicks >= 7) {
+        // Stop everything else
+        clearTimeout(swTimeout);
+        clearTimeout(explosionTimeout);
+
+        let fartAudio = document.getElementById('sw-audio');
+        if (fartAudio) fadeOutAudio(fartAudio, 500);
+
+        ussrAudio.volume = 1.0;
+        ussrAudio.currentTime = 0;
+        ussrAudio.play().catch(e => console.log(e));
+
+        document.getElementById('easter-egg-container').style.display = 'none'; // hide the sickle chasing
+        const swContainer = document.getElementById('starwars-container');
+
+        // Explode everything (Plates falling effect)
+        let contentChildren = document.getElementById('sw-content').children;
+        for (let i = 0; i < contentChildren.length; i++) {
+          contentChildren[i].style.transition = 'transform 2s cubic-bezier(.55,-0.61,.14,1.44), opacity 2s';
+          contentChildren[i].style.transform = `translateY(2000px) rotate(${Math.random() * 180 - 90}deg)`;
+          contentChildren[i].style.opacity = '0';
+        }
+
+        setTimeout(() => {
+          document.getElementById('sw-content').style.display = 'none';
+        }, 2000);
+
+        // Turn background instantly solid RED
+        swContainer.style.background = '#d50000';
+        swContainer.style.backgroundImage = 'none';
+
+        // Quotes dropping
+        const quotes = [
+          { text: "A história de todas as sociedades até hoje tem sido a história das lutas de classes.", author: "Karl Marx" },
+          { text: "O simulacro nunca é o que esconde a verdade; é a verdade que esconde que não há nenhuma. O simulacro é verdadeiro.", author: "Jean Baudrillard" },
+          { text: "É muito mais fácil imaginar o fim do mundo do que imaginar o fim do capitalismo.", author: "Mark Fisher" },
+          { text: "Na modernidade líquida, os laços humanos escorrem pelos dedos antes mesmo de poderem ser moldados.", author: "Zygmunt Bauman" },
+          { text: "O consumo conspícuo de bens é o meio moderno de obter reputação vazia.", author: "Thorstein Veblen" },
+          { text: "Tudo o que era sólido e estável se desmancha no ar sagrado do lucro.", author: "Karl Marx" },
+          { text: "O espetáculo não é um conjunto de imagens, mas uma relação social entre pessoas, mediada por imagens.", author: "Guy Debord" },
+          { text: "A sociedade do cansaço transforma a autoexploração implacável em realização pessoal e liberdade.", author: "Byung-Chul Han" },
+          { text: "A mercadoria assumiu um controle totalitário e invisível sobre os aspectos tangíveis da vida humana.", author: "Guy Debord" },
+          { text: "A melancolia do trabalhador moderno é que ele nem mesmo possui a própria alienação.", author: "Albert Camus" },
+          { text: "O desespero não é a falta de esperança, é a convicção de que o amanhã será exatamente como hoje.", author: "Aleksandr Solzhenitsyn" },
+          { text: "Nossa apatia é o maior produto de fábrica das indústrias culturais contemporâneas.", author: "Theodor Adorno" },
+          { text: "O hiper-real tomou conta da realidade. Nós agora vivemos num mapa cujos territórios desapareceram.", author: "Jean Baudrillard" },
+          { text: "A violência do sistema se torna mais eficaz à medida que assume as formas sutis do entretenimento.", author: "Herbert Marcuse" },
+          { text: "Ser livre não é meramente livrar-se de suas correntes, mas viver de uma forma que respeite e exalte a liberdade dos outros.", author: "Nelson Mandela" },
+          { text: "Aquele que não conhece a verdade é apenas um tolo, mas aquele que a conhece e a chama de mentira é um criminoso.", author: "Bertolt Brecht" }
+        ];
+
+        // Shuffle
+        quotes.sort(() => Math.random() - 0.5);
+
+        let index = 0;
+        let quoteInterval = setInterval(() => {
+          if (index >= quotes.length || document.getElementById('starwars-container').style.display === 'none') {
+            clearInterval(quoteInterval);
+            return;
+          }
+          let qDiv = document.createElement('div');
+          qDiv.innerHTML = `”${quotes[index].text}”<br><span style="display: block; font-size: 0.6em; color: #1b1b1b; background: #e1e812; padding: 2px 8px; border: 3px solid #1b1b1b; display: inline-block; margin-top: 15px; font-family: 'Permanent Marker', cursive; transform: rotate(-2deg); box-shadow: 2px 2px 0 #1b1b1b;">— ${quotes[index].author}</span>`;
+          qDiv.className = 'glass-panel';
+          qDiv.style.position = 'absolute';
+          qDiv.style.top = '50%';
+          qDiv.style.left = '50%';
+          qDiv.style.color = '#1b1b1b';
+          qDiv.style.backgroundColor = '#F5E8D2'; // Claro from brandbook
+          qDiv.style.padding = '30px 40px';
+          qDiv.style.border = '6px solid #1b1b1b'; // Preto from brandbook
+          qDiv.style.boxShadow = '12px 12px 0 #1b1b1b'; // Preto heavy shadow
+          qDiv.style.fontSize = 'clamp(1.5rem, 3vw, 3rem)';
+          qDiv.style.fontFamily = "'Zilla Slab', serif"; // Principal font
+          qDiv.style.textAlign = 'center';
+          qDiv.style.fontWeight = '800';
+          qDiv.style.width = '90%';
+          qDiv.style.maxWidth = '900px';
+          qDiv.style.opacity = '0';
+          qDiv.style.zIndex = '9000';
+          qDiv.style.transition = 'all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+
+          let offsetX = Math.random() * 20 - 10;
+          let offsetY = Math.random() * 30 - 15;
+          let angle = Math.random() * 10 - 5;
+
+          qDiv.style.transform = `translate(-50%, -50%) scale(0.1) rotate(${angle}deg)`;
+
+          let finalTransform = `translate(calc(-50% + ${offsetX}vw), calc(-50% + ${offsetY}vh)) scale(1) rotate(${angle}deg)`;
+
+          swContainer.appendChild(qDiv);
+
+          setTimeout(() => {
+            qDiv.style.transform = finalTransform;
+            qDiv.style.opacity = '1';
+          }, 50);
+
+          setTimeout(() => {
+            qDiv.style.opacity = '0';
+            qDiv.style.transform = finalTransform.replace('scale(1)', 'scale(0.8)');
+            setTimeout(() => qDiv.remove(), 600);
+          }, 11500);
+
+          index++;
+        }, 8000);
+
+        // Custom Confetti Function!
+        setInterval(() => {
+          if (document.getElementById('starwars-container').style.display === 'none') return;
+          let conf = document.createElement('div');
+          conf.innerHTML = "☭";
+          conf.style.position = 'absolute';
+          conf.style.top = '-50px';
+          conf.style.left = Math.random() * 100 + '%';
+          conf.style.color = Math.random() > 0.5 ? '#ffda00' : '#ffffff';
+          conf.style.fontSize = Math.random() * 3 + 1 + 'rem';
+          conf.style.zIndex = '9999';
+          conf.style.transition = 'transform 3s linear, top 3s linear';
+          swContainer.appendChild(conf);
+
+          setTimeout(() => {
+            conf.style.top = '120vh';
+            conf.style.transform = `rotate(${Math.random() * 720}deg)`;
+          }, 50);
+
+          setTimeout(() => conf.remove(), 3050);
+        }, 100);
+
+      } else {
+        const hudA = document.getElementById('hud-a');
+        if (hudA) hudA.innerText = `CLICKS: ${commieClicks}/3!`;
+        document.getElementById('easter-egg-sickle').style.transform += ' scale(1.3)';
+      }
     }
 
     function changeStarWarsSpeed(speed) {
@@ -1762,12 +1961,12 @@
       }
 
       if (swContent && swContent.style.animationName) {
-        const baseDuration = 60; // Base is 60s for 1x
+        const baseDuration = 100; // Base is logically 100s for 1x now
         const newDuration = baseDuration / parseFloat(speed);
         swContent.style.animationDuration = newDuration + 's';
 
         clearTimeout(explosionTimeout);
-        explosionTimeout = setTimeout(triggerExplosion, (newDuration * 1000) * 0.40);
+        explosionTimeout = setTimeout(triggerExplosion, ((newDuration * 1000) * 0.40) + 5000);
       }
     }
 
@@ -1817,6 +2016,9 @@
       const audio = document.getElementById('sw-audio');
       if (audio) {
         fadeOutAudio(audio, 500);
+      }
+      if (typeof ussrAudio !== 'undefined' && ussrAudio) {
+        fadeOutAudio(ussrAudio, 500);
       }
 
       const eggContainer = document.getElementById('easter-egg-container');

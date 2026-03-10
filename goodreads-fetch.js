@@ -14,7 +14,9 @@ async function fetchShelf(url) {
     return books.slice(0, 3).map(b => ({
         title: b.title,
         link: b.link,
-        image: b.book_image_url
+        image: b.book_image_url ? b.book_image_url.replace(/\._S[A-Z0-9]+_/i, '') : '',
+        author: b.author_name || '',
+        year: b.book_published || ''
     }));
 }
 

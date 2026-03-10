@@ -29,11 +29,14 @@ jobs:
     - name: Run Goodreads Fetch Script
       run: node goodreads-fetch.js
 
+    - name: Run Substack Fetch Script
+      run: node substack-fetch.js
+
     - name: Commit and Push changes
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add steam-data.json goodreads-data.json
+        git add steam-data.json steam-data.js goodreads-data.json goodreads-data.js substack-data.json substack-data.js
         # Only commit if there are changes
-        git diff --quiet && git diff --staged --quiet || git commit -m "chore: Automate profile data updates (Steam & Goodreads)"
+        git diff --quiet && git diff --staged --quiet || git commit -m "chore: Automate profile data updates (Steam & Goodreads & Substack)"
         git push

@@ -16,6 +16,11 @@
   box-sizing: border-box;
 }
 
+.btn:focus, .btn:active {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
 body {
   font-family: 'Zilla Slab', serif;
   color: var(--text-primary);
@@ -269,13 +274,18 @@ a {
 .col-spotify,
 .col-steam,
 .col-books,
-.col-leaderboard {
+.col-leaderboard,
+.col-notes {
   grid-column: span 12;
 }
 
 @media (min-width: 768px) {
   .col-social {
     grid-column: span 4;
+  }
+  
+  .col-notes {
+    grid-column: span 8;
   }
 
   .col-mine {
@@ -318,6 +328,10 @@ a {
 @media (min-width: 992px) {
   .col-social {
     grid-column: span 3;
+  }
+  
+  .col-notes {
+    grid-column: span 4;
   }
 
   .col-mine {
@@ -1224,8 +1238,8 @@ footer {
 }
 
 .grunge-book-hover:hover img {
-  border-color: #0ff !important;
-  box-shadow: 8px 8px 0 #000, 0 0 20px #0ff !important;
+  border-color: var(--accent-secondary) !important;
+  box-shadow: 8px 8px 0 var(--text-primary), 0 0 20px var(--accent-secondary) !important;
   filter: contrast(1.2) saturate(1.2);
 }
 
@@ -1250,9 +1264,9 @@ footer {
 .grunge-book-hover:hover .grunge-book-tooltip {
   opacity: 1;
   bottom: -15px;
-  background: #0ff;
-  color: #000;
-  border: 4px solid #000;
+  background: var(--accent-secondary);
+  color: var(--text-primary);
+  border: 4px solid var(--text-primary);
   box-shadow: 6px 6px 0 var(--accent-primary);
 }
 

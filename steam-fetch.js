@@ -21,7 +21,7 @@ async function fetchSteamXML() {
         const xml = await response.text();
         const parser = new xml2js.Parser({ explicitArray: false });
 
-        parser.parseString(xml, (err, result) => {
+        parser.parseString(xml, async (err, result) => {
             if (err) {
                 throw new Error('Falha ao processar XML da Steam');
             }
@@ -38,7 +38,11 @@ async function fetchSteamXML() {
                     id: p.customURL || p.steamID64,
                     memberSince: p.memberSince || '',
                     location: p.location || '',
-                    hours2Wk: p.hoursPlayed2Wk || '0'
+                    hours2Wk: p.hoursPlayed2Wk || '0',
+                    level: '0',
+                    gamesCount: '0',
+                    friendsCount: '0',
+                    screenshotsCount: '0'
                 };
 
                 let gamesData = [];
@@ -52,6 +56,26 @@ async function fetchSteamXML() {
                         logo: g.gameLogo ? g.gameLogo.replace('media.steampowered.com', 'cdn.akamai.steamstatic.com') : '',
                         link: g.gameLink
                     }));
+                }
+
+                try {
+                    console.log(`Buscando HTML da Steam para dados complementares...`);
+                    const htmlResponse = await fetch(`https://steamcommunity.com/id/${accountId}`, {
+                        headers: {
+                            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                            'Accept': 'text/html'
+                        }
+                    });
+                    if (htmlResponse.ok) {
+                        const html = await htmlResponse.text();
+                        profileData.level = html.match(/friendPlayerLevelNum[^>]*>(\d+)/)?.[1] || profileData.level;
+                        profileData.gamesCount = html.match(/games\/\?tab=all[\s\S]*?profile_count_link_total[^>]*>\s*([\d,\.]+)\s*<\/span>/i)?.[1] || profileData.gamesCount;
+                        profileData.friendsCount = html.match(/friends\/[\s\S]*?profile_count_link_total[^>]*>\s*([\d,\.]+)\s*<\/span>/i)?.[1] || profileData.friendsCount;
+                        profileData.screenshotsCount = html.match(/screenshots\/[\s\S]*?profile_count_link_total[^>]*>\s*([\d,\.]+)\s*<\/span>/i)?.[1] || profileData.screenshotsCount;
+                        console.log(`Stats extras: Nível ${profileData.level}, Jogos ${profileData.gamesCount}, Amigos ${profileData.friendsCount}, Capturas ${profileData.screenshotsCount}`);
+                    }
+                } catch (htmlErr) {
+                    console.log(`Erro ao buscar HTML complementar: ${htmlErr.message}`);
                 }
 
                 const data = { profile: profileData, games: gamesData };

@@ -780,55 +780,105 @@ a {
 }
 
 @keyframes stick-dance-1 {
-
-  0%,
-  100% {
-    transform: translateY(0) rotate(-5deg);
-  }
-
-  50% {
-    transform: translateY(-15px) rotate(15deg);
-  }
+  0% { transform: translateY(0) rotate(-15deg); }
+  50% { transform: translateY(-25px) rotate(25deg) scale(1.1); filter: drop-shadow(4px 4px 0 var(--accent-secondary)); }
+  100% { transform: translateY(0) rotate(-5deg); filter: none; }
 }
 
 @keyframes stick-dance-2 {
-
-  0%,
-  100% {
-    transform: translateY(0) scale(1) rotate(5deg);
-  }
-
-  50% {
-    transform: translateY(-20px) scale(1.1) rotate(-15deg);
-  }
+  0% { transform: translateY(0) scale(0.9) rotate(10deg); }
+  50% { transform: translateY(-30px) scale(1.2) rotate(-20deg); filter: drop-shadow(4px 4px 0 var(--accent-primary)); }
+  100% { transform: translateY(0) scale(1) rotate(5deg); filter: none; }
 }
 
 @keyframes stick-dance-3 {
-
-  0%,
-  100% {
-    transform: translateY(0) translateX(0);
-  }
-
-  25% {
-    transform: translateY(-10px) translateX(-5px) rotate(-20deg);
-  }
-
-  75% {
-    transform: translateY(-5px) translateX(5px) rotate(20deg);
-  }
+  0% { transform: translateY(0) translateX(-10px) rotate(-10deg); }
+  25% { transform: translateY(-30px) translateX(10px) rotate(30deg); filter: drop-shadow(-4px 4px 0 var(--accent-secondary)); }
+  75% { transform: translateY(-15px) translateX(-15px) rotate(-20deg); filter: drop-shadow(4px -4px 0 var(--accent-primary)); }
+  100% { transform: translateY(0) translateX(0) rotate(10deg); filter: none; }
 }
+
+@keyframes mosh-head {
+  0% { transform: translateX(-50%) rotate(-15deg) scale(1); border-color: var(--text-primary); }
+  50% { transform: translateX(-50%) translateY(8px) rotate(20deg) scale(1.4); border-color: var(--accent-secondary); border-radius: 4px; }
+  100% { transform: translateX(-50%) rotate(5deg) scale(0.9); border-color: var(--accent-primary); }
+}
+@keyframes mosh-body {
+  0% { background: var(--text-primary); }
+  50% { background: var(--accent-primary); transform: translateX(-50%) scaleX(2); }
+  100% { background: var(--accent-secondary); }
+}
+@keyframes mosh-arm-l {
+  0% { transform: rotate(20deg); background: var(--text-primary); }
+  50% { transform: rotate(160deg) translateY(-10px); background: var(--accent-secondary); }
+  100% { transform: rotate(-40deg); background: var(--accent-primary); }
+}
+@keyframes mosh-arm-r {
+  0% { transform: rotate(-20deg); background: var(--text-primary); }
+  50% { transform: rotate(-160deg) translateY(-10px); background: var(--accent-primary); }
+  100% { transform: rotate(40deg); background: var(--accent-secondary); }
+}
+@keyframes mosh-leg-l {
+  0% { transform: rotate(10deg); }
+  50% { transform: rotate(80deg) translateY(-15px); }
+  100% { transform: rotate(-30deg); }
+}
+@keyframes mosh-leg-r {
+  0% { transform: rotate(-10deg); }
+  50% { transform: rotate(-80deg) translateY(-15px); }
+  100% { transform: rotate(30deg); }
+}
+
 
 .stick-anim-1 {
-  animation: stick-dance-1 0.7s infinite alternate cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  animation: stick-dance-1 0.5s infinite alternate cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-
 .stick-anim-2 {
-  animation: stick-dance-2 0.8s infinite alternate cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  animation: stick-dance-2 0.6s infinite alternate cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.stick-anim-3 {
+  animation: stick-dance-3 0.7s infinite alternate cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.stick-anim-3 {
-  animation: stick-dance-3 1s infinite alternate cubic-bezier(0.68, -0.55, 0.265, 1.55);
+/* Bind body part animations */
+.discord-stick-figure .stick-head {
+  animation: mosh-head 0.4s infinite alternate ease-in-out;
+  animation-delay: inherit;
+}
+.discord-stick-figure .stick-body {
+  animation: mosh-body 0.5s infinite alternate ease-in-out;
+  animation-delay: inherit;
+}
+.discord-stick-figure .stick-arm-l {
+  animation: mosh-arm-l 0.3s infinite alternate cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  animation-delay: inherit;
+}
+.discord-stick-figure .stick-arm-r {
+  animation: mosh-arm-r 0.35s infinite alternate cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  animation-delay: inherit;
+}
+.discord-stick-figure .stick-leg-l {
+  animation: mosh-leg-l 0.4s infinite alternate cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  animation-delay: inherit;
+}
+.discord-stick-figure .stick-leg-r {
+  animation: mosh-leg-r 0.45s infinite alternate cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  animation-delay: inherit;
+}
+
+/* Hover Hyper-Speed State */
+.discord-stick-figure:hover {
+  z-index: 99;
+  transform: scale(1.5) translateY(-20px) !important;
+  filter: drop-shadow(0px 10px 0 var(--accent-primary));
+}
+.discord-stick-figure:hover .stick-head,
+.discord-stick-figure:hover .stick-body,
+.discord-stick-figure:hover .stick-arm-l,
+.discord-stick-figure:hover .stick-arm-r,
+.discord-stick-figure:hover .stick-leg-l,
+.discord-stick-figure:hover .stick-leg-r {
+  animation-duration: 0.1s !important;
 }
 
 

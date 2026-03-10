@@ -259,6 +259,7 @@ a {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.6), 8px 8px 0 var(--text-primary);
 }
 
+.col-social,
 .col-discord,
 .col-mine,
 .col-yt,
@@ -1197,7 +1198,17 @@ footer {
 
 @media (max-width: 768px) {
   .sw-board {
-    perspective: 50vh;
+    perspective: 75vh;
+  }
+  .sw-content {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    width: 90%;
+  }
+  .sw-title {
+    font-size: clamp(3rem, 6vw, 4rem);
+  }
+  .sw-subtitle {
+    font-size: clamp(3.5rem, 8vw, 5rem);
   }
 }
 

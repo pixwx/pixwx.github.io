@@ -614,7 +614,7 @@
         style="font-size: 5rem; color: var(--text-primary); text-shadow: 4px 4px 0px var(--accent-secondary); font-family: 'Permanent Marker', cursive;">
         QUACK</h1>
       <p class="fs-4 fw-bold mt-3 mb-5 text-center px-4" style="color: var(--text-secondary); max-width: 600px;">
-        Nós sabemos que você não ia ler o letreiro rolante até o final.<br>Quer ler a versão normal de uma vez?
+        Eu sei que você não ia ler o letreiro rolante até o final.<br>Quer ler a versão normal de uma vez?
       </p>
       <div class="d-flex flex-wrap gap-3 justify-content-center">
         <button onclick="readBioNormal()" class="btn px-4 py-3 fw-bold bg-dark text-white"
@@ -1713,7 +1713,15 @@
           let mouseX = window.innerWidth / 2;
           let mouseY = window.innerHeight / 2;
           const trackMouse = (e) => { mouseX = e.clientX; mouseY = e.clientY; };
+          const trackTouch = (e) => { 
+            if (e.touches && e.touches.length > 0) {
+              mouseX = e.touches[0].clientX; 
+              mouseY = e.touches[0].clientY; 
+            }
+          };
           document.addEventListener('mousemove', trackMouse);
+          document.addEventListener('touchmove', trackTouch);
+          document.addEventListener('touchstart', trackTouch);
 
           let startT = null;
           let chaseDuration = 15000; // Limits the chase to 15 seconds before flying off
@@ -1740,9 +1748,11 @@
                 return; // done
               }
             } else {
-              // Chasing mouse logic
-              let dx = mouseX - currX;
-              let dy = mouseY - currY;
+              // Chasing mouse logic with orbit
+              let targetX = mouseX + Math.sin(elapsed / 600) * 120;
+              let targetY = mouseY + Math.cos(elapsed / 450) * 120;
+              let dx = targetX - currX;
+              let dy = targetY - currY;
               let dist = Math.sqrt(dx * dx + dy * dy);
 
               if (dist > 0) {

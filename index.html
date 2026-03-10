@@ -86,8 +86,8 @@
           style="background-color: var(--text-primary); border: 4px solid var(--text-primary); box-shadow: 4px 4px 0 var(--accent-secondary); text-transform: uppercase;">
           <i class="ph-fill ph-envelope-simple me-2"></i>Contato Profissional
         </a>
-        <p class="small text-muted mt-2 fw-bold" style="font-size: 0.75rem; letter-spacing: 0.5px;">(Email blindado
-          alternativo via VPN)</p>
+        <p class="small text-muted mt-2" style="font-size: 0.75rem; letter-spacing: 0.5px;">(Email blindado alternativo
+          via VPN)</p>
       </div>
     </div>
 
@@ -153,6 +153,11 @@
         <div class="yt-wrapper" style="border: 4px solid var(--text-primary); border-radius: 0;">
           <iframe id="yt-iframe" src="" frameborder="0" allowfullscreen></iframe>
         </div>
+        <div id="yt-title" class="text-center mt-3"
+          style="font-family: 'Space Grotesk', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--text-primary);">
+          <div class="spinner-border spinner-border-sm" role="status" style="color: var(--accent-primary);"></div>
+          Carregando Título...
+        </div>
       </div>
 
       <!-- Minecraft CTA -->
@@ -194,7 +199,7 @@
       <!-- Donate & Support -->
       <div class="bento-item col-donate glass-panel" data-aos="zoom-in" data-aos-delay="500">
         <h3 class="panel-title"><i class="ph-fill ph-heart"></i> Apoiar o Projeto</h3>
-        <p class="text-secondary small mb-3 fw-bold">Suporte direto sem taxas furtivas.</p>
+        <p class="text-secondary small mb-3">Suporte direto sem taxas furtivas.</p>
         <button class="btn w-100 mb-2 pix-btn fw-bold"
           style="background: var(--text-primary); color: var(--bg-primary); border-radius: 0; box-shadow: 4px 4px 0 var(--accent-primary);"
           onclick="navigator.clipboard.writeText('pixwx5097@gmail.com'); alert('Chave PIX (E-mail) copiada!')">
@@ -264,8 +269,7 @@
       <!-- Leaderboard StreamElements -->
       <div class="bento-item col-leaderboard glass-panel" data-aos="fade-up" data-aos-delay="650">
         <h3 class="panel-title mb-1"><i class="ph-bold ph-trophy"></i> Os de verdade da live</h3>
-        <p class="text-secondary small mb-1 fw-bold" style="font-size: 0.8rem;">Top 10 mais ativos na Twitch (Pixels)
-        </p>
+        <p class="text-secondary small mb-1" style="font-size: 0.8rem;">Top 10 mais ativos na Twitch (Pixels)</p>
         <button type="button" class="btn btn-sm btn-link text-decoration-none fw-bold mb-3 p-0"
           style="color: var(--accent-primary); font-family: 'Space Grotesk';" data-bs-toggle="modal"
           data-bs-target="#pixelTutorialModal"><i class="ph-bold ph-info"></i> Como subir no rank?</button>
@@ -296,8 +300,16 @@
         style="background: var(--bg-primary);" data-aos="zoom-in" data-aos-delay="630">
         <div class="w-100 py-4 px-3">
           <i class="ph-fill ph-book-open-text fs-1 mb-2 d-block" style="color: var(--text-primary);"></i>
-          <h4 class="mb-2" style="font-family: 'Permanent Marker', cursive; color: var(--text-primary);">Estante Atual
+          <h4 class="mb-2" style="font-family: 'Permanent Marker', cursive; color: var(--text-primary);">Estante Virtual
           </h4>
+          <div class="d-flex justify-content-center gap-2 mt-2">
+            <button id="btn-lendo" class="btn btn-sm px-3 fw-bold"
+              style="border-radius:0; border:2px solid var(--text-primary); box-shadow: 2px 2px 0 var(--text-primary); background: var(--text-primary); color: #fff;"
+              onclick="window.switchBooks('lendo')">Lendo</button>
+            <button id="btn-lidos" class="btn btn-sm px-3 fw-bold"
+              style="border-radius:0; border:2px solid var(--text-primary); box-shadow: 2px 2px 0 var(--text-primary); background: var(--bg-secondary); color: var(--text-primary);"
+              onclick="window.switchBooks('lidos')">Lidos</button>
+          </div>
           <div id="goodreads-books" class="d-flex flex-wrap justify-content-center gap-3 my-3">
             <div class="spinner-border spinner-border-sm" role="status" style="color: var(--accent-primary);"></div>
           </div>
@@ -695,13 +707,27 @@
         const resp = await fetch(proxyUrl);
         const text = await resp.text();
 
-        // Extrai o primeiro (mais recente) video id nativamente da feed atom
-        const match = text.match(/<yt:videoId>([^<]+)<\/yt:videoId>/);
-        if (match && match[1]) {
-          document.getElementById('yt-iframe').src = `https://www.youtube.com/embed/${match[1]}?rel=0`;
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(text, "text/xml");
+        const entries = doc.getElementsByTagName("entry");
+        if (entries.length > 0) {
+          const entry = entries[0];
+          const videoIdMatch = entry.getElementsByTagName("yt:videoId");
+          const videoId = videoIdMatch.length > 0 ? videoIdMatch[0].textContent : null;
+          const titleMatch = entry.getElementsByTagName("title");
+          const title = titleMatch.length > 0 ? titleMatch[0].textContent : null;
+
+          if (videoId) {
+            document.getElementById('yt-iframe').src = `https://www.youtube.com/embed/${videoId}?rel=0`;
+          }
+          if (title) {
+            document.getElementById('yt-title').innerText = "📺 " + title;
+          }
         }
       } catch (e) {
         console.error("Yt Load error", e);
+        const ytTitle = document.getElementById('yt-title');
+        if (ytTitle) ytTitle.innerText = "📺 Indisponível no momento";
       }
     }
     loadLatestYT();
@@ -892,44 +918,90 @@
     }
     renderClips();
 
-    // 6. Goodreads Fetcher
+    // 6. Goodreads Fetcher via Local JSON
+    let goodreadsData = null;
+    let currentGoodreadsTab = 'lendo';
+
+    window.switchBooks = function (tab) {
+      if (!goodreadsData) return;
+      currentGoodreadsTab = tab;
+
+      const btnLendo = document.getElementById('btn-lendo');
+      const btnLidos = document.getElementById('btn-lidos');
+
+      if (tab === 'lendo') {
+        btnLendo.style.background = 'var(--text-primary)';
+        btnLendo.style.color = '#fff';
+        btnLidos.style.background = 'var(--bg-secondary)';
+        btnLidos.style.color = 'var(--text-primary)';
+      } else {
+        btnLidos.style.background = 'var(--text-primary)';
+        btnLidos.style.color = '#fff';
+        btnLendo.style.background = 'var(--bg-secondary)';
+        btnLendo.style.color = 'var(--text-primary)';
+      }
+      renderGoodreadsBooks();
+    }
+
+    function renderGoodreadsBooks() {
+      const container = document.getElementById('goodreads-books');
+      if (!container || !goodreadsData) return;
+
+      const books = goodreadsData[currentGoodreadsTab] || [];
+
+      if (books.length > 0) {
+        let html = '';
+        books.forEach(b => {
+          html += `
+            <a href="${b.link}" target="_blank" class="grunge-book-hover position-relative d-inline-block">
+              <img src="${b.image}" alt="${b.title}" style="height: 160px; border: 4px solid var(--text-primary); box-shadow: 6px 6px 0 var(--text-primary);">
+              <div class="grunge-book-tooltip">${b.title}</div>
+            </a>
+           `;
+        });
+        container.innerHTML = html;
+      } else {
+        container.innerHTML = '<span class="text-muted small">Nenhum livro nessa estante.</span>';
+      }
+    }
+
     async function loadGoodreads() {
       const container = document.getElementById('goodreads-books');
       if (!container) return;
       try {
-        const url = "https://www.goodreads.com/user/show/100645513-gabriel-alcantara-de-albuquerque";
-        const proxyUrl = "https://api.codetabs.com/v1/proxy?quest=" + encodeURIComponent(url);
+        let lendo = [];
+        let lidos = [];
 
-        const res = await fetch(proxyUrl);
-        const text = await res.text();
-
-        const regex = /<a title="([^"]+)" href="(\/book\/show[^"]+)"><img alt="[^"]*" src="([^"]+)"/g;
-        let match;
-        const books = [];
-
-        while ((match = regex.exec(text)) !== null && books.length < 2) {
-          books.push({
-            title: match[1],
-            link: "https://www.goodreads.com" + match[2],
-            image: match[3]
-          });
+        try {
+          const res = await fetch('goodreads-data.json?' + new Date().getTime());
+          if (!res.ok) throw new Error("Load error");
+          const data = await res.json();
+          lendo = data.lendo || [];
+          lidos = data.lidos || [];
+        } catch (localErr) {
+          // Fallback para caso o usuário esteja testando em file:///
+          console.log("Goodreads local request failed, using direct XML proxy...");
+          const fetchShelf = async (shelf) => {
+            const proxyUrl = "https://api.codetabs.com/v1/proxy?quest=" + encodeURIComponent(`https://www.goodreads.com/review/list_rss/100645513?shelf=${shelf}&sort=date_read&order=d`);
+            const r = await fetch(proxyUrl);
+            const t = await r.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(t, "text/xml");
+            const items = doc.querySelectorAll('item');
+            return Array.from(items).slice(0, 3).map(item => {
+              const title = item.querySelector("title")?.textContent || "";
+              const link = item.querySelector("link")?.textContent || "";
+              const imgNodes = item.getElementsByTagName("book_image_url");
+              const img = imgNodes.length > 0 ? imgNodes[0].textContent : "";
+              return { title, link, image: img };
+            });
+          };
+          lendo = await fetchShelf('currently-reading');
+          lidos = await fetchShelf('read');
         }
 
-        if (books.length > 0) {
-          let html = '';
-          books.forEach(b => {
-            html += `
-              <a href="${b.link}" target="_blank" class="grunge-book-hover position-relative d-inline-block">
-                <img src="${b.image}" alt="${b.title}" style="height: 160px; border: 4px solid var(--text-primary); box-shadow: 6px 6px 0 var(--text-primary);">
-                <div class="grunge-book-tooltip fw-bold">${b.title}</div>
-              </a>
-             `;
-          });
-          container.innerHTML = html;
-        } else {
-          container.innerHTML = '<span class="text-muted small">Descansando a vista.</span>';
-        }
-
+        goodreadsData = { lendo, lidos };
+        renderGoodreadsBooks();
       } catch (err) {
         console.error("Goodreads load error:", err);
         container.innerHTML = '<span class="text-muted small">Não foi possível carregar as leituras.</span>';
@@ -1126,20 +1198,19 @@
     }
     checkMinecraftServer();
 
-    // 10. Steam Custom Module (Public profile XML)
+    // 10. Steam Custom Module (Public profile XML via Proxy)
     async function loadSteam() {
       const container = document.getElementById('steam-games');
       if (!container) return;
 
       try {
-        const steamXmlUrl = "https://steamcommunity.com/id/pixwx?xml=1";
-        // Convert to allorigins GET structure since raw sometimes fails
-        const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(steamXmlUrl)}`;
+        // Usa o SteamID64 garantido que foi testado
+        const steamXmlUrl = "https://steamcommunity.com/profiles/76561199196420253?xml=1";
+        const proxyUrl = `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(steamXmlUrl)}`;
         const res = await fetch(proxyUrl);
 
-        if (!res.ok) throw new Error("Proxy error");
-        const json = await res.json();
-        const text = json.contents;
+        if (!res.ok) throw new Error("Load error");
+        const text = await res.text();
 
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(text, "text/xml");
@@ -1153,11 +1224,11 @@
           for (let i = 0; i < maxGames; i++) {
             const game = games[i];
             const name = game.getElementsByTagName("gameName")[0]?.textContent || "Desconhecido";
-            const hours = game.getElementsByTagName("hoursOnRecord")[0]?.textContent || "";
-            let logo = game.getElementsByTagName("gameLogo")[0]?.textContent;
-            const link = game.getElementsByTagName("gameLink")[0]?.textContent || "https://steamcommunity.com/id/pixwx/";
+            const hours = game.getElementsByTagName("hoursOnRecord")[0]?.textContent || "0";
+            let logo = game.getElementsByTagName("gameLogo")[0]?.textContent || "";
+            const link = game.getElementsByTagName("gameLink")[0]?.textContent || "https://steamcommunity.com/id/that4kira/";
 
-            // convert image path to high res steam cdn
+            // Convert Steam image domain to high-res CDN
             if (logo && logo.includes('media.steampowered.com')) {
               logo = logo.replace('media.steampowered.com', 'cdn.akamai.steamstatic.com');
             }
@@ -1216,7 +1287,7 @@
                         <img src="${avatar}" alt="${u.username}" style="width: 32px; height: 32px; border-radius: 50%; border: 3px solid var(--text-primary); object-fit: cover;">
                         <span class="fw-bold fs-6 text-white text-truncate" style="max-width: 90px;" title="${u.username}">${u.username}</span>
                      </div>
-                     <span class="badge bg-light text-dark rounded-0 px-2 py-1 rank-points-badge" style="border: 2px solid var(--text-primary); font-size: 0.9rem; font-family: 'Permanent Marker', cursive; box-shadow: 2px 2px 0 var(--accent-primary);">${u.points}</span>
+                     <span class="badge rounded-0 px-2 py-1 rank-points-badge" style="background-color: var(--accent-primary); color: var(--text-primary); border: 2px solid var(--text-primary); font-size: 0.9rem; font-family: 'Permanent Marker', cursive; box-shadow: 2px 2px 0 var(--text-primary);">${u.points}</span>
                   </div>
                 </a>
               </div>
@@ -1226,7 +1297,7 @@
               <div class="col">
                 <a href="https://twitch.tv/${u.username}" target="_blank" class="text-decoration-none h-100 d-block">
                   <div class="grunge-board-hover d-flex justify-content-between align-items-center bg-light p-2 h-100" style="border: 2px dashed #000; font-family: 'Space Grotesk', sans-serif;">
-                     <span class="fw-bold text-secondary text-truncate" style="max-width: 140px; font-size: 0.85rem;">#${i + 1} <span style="text-decoration: underline;">${u.username}</span></span>
+                     <span class="text-secondary text-truncate" style="max-width: 140px; font-size: 0.85rem;">#${i + 1} <span style="text-decoration: underline;">${u.username}</span></span>
                      <span class="badge bg-secondary rounded-0 text-white border border-dark" style="font-size: 0.8rem;">${u.points}</span>
                   </div>
                 </a>

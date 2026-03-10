@@ -479,7 +479,7 @@ a {
 }
 
 .radial-center:hover {
-  scale: 1.1;
+  transform: translate(-50%, -50%) scale(1.1);
   box-shadow: 6px 6px 0 var(--accent-primary);
 }
 
@@ -502,8 +502,7 @@ a {
   justify-content: center;
   align-items: center;
   font-size: 1.4rem;
-  scale: 1;
-  transition: scale 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s, background 0.2s, color 0.2s;
+  transition: width 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), margin 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), font-size 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s, background 0.2s, color 0.2s;
   transform: rotate(var(--rot)) translateY(-100px) rotate(var(--rev));
   opacity: 1;
   pointer-events: auto;
@@ -512,7 +511,10 @@ a {
 }
 
 .radial-btn:hover {
-  scale: 1.4;
+  width: 70px;
+  height: 70px;
+  margin: -35px 0 0 -35px;
+  font-size: 1.96rem;
   background: var(--text-primary);
   color: var(--bg-secondary);
   box-shadow: 6px 6px 0 var(--accent-primary);
@@ -525,8 +527,8 @@ a {
   top: 50%;
   left: 120%;
   transform: translateY(-50%) skewX(-10deg);
-  background: #0ff;
-  color: #000;
+  background: var(--accent-secondary);
+  color: var(--text-primary);
   padding: 4px 10px;
   font-size: 0.9rem;
   font-weight: 900;
@@ -536,7 +538,7 @@ a {
   pointer-events: none;
   transition: all 0.2s ease;
   white-space: nowrap;
-  border: 4px solid #000;
+  border: 4px solid var(--text-primary);
   border-radius: 0;
   box-shadow: 4px 4px 0 var(--accent-primary);
 }
@@ -544,6 +546,13 @@ a {
 .radial-btn:hover::after {
   opacity: 1;
   left: 130%;
+}
+
+@media (max-width: 768px) {
+  .radial-menu-container.active .radial-btn::after {
+    opacity: 1;
+    left: 130%;
+  }
 }
 
 /* Minecraft Box */
@@ -1107,10 +1116,6 @@ footer {
 
 .grunge-board-hover.top-rank {
   background-color: var(--text-primary) !important;
-}
-
-.grunge-board-hover.top-rank span.text-dark {
-  color: var(--bg-secondary) !important;
 }
 
 .grunge-board-hover.top-rank:hover {

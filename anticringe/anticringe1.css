@@ -1280,3 +1280,150 @@ footer {
   border-color: var(--accent-primary) !important;
   box-shadow: 2px 2px 0 var(--bg-primary);
 }
+
+/* -------------------------------------
+   MOBILE & RESPONSIVE REFINEMENTS
+   ------------------------------------- */
+
+@media (max-width: 768px) {
+
+  /* Prevent horizontal scroll from absolutely positioned elements */
+  body,
+  html {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Profile Header Mobile Optimization */
+  .profile-name {
+    font-size: 1.8rem;
+    flex-wrap: wrap;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 0.2rem;
+  }
+
+  .profile-img-wrap {
+    width: 130px;
+    height: 130px;
+  }
+
+  .profile-desc {
+    font-size: 0.95rem;
+    padding: 0 10px;
+  }
+
+  /* Bento Grid Mobile Gutters */
+  .bento-grid {
+    gap: 1rem;
+    padding: 0 5px;
+  }
+
+  .bento-item {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  /* Steam Box Mobile Adjustments */
+  #steam-profile-header {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  #steam-profile-header .d-flex.w-100 {
+    flex-direction: column;
+    align-items: center !important;
+  }
+
+  #steam-profile-header .text-start {
+    text-align: center !important;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Fix Steam Extra Info Wrap */
+  #steam-profile-header .justify-content-around {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* Footer Adjustments */
+  footer {
+    padding: 2rem 10px !important;
+    margin-top: 3rem !important;
+  }
+
+  /* Radial Menu Scaling for Mobile */
+  .radial-menu-container {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+
+  .radial-center {
+    width: 80px;
+    height: 80px;
+  }
+
+  .radial-center i {
+    font-size: 1.5rem;
+  }
+
+  /* Reset tooltips on mobile so they don't break width */
+  .radial-btn::after {
+    display: none !important;
+  }
+
+  .radial-menu-container.active .radial-btn {
+    width: 45px;
+    height: 45px;
+    margin: -22.5px 0 0 -22.5px;
+    transform: rotate(var(--rot)) translateY(-95px) rotate(var(--rev)) !important;
+  }
+
+  .radial-menu-container.active .radial-btn:hover {
+    width: 55px;
+    height: 55px;
+    margin: -27.5px 0 0 -27.5px;
+    transform: rotate(var(--rot)) translateY(-95px) rotate(var(--rev)) scale(1.1) !important;
+  }
+
+  /* In mobile, show the title in a central fixed spot instead of next to each floating button */
+  .radial-menu-container.active::before {
+    content: "Redes Sociais";
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-secondary);
+    color: var(--text-primary);
+    padding: 4px 10px;
+    font-size: 0.9rem;
+    font-weight: 900;
+    font-family: 'Permanent Marker', cursive;
+    text-transform: uppercase;
+    border: 4px solid var(--text-primary);
+    box-shadow: 4px 4px 0 var(--accent-primary);
+    white-space: nowrap;
+    z-index: 100;
+  }
+
+  /* Prevent discord stick figures from stacking out of bounds */
+  .member-list {
+    min-height: 120px;
+    gap: 8px;
+    padding-bottom: 20px;
+  }
+
+  .discord-stick-figure {
+    width: 32px;
+    height: 65px;
+  }
+
+  .stick-head {
+    width: 28px;
+    height: 28px;
+  }
+}

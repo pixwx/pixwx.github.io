@@ -261,7 +261,6 @@ a {
 .col-social:hover {
   transform: scale(1.1);
   z-index: 50;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6), 8px 8px 0 var(--text-primary);
 }
 
 .col-social,
@@ -1404,7 +1403,9 @@ footer {
   padding: 4px 8px;
   font-size: 0.8rem;
   font-family: 'Permanent Marker', cursive;
-  white-space: nowrap;
+  white-space: normal;
+  width: max-content;
+  max-width: 220px;
   opacity: 0;
   pointer-events: none;
   transition: all 0.2s ease;
@@ -1577,6 +1578,26 @@ footer {
     width: 28px;
     height: 28px;
   }
+}
+
+.rebel-badge {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 3.5rem;
+  line-height: 1;
+  padding: 6px 16px;
+  background: var(--accent-secondary);
+  color: var(--text-primary);
+  border: 5px solid var(--text-primary);
+  box-shadow: 8px 8px 0 var(--accent-primary);
+  display: inline-block;
+  transform-origin: center;
+  animation: rebel-wobble 0.7s infinite alternate ease-in-out;
+}
+
+@keyframes rebel-wobble {
+  0% { transform: rotate(-8deg) scale(1); box-shadow: 6px 6px 0 var(--accent-primary); }
+  50% { transform: rotate(-3deg) scale(1.08); box-shadow: 12px 12px 0 var(--accent-primary); }
+  100% { transform: rotate(-10deg) scale(0.95); box-shadow: 4px 4px 0 var(--accent-primary); }
 }
 
 /* 📱 MOBILE / TOUCH DEVICES 2026 UX FIXES (NO-HOVER FALLBACK) */

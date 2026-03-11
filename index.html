@@ -162,7 +162,7 @@
 
       <!-- Social Links -->
       <div class="bento-item col-social d-flex flex-column" data-aos="fade-right" data-aos-delay="100">
-        <div class="d-none d-md-flex w-100 flex-column glass-panel">
+        <div class="d-none d-md-flex w-100 h-100 flex-column glass-panel">
           <h3 class="panel-title align-self-start"><i class="ph-bold ph-link"></i> Conexões</h3>
           <div class="radial-menu-container">
           <div class="radial-center" title="PixWx Hub" onclick="this.parentElement.classList.toggle('active')">
@@ -352,8 +352,11 @@
       <div class="bento-item col-discord glass-panel" data-aos="zoom-in" data-aos-delay="400">
         <div class="discord-widget text-center">
           <i class="ph-fill ph-discord-logo mb-2" style="font-size: 2.5rem; color: var(--accent-primary);"></i>
-          <div class="discord-status" style="color: var(--text-primary);">
-            <span id="online-count">--</span> Membros Online
+          <div class="discord-status mt-4 mb-5 d-flex flex-row justify-content-center align-items-center" style="color: #1b1b1b; text-transform: uppercase;">
+            <div class="rebel-badge d-flex align-items-center justify-content-center mx-auto" style="gap: 12px; background: var(--accent-secondary); border: 5px solid #1b1b1b; box-shadow: 8px 8px 0 var(--accent-primary); color: #1b1b1b !important;">
+              <span id="online-count" style="color: #1b1b1b !important;">--</span>
+              <span id="online-text" style="font-size: 1.4rem; text-align: left; line-height: 1.1; transform: rotate(2deg); color: #1b1b1b !important;">MEMBROS<br>ONLINE</span>
+            </div>
           </div>
           <div id="member-list" class="member-list justify-content-center">
             <div class="spinner-border spinner-border-sm mx-auto" style="color: var(--accent-primary);" role="status">
@@ -1020,12 +1023,21 @@
         const res = await fetch(`https://discord.com/api/guilds/${GUILD_ID}/widget.json?include_presences=true`);
         const data = await res.json();
 
-        document.getElementById('online-count').textContent = data.presence_count;
-
         const list = document.getElementById('member-list');
         list.innerHTML = '';
+        
+        let displayCount = data.presence_count || 0;
+
         if (data.members) {
-          data.members.slice(0, 10).forEach(m => {
+          const botsToHide = ['! 𝓖𝓾𝓪𝓷𝓭𝓮𝓻', 'LivePix', 'VixWx'];
+          const realMembers = data.members.filter(m => !botsToHide.includes(m.username) && !m.username.toLowerCase().includes('bot'));
+
+          // Update count to reflect only real members
+          displayCount = realMembers.length;
+          document.getElementById('online-count').textContent = displayCount;
+          document.getElementById('online-text').innerHTML = displayCount === 1 ? 'MEMBRO<br>ONLINE' : 'MEMBROS<br>ONLINE';
+
+          realMembers.slice(0, 10).forEach(m => {
             const div = document.createElement('div');
             const stickClasses = ['stick-anim-1', 'stick-anim-2', 'stick-anim-3'];
             const randomClass = stickClasses[Math.floor(Math.random() * stickClasses.length)];
@@ -1253,29 +1265,15 @@
       if (books.length > 0) {
         let html = '';
         books.forEach(b => {
-          let progressTooltip = '';
-          let progressBar = '';
-          if (currentGoodreadsTab === 'lendo') {
-            const prog = b.progress || '0';
-            progressTooltip = `<div class="mt-2 fw-bold p-1" style="background: var(--bg-primary); border: 2px solid var(--text-primary); color: var(--text-primary); font-size: 0.75rem;">${prog}% Lido</div>`;
-            progressBar = `
-              <div class="w-100 mt-3 position-relative" style="border: 2px solid var(--text-primary); height: 12px; background: var(--bg-primary); box-shadow: 2px 2px 0 var(--text-primary); max-width: 100px;">
-                <div style="height:100%; width:${prog}%; background: var(--accent-primary);"></div>
-              </div>
-            `;
-          }
-
           html += `
-            <div class="d-flex flex-column align-items-center">
-              <a href="${b.link}" target="_blank" class="grunge-book-hover position-relative d-inline-block">
-                <img src="${b.image}" alt="${b.title}" style="height: 160px; border: 4px solid var(--text-primary); box-shadow: 6px 6px 0 var(--text-primary);">
-                <div class="grunge-book-tooltip text-center">
-                  <div class="fw-bold" style="font-family: 'Permanent Marker', cursive; font-size: 1.1rem; line-height: 1.1;">${b.title}</div>
-                  <div class="mt-1" style="font-size: 0.85rem; font-family: 'Zilla Slab', serif; font-weight: 500;">${b.author || 'Autor'} ${b.year ? '(' + b.year + ')' : ''}</div>
-                  ${progressTooltip}
+            <div class="d-flex flex-column align-items-center mb-3">
+              <a href="${b.link}" target="_blank" class="grunge-book-hover position-relative d-inline-block text-decoration-none">
+                <img src="${b.image}" alt="${b.title}" style="height: 160px; border: 4px solid var(--text-primary); box-shadow: 6px 6px 0 var(--text-primary); display: block; margin: 0 auto;">
+                <div class="grunge-book-tooltip text-center mt-2">
+                  <div class="fw-bold text-dark" style="font-family: 'Permanent Marker', cursive; font-size: 1.1rem; line-height: 1.1;">${b.title}</div>
+                  <div class="text-dark mt-1" style="font-size: 0.85rem; font-family: 'Zilla Slab', serif; font-weight: 500;">${b.author || 'Autor'} ${b.year ? '(' + b.year + ')' : ''}</div>
                 </div>
               </a>
-              ${progressBar}
             </div>
            `;
         });

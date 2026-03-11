@@ -2,14 +2,28 @@ const fs = require('fs');
 const xml2js = require('xml2js');
 
 async function fetchShelf(url, limit = 3) {
-    const res = await fetch(url);
+    const urlWithCacheBust = url + (url.includes('?') ? '&' : '?') + '_cb=' + Date.now();
+    const res = await fetch(urlWithCacheBust, {
+        headers: {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': 'text/xml,application/xml'
+        }
+    });
+
+    if (!res.ok) {
+        throw new Error(`Goodreads HTTP Error: ${res.status}`);
+    }
+
     const text = await res.text();
     const parser = new xml2js.Parser({ explicitArray: false });
     const result = await parser.parseStringPromise(text);
 
-    const items = result.rss.channel.item;
-    if (!items) return [];
+    if (!result || !result.rss || !result.rss.channel || !result.rss.channel.item) {
+        console.warn(`Goodreads RSS parsing warning: No items found or invalid format for ${url}`);
+        return [];
+    }
 
+    const items = result.rss.channel.item;
     const books = Array.isArray(items) ? items : [items];
     return books.slice(0, limit).map(b => ({
         title: b.title,

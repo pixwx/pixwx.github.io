@@ -24,18 +24,21 @@
 
         h1 {
             font-family: 'Permanent Marker', cursive;
-            font-size: 4rem;
+            font-size: clamp(2rem, 8vw, 4rem);
             color: #e1e812;
             margin-bottom: 2rem;
             text-transform: uppercase;
             text-shadow: 4px 4px 0px #e35e8e;
+            padding: 0 1rem;
         }
 
         p {
-            font-size: 1.5rem;
-            max-width: 600px;
+            font-size: clamp(1rem, 4vw, 1.5rem);
+            max-width: 90%;
+            width: 600px;
             line-height: 1.6;
             margin-bottom: 2rem;
+            padding: 0 1rem;
         }
 
         .btn {

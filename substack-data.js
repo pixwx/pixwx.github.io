@@ -1,5 +1,17 @@
 window.SUBSTACK_NOTES = [
   {
+    "id": 225956794,
+    "date": "2026-03-10T21:34:59.680Z",
+    "body": "O Substack deixa tanto a desejar que tive que fazer um leitor no meu próprio site mesmo (e ficou BEM mais organizado/melhor)",
+    "likes": 0,
+    "replies": 0,
+    "restacks": 0,
+    "url": "https://substack.com/@pixwx/note/c-225956794",
+    "user_photo": "https://substack-post-media.s3.amazonaws.com/public/images/913aa8e4-fb4b-48ea-9817-c459b950781c_1024x1024.png",
+    "user_name": "Gabriel A. A. de A.",
+    "user_handle": "pixwx"
+  },
+  {
     "id": 218467499,
     "date": "2026-02-23T11:41:27.586Z",
     "body": "Cuidado em achar que não é doomscrolling só porque a entidade mudou de nome.\n\nSubstack ainda é “rede social”.",

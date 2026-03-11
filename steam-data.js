@@ -19,7 +19,7 @@ window.STEAM_DATA = {
     {
       "name": "Fallout Shelter",
       "hours": "32",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/588430/215588003e8684f96229d5d86dd1e837b3661a8d/capsule_184x69.jpg?t=1772218904",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/588430/215588003e8684f96229d5d86dd1e837b3661a8d/capsule_184x69.jpg?t=1773174911",
       "link": "https://steamcommunity.com/app/588430"
     },
     {

@@ -789,7 +789,7 @@
   <!-- Scripts -->
   <!-- Normal Bio Modal -->
   <div class="modal fade" id="bioModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable modal-fullscreen-sm-down">
       <div class="modal-content"
         style="border: 4px solid var(--text-primary); border-radius: 0; background: var(--bg-primary);">
         <div class="modal-header"
@@ -800,16 +800,16 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
             style="border: 2px solid var(--text-primary); border-radius: 0; background-color: var(--bg-secondary);"></button>
         </div>
-        <div class="modal-body p-4 bg-white"
-          style="font-family: 'Space Grotesk', sans-serif; font-size: 1.15rem; color: var(--text-secondary); line-height: 1.6;">
-          <p>Sou o Gabriel, nascido e criado, com muito orgulho, em Belém do Pará; morei em Fortaleza, Rio de Janeiro e
+        <div class="modal-body p-3 p-md-4 bg-white"
+          style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(1rem, 4vw, 1.15rem); color: var(--text-secondary); line-height: 1.8;">
+          <p class="mb-4">Sou o Gabriel, nascido e criado, com muito orgulho, em Belém do Pará; morei em Fortaleza, Rio de Janeiro e
             Santa Maria (pra estudar na UFSM). Desde 2019, tô morando temporariamente em Portugal.</p>
-          <p>Minha trajetória acadêmica foi uma cagada: pulei de Direito pra Farmácia, voltei pro Direito, Direito pra
+          <p class="mb-4">Minha trajetória acadêmica foi uma cagada: pulei de Direito pra Farmácia, voltei pro Direito, Direito pra
             Administração e depois Engenharia Aeroespacial, tudo isso com o TDAH piorando tudo. No meio disso, fiz
             Iniciação Científica na UFRJ, com pesquisa sobre sequenciamento de genoma e glaucoma. Essa sopa toda moldou
             como eu vejo o mundo hoje, alimentando minha cabeça de escritor, game dev e a salvação de tocar um violão
             quando tá complicado.</p>
-          <p>Profissionalmente, sou gestor de projetos numa empresa de engenharia civil, mas sou fissurado mesmo em
+          <p class="mb-0">Profissionalmente, sou gestor de projetos numa empresa de engenharia civil, mas sou fissurado mesmo em
             criar ecossistemas virtuais do zero. Não é só jogar ou montar um servidor: eu construo bots com economias
             integradas, arquiteturas complexas de RPG cheios de mecânicas novas, e to usando grande parte do meu tempo
             pra isso e pra aprender coisas novas.</p>
@@ -1581,7 +1581,7 @@
       script.src = isLocal ? 'steam-data.js' : 'steam-data.js?t=' + Date.now();
 
       script.onload = function () {
-        if (window.STEAM_DATA && window.STEAM_DATA.length > 0) {
+        if (window.STEAM_DATA && (window.STEAM_DATA.profile || (window.STEAM_DATA.games && window.STEAM_DATA.games.length > 0))) {
           renderSteamGames();
         } else {
           fallbackFetch();

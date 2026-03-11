@@ -336,26 +336,29 @@
       </div>
 
       <!-- YouTube Video Embed -->
-      <div class="bento-item col-yt glass-panel" data-aos="fade-up" data-aos-delay="200">
-        <h3 class="panel-title"><i class="ph-fill ph-play-circle"></i> Último Vídeo</h3>
-        <div class="yt-wrapper" style="border: 4px solid var(--text-primary); border-radius: 0;">
-          <iframe id="yt-iframe" src="" frameborder="0" allowfullscreen></iframe>
+      <div class="bento-item col-yt glass-panel d-flex flex-column" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="panel-title text-start mb-3 align-self-start"><i class="ph-fill ph-youtube-logo" style="color: var(--accent-primary);"></i> Último Vídeo</h3>
+        
+        <div class="yt-wrapper w-100 mb-3 flex-grow-1 d-flex flex-column justify-content-center" style="border: 4px solid var(--text-primary); border-radius: 0; box-shadow: 4px 4px 0 var(--accent-primary);">
+          <iframe id="yt-iframe" src="" frameborder="0" allowfullscreen style="flex-grow: 1; width: 100%; min-height: 200px;"></iframe>
         </div>
-        <div id="yt-title" class="text-center mt-3"
-          style="font-family: 'Space Grotesk', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--text-primary);">
+        
+        <div id="yt-title" class="text-start w-100 text-truncate" style="font-family: 'Space Grotesk', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--text-primary); line-height: 1.2;">
           <div class="spinner-border spinner-border-sm" role="status" style="color: var(--accent-primary);"></div>
-          Carregando Título...
+          <span class="ms-1">Carregando Título...</span>
         </div>
       </div>
 
+
+
       <!-- Discord Embed -->
-      <div class="bento-item col-discord glass-panel" data-aos="zoom-in" data-aos-delay="400">
-        <div class="discord-widget text-center">
-          <i class="ph-fill ph-discord-logo mb-2" style="font-size: 2.5rem; color: var(--accent-primary);"></i>
-          <div class="discord-status mt-4 mb-5 d-flex flex-row justify-content-center align-items-center" style="color: #1b1b1b; text-transform: uppercase;">
-            <div class="rebel-badge d-flex align-items-center justify-content-center mx-auto" style="gap: 12px; background: var(--accent-secondary); border: 5px solid #1b1b1b; box-shadow: 8px 8px 0 var(--accent-primary); color: #1b1b1b !important;">
-              <span id="online-count" style="color: #1b1b1b !important;">--</span>
-              <span id="online-text" style="font-size: 1.4rem; text-align: left; line-height: 1.1; transform: rotate(2deg); color: #1b1b1b !important;">MEMBROS<br>ONLINE</span>
+      <div class="bento-item col-discord glass-panel d-flex flex-column" data-aos="zoom-in" data-aos-delay="400">
+        <h3 class="panel-title text-start mb-0"><i class="ph-fill ph-discord-logo" style="color: var(--accent-primary);"></i> Discord</h3>
+        <div class="discord-widget text-center flex-grow-1 d-flex flex-column justify-content-center">
+          <div class="discord-status mt-4 mb-4 d-flex flex-row justify-content-center align-items-center" style="color: #1b1b1b; text-transform: uppercase;">
+            <div class="rebel-badge d-flex align-items-center justify-content-center mx-auto" style="gap: 12px; background: var(--accent-secondary); border: 5px solid #1b1b1b; box-shadow: 6px 6px 0 var(--accent-primary); color: #1b1b1b !important; padding: 10px 20px;">
+              <span id="online-count" style="color: #1b1b1b !important; font-family: 'Space Grotesk', sans-serif; font-size: 3rem; font-weight: normal; line-height: 1;">--</span>
+              <span id="online-text" style="font-size: 1.1rem; text-align: left; line-height: 1; transform: rotate(1deg); color: #1b1b1b !important; font-family: 'Space Grotesk', sans-serif; font-weight: 700;">MEMBROS<br>ONLINE</span>
             </div>
           </div>
           <div id="member-list" class="member-list justify-content-center">
@@ -370,17 +373,42 @@
       </div>
 
       <!-- Donate & Support -->
-      <div class="bento-item col-donate glass-panel" data-aos="zoom-in" data-aos-delay="500">
-        <h3 class="panel-title"><i class="ph-fill ph-heart"></i> Apoiar o Projeto</h3>
-        <p class="text-secondary small mb-3">Suporte direto sem taxas furtivas.</p>
-        <button class="btn w-100 mb-2 pix-btn fw-bold"
-          style="background: var(--text-primary); color: var(--bg-primary); border-radius: 0; box-shadow: 4px 4px 0 var(--accent-primary);"
-          onclick="navigator.clipboard.writeText('pixwx5097@gmail.com'); alert('Chave PIX (E-mail) copiada!')">
-          <i class="ph-bold ph-clipboard-text"></i> Copiar Chave PIX
-        </button>
-        <a href="https://livepix.gg/pixwx" class="btn w-100 text-dark fw-bold"
-          style="background-color: var(--accent-secondary); border: 3px solid var(--text-primary); border-radius: 0; box-shadow: 4px 4px 0 var(--text-primary);"
-          target="_blank">Apoiar pelo Live Pix</a>
+      <div class="bento-item col-donate glass-panel d-flex flex-column" data-aos="zoom-in" data-aos-delay="500">
+        <h3 class="panel-title"><i class="ph-fill ph-heart" style="color: var(--accent-primary);"></i> Apoiar o Projeto</h3>
+        <div class="mb-4 mt-2 flex-grow-1">
+          <p class="text-secondary m-0" style="font-size: 0.95rem; line-height: 1.5; font-weight: 500;">
+            O PixWx e nossos servidores se mantêm de pé inteiramente pelo suporte da comunidade. Seja a diferença!
+          </p>
+        </div>
+        
+        <div class="d-flex flex-column gap-3 mt-auto">
+          <!-- PIX Copy Button -->
+          <button class="btn w-100 fw-bold px-3 py-3 d-flex align-items-center justify-content-center gap-2"
+            style="background: var(--text-primary); color: var(--bg-primary); border-radius: 0; box-shadow: 6px 6px 0 var(--accent-primary); font-size: 1.1rem; border: none; transition: transform 0.2s;"
+            onclick="navigator.clipboard.writeText('pixwx5097@gmail.com'); alert('Chave PIX (E-mail) copiada!')"
+            onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='none'">
+            <i class="ph-bold ph-copy fs-4"></i> Copiar Chave PIX
+          </button>
+          
+          <div class="d-flex flex-column flex-sm-row gap-3">
+            <a href="minewx/index.html" class="btn w-100 fw-bold text-dark w-sm-50 py-2 d-flex align-items-center justify-content-center flex-column"
+              style="background-color: var(--accent-secondary); border: 4px solid var(--text-primary); border-radius: 0; box-shadow: 4px 4px 0 var(--text-primary); transition: transform 0.2s;"
+              onmouseover="this.style.transform='translate(-2px, -2px)'; this.style.boxShadow='6px 6px 0 var(--text-primary)';" 
+              onmouseout="this.style.transform='none'; this.style.boxShadow='4px 4px 0 var(--text-primary)';">
+              <span class="d-flex align-items-center gap-1" style="font-size: 0.95rem;"><i class="ph-bold ph-sword fs-5"></i> O Retorno MineWx</span>
+              <span style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase;">Conferir Metas ➔</span>
+            </a>
+            
+            <a href="https://livepix.gg/pixwx" class="btn w-100 fw-bold w-sm-50 py-2 d-flex align-items-center justify-content-center gap-2"
+              style="background-color: transparent; border: 4px solid var(--text-primary); border-radius: 0; color: var(--text-primary); box-shadow: 4px 4px 0 transparent; transition: all 0.2s;"
+              onmouseover="this.style.transform='translate(-2px, -2px)'; this.style.boxShadow='4px 4px 0 var(--text-primary)'" 
+              onmouseout="this.style.transform='none'; this.style.boxShadow='4px 4px 0 transparent'"
+              target="_blank">
+              <i class="ph-bold ph-coins fs-4"></i>
+              <span style="font-size: 0.9rem; line-height: 1.1;" class="text-start">Doação<br>LivePix</span>
+            </a>
+          </div>
+        </div>
       </div>
 
       <!-- Agenda / Roadmap -->
@@ -439,70 +467,71 @@
         style="background: var(--accent-secondary);" data-aos="zoom-in" data-aos-delay="620">
         <div class="w-100 py-4 px-3" style="min-height: 250px;">
 
-          <div id="steam-profile-header"
-            class="d-none w-100 flex-column align-items-center justify-content-center mb-3">
-            <div class="d-flex w-100 align-items-center justify-content-between mb-2 pb-1 px-1">
-              <!-- Left: Avatar -->
-              <img id="steam-avatar" src=""
-                style="width: 65px; height: 65px; border: 3px solid var(--text-primary); box-shadow: 4px 4px 0 var(--text-primary); border-radius: 0; background: var(--bg-primary); flex-shrink: 0;">
-              
-              <!-- Right: Name and Badges -->
+          <div id="steam-profile-header" class="d-none w-100 flex-column align-items-center justify-content-center mb-0">
+            <div class="d-flex w-100 align-items-center justify-content-between mb-2">
+              <img id="steam-avatar" src="" style="width: 70px; height: 70px; border: 4px solid var(--text-primary); box-shadow: 4px 4px 0 var(--text-primary); border-radius: 0; background: var(--bg-primary); flex-shrink: 0;">
               <div class="text-end" style="min-width: 0;">
-                <h4 id="steam-name" class="m-0 fw-bold text-truncate d-flex align-items-center justify-content-end gap-1 w-100"
-                  style="font-family: 'Permanent Marker', cursive; color: var(--text-primary); line-height: 1.1; max-width: 180px;">
-                  Nome <i class="ph-fill ph-steam-logo"></i>
+                <h4 id="steam-name" class="m-0 fw-bold text-truncate d-flex align-items-center justify-content-end gap-2 w-100" style="font-family: 'Permanent Marker', cursive; color: var(--text-primary); line-height: 1.1; font-size: 1.5rem;">
+                  PIXWX <i class="ph-bold ph-link text-dark"></i>
                 </h4>
-                <div id="steam-realname" class="fw-bold opacity-75 d-none text-truncate w-100 text-end"
-                  style="font-size: 0.8rem; max-width: 180px; color: var(--text-primary);"></div>
-                <div class="d-flex align-items-center justify-content-end gap-2 mt-2">
-                  <span id="steam-status" class="badge text-truncate"
-                    style="max-width: 150px; border: 2px solid var(--text-primary); box-shadow: 2px 2px 0 var(--text-primary); color: #fff; background: var(--text-primary);">Offline</span>
-                  <span id="steam-level" class="badge text-dark fw-bold"
-                    style="border: 2px solid var(--text-primary); box-shadow: 2px 2px 0 var(--text-primary); background: #ffcc00; display: none;">Nível 0</span>
+                <div id="steam-realname" class="fw-bold opacity-75 text-truncate w-100 text-end d-block mb-2" style="font-size: 0.9rem; color: var(--text-primary);">Gabriel A. A. de A.</div>
+                <div class="d-flex align-items-center justify-content-end gap-2 mt-1">
+                  <span id="steam-status" class="badge" style="border: 2px solid var(--text-primary); border-radius: 8px; color: #fff; background: var(--text-primary); font-size: 0.75rem; padding: 4px 8px;">Offline</span>
+                  <span id="steam-level" class="badge text-dark fw-bold" style="border: 2px solid var(--text-primary); border-radius: 8px; box-shadow: 2px 2px 0 var(--text-primary); background: #facc15; font-size: 0.75rem; padding: 4px 8px;">Lvl 50</span>
                 </div>
               </div>
             </div>
 
-            <!-- Extra Info & Activity Row Compacto -->
-            <div class="row w-100 mt-3 pt-2 m-0" style="border-top: 2px dashed rgba(27,27,27,0.2);">
+            <!-- Stats -->
+            <div class="row w-100 mt-3 pt-3 m-0" style="border-top: 2px dashed rgba(27,27,27,0.2);">
               <div class="col-3 d-flex flex-column text-center p-0" style="font-size: 0.75rem;">
-                <span class="fw-bold text-truncate" style="color: var(--text-primary);" title="Jogos"><i class="ph-fill ph-game-controller"></i> Jogos</span>
-                <span id="steam-games-count" class="fw-bold opacity-75 text-truncate" style="color: var(--text-primary);">-</span>
+                <span class="fw-bold text-truncate" style="color: var(--text-primary);"><i class="ph-fill ph-game-controller"></i> Jogos</span>
+                <span id="steam-games-count" class="opacity-75 text-truncate fw-bold mt-1" style="color: var(--text-primary);">167</span>
               </div>
               <div class="col-3 d-flex flex-column text-center p-0 border-start" style="font-size: 0.75rem; border-color: rgba(27,27,27,0.2) !important;">
-                <span class="fw-bold text-truncate" style="color: var(--text-primary);" title="Amigos"><i class="ph-fill ph-users"></i> Amigos</span>
-                <span id="steam-friends-count" class="fw-bold opacity-75 text-truncate" style="color: var(--text-primary);">-</span>
+                <span class="fw-bold text-truncate" style="color: var(--text-primary);"><i class="ph-fill ph-users"></i> Amigos</span>
+                <span id="steam-friends-count" class="opacity-75 text-truncate fw-bold mt-1" style="color: var(--text-primary);">86</span>
               </div>
               <div class="col-3 d-flex flex-column text-center p-0 border-start" style="font-size: 0.75rem; border-color: rgba(27,27,27,0.2) !important;">
-                <span class="fw-bold text-truncate" style="color: var(--text-primary);" title="Ativ. 2 Semanas"><i class="ph-fill ph-clock-counter-clockwise"></i> Ativ.</span>
-                <span id="steam-hours" class="fw-bold opacity-75 text-truncate" style="color: var(--text-primary);">0 Hrs</span>
+                <span class="fw-bold text-truncate" style="color: var(--text-primary);"><i class="ph-bold ph-clock-counter-clockwise"></i> Ativ.</span>
+                <span id="steam-hours" class="opacity-75 text-truncate fw-bold mt-1" style="color: var(--text-primary);">0 Hrs</span>
               </div>
               <div class="col-3 d-flex flex-column text-center p-0 border-start" style="font-size: 0.75rem; border-color: rgba(27,27,27,0.2) !important;">
-                <span class="fw-bold text-truncate" style="color: var(--text-primary);" title="Visto por último"><i class="ph-fill ph-cell-signal-full"></i> Visto</span>
-                <span id="steam-state-message" class="fw-bold opacity-75 text-truncate" style="color: var(--text-primary);">...</span>
+                <span class="fw-bold text-truncate" style="color: var(--text-primary);"><i class="ph-fill ph-caret-left"></i> Visto</span>
+                <span id="steam-state-message" class="opacity-75 text-truncate fw-bold mt-1" style="color: var(--text-primary);">Invisível/Offline</span>
               </div>
+            </div>
+
+            <!-- Games Container -->
+            <div id="steam-games" class="w-100 mt-3 d-flex flex-column gap-2 mb-2">
+               <!-- Injetado por JS -->
+            </div>
+
+            <!-- Actions container -->
+            <div id="steam-actions" class="d-none w-100 gap-2 mt-3">
+              <button class="btn w-50 fw-bold px-2 py-3" onclick="navigator.clipboard.writeText('76561199196420253'); alert('ID Copiado!')"
+                style="color: var(--text-primary); border: 4px solid var(--text-primary); background-color: #faeed7; box-shadow: 4px 4px 0 var(--text-primary); border-radius: 0; font-family: 'Space Grotesk', sans-serif;">
+                Copiar ID
+              </button>
+              <a id="steam-profile-url" href="https://steamcommunity.com/id/guander" target="_blank"
+                class="btn w-50 fw-bold px-2 py-3 text-decoration-none"
+                style="color: #fff; border: 4px solid var(--text-primary); background-color: var(--text-primary); box-shadow: 4px 4px 0 var(--accent-primary); border-radius: 0; font-family: 'Space Grotesk', sans-serif;">
+                Ver Perfil
+              </a>
             </div>
           </div>
 
-          <div id="steam-games" class="d-flex flex-column align-items-center justify-content-center gap-2 my-2 w-100"
-            style="min-height: 120px;">
-            <div class="spinner-border spinner-border-sm" role="status" style="color: var(--text-primary);"></div>
+          <div id="steam-loading" class="d-flex w-100 h-100 justify-content-center align-items-center my-5 py-5">
+            <div class="spinner-border spinner-border-sm" style="color: var(--text-primary);" role="status"></div>
           </div>
 
-          <div id="steam-actions" class="d-none gap-2 w-100 mt-3 px-2">
-            <button onclick="navigator.clipboard.writeText('76561199196420253'); alert('Steam ID Copiado!')"
-              class="btn w-50 fw-bold py-2"
-              style="background: var(--bg-primary); border: 4px solid var(--text-primary); border-radius: 0; box-shadow: 4px 4px 0 var(--text-primary); font-size: 0.9rem;">
-              Copiar ID
-            </button>
-            <a id="steam-btn-link" href="#" target="_blank" class="btn w-50 fw-bold py-2"
-              style="color: var(--bg-primary); border: 4px solid var(--text-primary); background-color: var(--text-primary); box-shadow: 4px 4px 0 var(--accent-primary); border-radius: 0; font-size: 0.9rem;">
-              Ver Perfil
-            </a>
+          <div id="steam-error" class="d-none text-danger mt-3 fw-bold" style="color: var(--accent-primary) !important;">
+            <i class="ph-fill ph-warning-circle"></i> Steam Privada / Offline
           </div>
 
         </div>
       </div>
+
 
       <!-- Leaderboard StreamElements -->
       <div class="bento-item col-leaderboard glass-panel" data-aos="fade-up" data-aos-delay="650">
@@ -1556,87 +1585,96 @@
 
     // 10. Steam Custom Module (Public profile XML via Proxy)
     window.renderSteamGames = function () {
-      const gContainer = document.getElementById('steam-games');
       const pHeader = document.getElementById('steam-profile-header');
-      const actions = document.getElementById('steam-actions');
-      if (!gContainer || !window.STEAM_DATA) return;
+      if (!pHeader || !window.STEAM_DATA) return;
 
       const payload = window.STEAM_DATA;
       const profile = payload.profile || null;
       const games = payload.games || payload;
 
+      const loader = document.getElementById('steam-loading');
+      if (loader) loader.classList.add('d-none');
+
       if (profile) {
         pHeader.classList.remove('d-none');
         pHeader.classList.add('d-flex');
-        actions.classList.remove('d-none');
-        actions.classList.add('d-flex');
 
         document.getElementById('steam-avatar').src = profile.avatar;
         document.getElementById('steam-name').innerHTML = profile.name + ' <i class="ph-fill ph-steam-logo" style="color:var(--text-primary);"></i>';
-        document.getElementById('steam-btn-link').href = profile.url;
+        document.getElementById('steam-profile-url').href = profile.url;
 
         if (profile.realname) {
           const rEl = document.getElementById('steam-realname');
-          rEl.innerText = profile.realname;
-          rEl.classList.remove('d-none');
+          if (rEl) {
+            rEl.innerText = profile.realname;
+            rEl.classList.remove('d-none');
+          }
         }
 
         if (profile.level && profile.level !== '0') {
           const lvlBadge = document.getElementById('steam-level');
-          lvlBadge.innerText = 'Lvl ' + profile.level;
-          lvlBadge.style.display = 'inline-block';
+          if (lvlBadge) {
+            lvlBadge.innerText = 'Lvl ' + profile.level;
+            lvlBadge.style.display = 'inline-block';
+          }
         }
 
-        document.getElementById('steam-games-count').innerText = profile.gamesCount && profile.gamesCount !== '0' ? profile.gamesCount : '-';
-        document.getElementById('steam-friends-count').innerText = profile.friendsCount && profile.friendsCount !== '0' ? profile.friendsCount : '-';
-        if (document.getElementById('steam-screenshots-count')) {
-          document.getElementById('steam-screenshots-count').innerText = profile.screenshotsCount && profile.screenshotsCount !== '0' ? profile.screenshotsCount : '-';
-        }
+        const gamesCountEl = document.getElementById('steam-games-count');
+        if (gamesCountEl) gamesCountEl.innerText = profile.gamesCount && profile.gamesCount !== '0' ? profile.gamesCount : '-';
 
-        const hrs = parseFloat(profile.hours2Wk) || 0;
-        document.getElementById('steam-hours').innerText = hrs > 0 ? hrs.toFixed(1) + ' Hrs' : '0 Hrs';
-
-        let sMsg = profile.stateMessage || (profile.state === 'online' ? 'Online' : 'Offline');
-        if (sMsg.toLowerCase() === 'offline') sMsg = 'Invisível/Offline';
-        if (sMsg.toLowerCase().includes('last online')) sMsg = sMsg.replace(/last online/i, '').trim();
-        document.getElementById('steam-state-message').innerText = sMsg;
+        const friendsCountEl = document.getElementById('steam-friends-count');
+        if (friendsCountEl) friendsCountEl.innerText = profile.friendsCount && profile.friendsCount !== '0' ? profile.friendsCount : '-';
+        
+        const createdEl = document.getElementById('steam-created');
+        if (createdEl && profile.memberSince) createdEl.innerText = profile.memberSince;
 
         const bStatus = document.getElementById('steam-status');
-        bStatus.innerText = profile.state === 'in-game' ? 'Jogando' : (profile.state === 'online' ? 'Online' : 'Offline');
+        if (bStatus) {
+            bStatus.innerText = profile.state === 'in-game' ? 'Jogando' : (profile.state === 'online' ? 'Online' : 'Offline');
 
-        if (profile.state === 'in-game') {
-          bStatus.className = 'badge mt-1 text-dark text-truncate';
-          bStatus.style.background = '#0ff'; // cyan
-        } else if (profile.state === 'online') {
-          bStatus.className = 'badge mt-1 text-white text-truncate';
-          bStatus.style.background = '#5865F2'; // blurpleish / blue
-        } else {
-          bStatus.className = 'badge mt-1 text-white text-truncate';
-          bStatus.style.background = 'var(--text-primary)';
+            if (profile.state === 'in-game') {
+              bStatus.className = 'badge mt-1 text-dark text-truncate';
+              bStatus.style.background = '#0ff'; // cyan
+            } else if (profile.state === 'online') {
+              bStatus.className = 'badge mt-1 text-white text-truncate';
+              bStatus.style.background = '#5865F2'; // blurpleish / blue
+            } else {
+              bStatus.className = 'badge mt-1 text-white text-truncate';
+              bStatus.style.background = 'var(--text-primary)';
+            }
         }
       }
 
-      if (games && games.length > 0) {
-        let html = '';
-        games.slice(0, 3).forEach(g => {
-          html += `
-            <a href="${g.link}" target="_blank" class="d-flex w-100 align-items-center text-decoration-none bg-white p-2" title="${g.name}" style="border: 3px solid var(--text-primary); box-shadow: 2px 2px 0 var(--text-primary); transition: transform 0.2s; border-radius: 0;" onmouseover="this.style.transform='translate(-2px, -2px)'" onmouseout="this.style.transform='none'">
-              <img src="${g.logo}" alt="${g.name}" style="height: 40px; width: auto; max-width: 80px; object-fit: contain; border: 2px solid var(--text-primary); background: #000; flex-shrink: 0;">
-              <div class="text-start ms-2" style="line-height: 1.2; overflow: hidden; min-width: 0;">
-                <span class="d-block fw-bold text-dark text-truncate w-100" style="font-size: 0.9rem;">${g.name}</span>
-                <span class="d-block text-secondary" style="font-size: 0.75rem;">${g.hours} horas</span>
-              </div>
-            </a>
-           `;
-        });
-        gContainer.innerHTML = html;
-      } else {
-        gContainer.innerHTML = '<span class="text-muted small fw-bold">Nenhum histórico aberto.</span>';
+      const actions = document.getElementById('steam-actions');
+      if (actions) {
+         actions.classList.remove('d-none');
+         actions.classList.add('d-flex');
+      }
+
+      const gContainer = document.getElementById('steam-games');
+      if (gContainer) {
+        if (games && games.length > 0) {
+          let html = '';
+          games.slice(0, 3).forEach(g => {
+            html += `
+              <a href="${g.link}" target="_blank" class="d-flex w-100 align-items-center text-decoration-none bg-white p-2" title="${g.name}" style="border: 4px solid var(--text-primary); transition: transform 0.2s; border-radius: 0;" onmouseover="this.style.transform='translate(-2px, -2px)'" onmouseout="this.style.transform='none'">
+                <img src="${g.logo}" alt="${g.name}" style="height: 40px; width: 80px; object-fit: cover; border: 2px solid var(--text-primary); background: #000; flex-shrink: 0;">
+                <div class="text-start ms-3" style="line-height: 1.2; overflow: hidden; min-width: 0;">
+                  <span class="d-block fw-bold text-dark text-truncate w-100" style="font-size: 0.95rem; font-family: 'Space Grotesk', sans-serif;">${g.name}</span>
+                  <span class="d-block text-secondary" style="font-size: 0.75rem; font-family: 'Space Grotesk', sans-serif; font-weight: normal;">${g.hours} horas</span>
+                </div>
+              </a>
+             `;
+          });
+          gContainer.innerHTML = html;
+        } else {
+          gContainer.innerHTML = '<span class="text-muted small fw-bold mt-2">Nenhum histórico aberto.</span>';
+        }
       }
     };
 
     async function loadSteam() {
-      const container = document.getElementById('steam-games');
+      const container = document.getElementById('steam-profile-header');
       if (!container) return;
 
       const fallbackFetch = async () => {

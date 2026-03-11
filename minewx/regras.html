@@ -1,330 +1,138 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 
 <head>
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon-16x16.png">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Meta para coisas legais quando se compartilha no Discord -->
-  <meta property="og:title" content="Regras de conduta do MineWx">
-  <meta property="og:description"
-    content="Conheça as regras do servidor MineWx e ajude a manter a comunidade segura e divertida.">
-  <meta property="og:image" content="https://pixwx.wtf/minewx/imgs/og-image-regras.png">
-  <meta property="og:url" content="https://pixwx.wtf/minewx/regras.html">
-  <meta property="og:type" content="website">
+  <meta charset="utf-8">
   <title>Regras — MineWx</title>
-  <!-- Fontes Google -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap"
-    rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Regras de conduta do MineWx. Conheça as leis e sobreviva sem levar ban no IP.">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="../anticringe/anticringe1.css">
   <style>
-    .minecraft-title {
-      font-family: 'Press Start 2P', cursive;
-      font-size: 1.5rem;
-      /* ajuste conforme necessário */
-      color: var(--pink);
+    body { padding-top: 100px; }
+    
+    /* Regras Hover Anti-Cringe */
+    .rule-card {
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
-
-    :root {
-      --pink: #ff007f;
-      --yellow: #ffd700;
-      --cyan: #00f3ff;
-      --black: #0d0614;
-      --dark-bg: rgba(20, 10, 30, 0.85);
-      --light-text: #e4e4e4;
-      --grid-color: rgba(255, 0, 127, 0.15);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: var(--black);
-      background-image:
-        linear-gradient(transparent 95%, var(--grid-color) 96%),
-        linear-gradient(90deg, transparent 95%, var(--grid-color) 96%);
-      background-size: 40px 40px;
-      background-position: center bottom;
-      color: var(--light-text);
-      line-height: 1.6;
-      position: relative;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background: radial-gradient(circle at center 80%, rgba(255, 0, 127, 0.1) 0%, transparent 60%);
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    a {
-      color: var(--pink);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* Header fixo com gradiente synthwave */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: linear-gradient(90deg, #2b0a3d, var(--pink), var(--yellow));
-      padding: 0.75rem 0;
-      box-shadow: 0 4px 15px rgba(255, 0, 127, 0.3);
-      z-index: 100;
-      border-bottom: 2px solid var(--cyan);
-    }
-
-    .navbar {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 1rem;
-    }
-
-    .logo img {
-      height: 48px;
-      filter: drop-shadow(0 0 5px var(--cyan));
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .nav-links a {
-      font-weight: 600;
-      color: #fff;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: all 0.3s ease;
-      text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-    }
-
-    .nav-links a.active,
-    .nav-links a:hover {
-      color: var(--cyan);
-      text-shadow: 0 0 10px var(--cyan), 0 0 20px var(--cyan);
-    }
-
-    /* Espaço para conteúdo */
-    main {
-      margin-top: 100px;
-      padding: 2rem 1rem;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-      position: relative;
-      z-index: 1;
-    }
-
-
-    /* Título da seção estilizado com fonte prime */
-    .section-title {
-      font-family: 'Cinzel', serif;
-      font-size: 2.75rem;
-      color: transparent;
-      -webkit-text-stroke: 1px var(--pink);
-      text-align: center;
-      margin: 3rem 0 1.5rem;
-      position: relative;
-      text-shadow: 0 0 15px rgba(255, 0, 127, 0.5), 2px 2px 0px var(--cyan);
-    }
-
-    .section-title::after {
-      content: '';
-      display: block;
-      width: 150px;
-      height: 4px;
-      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
-      margin: 1rem auto 0;
-      border-radius: 3px;
-      box-shadow: 0 0 10px var(--cyan);
-    }
-
-    /* Estilo das regras */
-    .rule {
-      background: var(--dark-bg);
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      border-left: 4px solid var(--cyan);
-      border-right: 4px solid var(--pink);
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(255, 0, 127, 0.05);
-      backdrop-filter: blur(5px);
-      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
-    }
-
-    .rule:hover {
-      transform: translateY(-5px) scale(1.02);
-      box-shadow: 0 8px 25px rgba(0, 243, 255, 0.2), inset 0 0 20px rgba(255, 0, 127, 0.1);
-    }
-
-    .rule h3 {
-      font-size: 1.25rem;
-      color: var(--yellow);
-      margin-bottom: 0.5rem;
-      text-shadow: 0 0 5px rgba(255, 215, 0, 0.4);
-      letter-spacing: 0.5px;
-    }
-
-    .rule p {
-      font-size: 1rem;
-      color: #eee;
-    }
-
-    /* Alerta final */
-    .alert {
-      background: rgba(40, 0, 20, 0.9);
-      border: 2px solid var(--pink);
-      padding: 1.5rem;
-      color: #ff99cc;
-      margin-top: 3rem;
-      border-radius: 8px;
-      font-weight: 600;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(255, 0, 127, 0.4);
-      text-shadow: 0 0 5px rgba(255, 100, 150, 0.5);
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: var(--black);
-      color: var(--cyan);
-      font-size: 0.9rem;
-      border-top: 2px solid var(--pink);
-      box-shadow: 0 -5px 20px rgba(255, 0, 127, 0.2);
-      text-shadow: 0 0 5px var(--cyan);
-    }
-
-    /* Responsividade */
-    @media (max-width: 600px) {
-      .section-title {
-        font-size: 1.75rem;
-      }
-
-      .nav-links {
-        gap: 1rem;
-        font-size: 0.85rem;
-      }
-
-      .rule {
-        padding: 1rem;
-        border-right: none;
-      }
-    }
-
-    .section-title.minecraft-title {
-      font-family: 'Press Start 2P', cursive;
-      font-size: 2rem;
-      letter-spacing: 2px;
-      color: #fff;
-      -webkit-text-stroke: 0px;
-      text-shadow: 4px 4px 0px var(--pink), -2px -2px 0px var(--cyan);
+    .rule-card:hover {
+      transform: translate(-4px, -4px);
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <a href="index.html"><img src="imgs\topo.png" alt="MineWx Logo"></a>
+
+  <!-- Navbar Anti-Cringe -->
+  <nav class="navbar navbar-expand-lg fixed-top shadow-sm py-2" style="background: var(--bg-primary) !important;">
+    <div class="container-fluid max-w-1200 justify-content-center gap-4">
+      <a class="text-decoration-none" href="../index.html" style="font-family: 'Permanent Marker', cursive; font-size: 1.25rem; color: var(--text-primary); text-transform: uppercase;">
+        <i class="ph-bold ph-arrow-left"></i> Voltar ao Hub
+      </a>
+      <a class="text-decoration-none" href="index.html" style="font-family: 'Permanent Marker', cursive; font-size: 1.25rem; color: var(--text-primary); text-transform: uppercase;">
+        <i class="ph-bold ph-sword"></i> O Retorno / Apoiar
+      </a>
+    </div>
+  </nav>
+
+  <div class="container my-5 max-w-1200" style="max-width: 900px; margin-top: 4rem;">
+    <div class="text-center mb-5" data-aos="fade-down">
+      <h1 class="display-3 fw-bold mb-3" style="color: var(--text-primary); text-shadow: 4px 4px 0 var(--accent-primary);">LEIS DO MINEWX</h1>
+      <p class="lead fw-bold mt-3 px-3 py-2 text-white" style="background: var(--text-primary); display: inline-block; transform: rotate(1deg); border: 4px solid var(--text-primary); box-shadow: 4px 4px 0 var(--accent-secondary); font-family: 'Space Grotesk', sans-serif;">Leia com extrema atenção. O choro pós-ban lá no Discord é patético.</p>
+    </div>
+
+    <div class="d-flex flex-column gap-4">
+
+      <!-- Rule 1 & 2 -->
+      <div class="row g-4">
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="glass-panel h-100 rule-card" style="box-shadow: 6px 6px 0 var(--text-primary);">
+            <h4 class="fw-bold fs-5 mb-3" style="font-family: 'Permanent Marker', cursive;"><span class="badge border border-2 border-dark" style="background: var(--text-primary); color: var(--accent-secondary); box-shadow: 2px 2px 0 var(--accent-primary); font-family: 'Space Grotesk', sans-serif; font-size: 1rem;">#01</span> Propriedade Constante</h4>
+            <p class="mb-0 text-secondary fw-bold" style="font-size: 0.95rem;">Não destrua ou modifique áreas construídas sem permissão. Respeite o esforço alheio. Cada bloco conta.</p>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="glass-panel h-100 rule-card" style="box-shadow: 6px 6px 0 var(--text-primary);">
+            <h4 class="fw-bold fs-5 mb-3" style="font-family: 'Permanent Marker', cursive;"><span class="badge border border-2 border-dark" style="background: var(--text-primary); color: var(--accent-secondary); box-shadow: 2px 2px 0 var(--accent-primary); font-family: 'Space Grotesk', sans-serif; font-size: 1rem;">#02</span> Não Roube (Sério)</h4>
+            <p class="mb-0 text-secondary fw-bold" style="font-size: 0.95rem;">Todo o histórico do mapa fica em cache logado. Quem abre que baú e quando. Pensa duas vezes antes de passar a mão na plantação ou dima dos outros.</p>
+          </div>
+        </div>
       </div>
-      <ul class="nav-links">
-        <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="jogar.html">Jogar</a></li>
-        <li><a href="regras.html" class="active">Regras</a></li>
-        <li><a href="loja.html">Loja</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <h2 class="section-title minecraft-title">Regras do MineWx</h2>
+      <!-- Rule 3 & 4 -->
+      <div class="row g-4">
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="glass-panel h-100 rule-card" style="box-shadow: 6px 6px 0 var(--text-primary);">
+            <h4 class="fw-bold fs-5 mb-3" style="font-family: 'Permanent Marker', cursive;"><span class="badge border border-2 border-dark" style="background: var(--text-primary); color: var(--accent-secondary); box-shadow: 2px 2px 0 var(--accent-primary); font-family: 'Space Grotesk', sans-serif; font-size: 1rem;">#03</span> Zonas Públicas Intactas</h4>
+            <p class="mb-0 text-secondary fw-bold" style="font-size: 0.95rem;">Creeper explodiu e ferrou a rua? Conserta o buraco. Nada de deixar abismos aleatórios estragando o chão sagrado das vilas e spawns públicos.</p>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="glass-panel h-100 rule-card" style="box-shadow: 6px 6px 0 var(--text-primary);">
+            <h4 class="fw-bold fs-5 mb-3" style="font-family: 'Permanent Marker', cursive;"><span class="badge border border-2 border-dark" style="background: var(--text-primary); color: var(--accent-secondary); box-shadow: 2px 2px 0 var(--accent-primary); font-family: 'Space Grotesk', sans-serif; font-size: 1rem;">#04</span> Toxicidade Zero</h4>
+            <p class="mb-0 text-secondary fw-bold" style="font-size: 0.95rem;">Chat é sobre empatia e bom senso in-game e out-game. Trollagem barata não tem vez.</p>
+          </div>
+        </div>
+      </div>
 
-    <div class="rule">
-      <h3>1 ∘ Não destrua ou modifique áreas construídas sem permissão.</h3>
-      <p>Respeite o esforço dos outros jogadores. Cada bloco conta.
+      <!-- Rule 5 & 6 -->
+      <div class="row g-4">
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+          <div class="glass-panel h-100 rule-card" style="box-shadow: 6px 6px 0 var(--text-primary);">
+            <h4 class="fw-bold fs-5 mb-3" style="font-family: 'Permanent Marker', cursive;"><span class="badge border border-2 border-dark" style="background: var(--text-primary); color: var(--accent-secondary); box-shadow: 2px 2px 0 var(--accent-primary); font-family: 'Space Grotesk', sans-serif; font-size: 1rem;">#05</span> Claims (Pá de Ouro)</h4>
+            <p class="mb-0 text-secondary fw-bold" style="font-size: 0.95rem;">Seu limite de chunks protegidos inicia minúsculo. Evolua participando e doando. Só é seu se tiver protection block/claim demarcado nele.</p>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
+          <div class="glass-panel h-100 rule-card" style="box-shadow: 6px 6px 0 var(--text-primary);">
+            <h4 class="fw-bold fs-5 mb-3" style="font-family: 'Permanent Marker', cursive;"><span class="badge border border-2 border-dark" style="background: var(--text-primary); color: var(--accent-secondary); box-shadow: 2px 2px 0 var(--accent-primary); font-family: 'Space Grotesk', sans-serif; font-size: 1rem;">#06</span> Estilo de Vizinhança</h4>
+            <p class="mb-0 text-secondary fw-bold" style="font-size: 0.95rem;">Vai morar em um distrito temático? Acate as diretrizes da prefeitura orgânica local antes de dropar uma casa de terra feia do lado de uma pirâmide.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- List for 7,8,9,10 -->
+      <div class="glass-panel mt-2 rule-card" data-aos="fade-up" data-aos-delay="700" style="padding: 3rem; background: var(--bg-secondary); border: 4px solid var(--text-primary); box-shadow: 8px 8px 0 var(--text-primary);">
+        <ul class="list-unstyled mb-0 d-flex flex-column gap-4 fw-bold">
+          <li class="d-flex align-items-start gap-3">
+            <span class="fs-4 lh-1" style="color: var(--accent-primary); font-family: 'Permanent Marker', cursive;">#07</span>
+            <div><strong style="color: var(--text-primary); font-family: 'Permanent Marker', cursive;">Preservação:</strong> Proibida mineração extrema/strip visível perto de passagens, trilhas e pontos notórios. Vai pra baixo fundo e seja cirúrgico. Refloreste as madeiras que cortar perto do spawn!</div>
+          </li>
+          <li class="d-flex align-items-start gap-3">
+            <span class="fs-4 lh-1" style="color: var(--accent-primary); font-family: 'Permanent Marker', cursive;">#08</span>
+            <div><strong style="color: var(--text-primary); font-family: 'Permanent Marker', cursive;">Colaboração:</strong> Participe de construções épicas comunitárias e dos eventos de data-comemorativa (Natal/Halloween) para upar seus "direitos" na cidade e ganhar bônus no seu claim de terra.</div>
+          </li>
+          <li class="d-flex align-items-start gap-3">
+            <span class="fs-4 lh-1" style="color: var(--accent-primary); font-family: 'Permanent Marker', cursive;">#09</span>
+            <div><strong style="color: var(--text-primary); font-family: 'Permanent Marker', cursive;">Tolerância 0 Hacks:</strong> X-Ray, Optifine FullBright exagerado (em pvp/procurar tesourões), Baritone = BAN sumário. Seu ato de Griefing vai ser rolado e desfeito em segundos via console. Ban appeal no discord (boa sorte!).</div>
+          </li>
+          <li class="d-flex align-items-start gap-3">
+            <span class="fs-4 lh-1" style="color: var(--accent-primary); font-family: 'Permanent Marker', cursive;">#10</span>
+            <div><strong style="color: var(--text-primary); font-family: 'Permanent Marker', cursive;">Limpeza de Regiões:</strong> Construções medíocres paradas pelo mapa a partir de abandono há +60 dias do player serão explodidas impiedosamente pelos admins, dando espaço para novas vilas (a não ser que avise sua viagem no #discord).</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="p-4 text-center mt-5 mb-5" data-aos="zoom-in" data-aos-delay="800" style="background: var(--text-primary); border: 4px solid var(--accent-primary); box-shadow: 8px 8px 0 var(--text-primary); transform: rotate(-1deg); transition: transform 0.2s;" onmouseover="this.style.transform='rotate(1deg)'" onmouseout="this.style.transform='rotate(-1deg)'">
+        <h3 class="fw-bold text-white mb-3" style="font-family: 'Permanent Marker', cursive;"><i class="ph-bold ph-shield-warning" style="color: var(--accent-primary);"></i> Viu algo bizarro ou fora das leis? DENUNCIE.</h3>
+        <p class="text-white mb-0 fs-5" style="opacity: 0.9;">Com meia dúzia de prints via ticket no Discord arrastamos pra fora e exterminamos por completo <strong>qualquer IP</strong> que prejudicar o sossego dos reais contribuintes e moradores do MineWx.</p>
+      </div>
+
     </div>
+  </div>
 
-    <div class="rule">
-      <h3>2 ∘ Não roube.</h3>
-      <p>Todo histórico de ações fica registrado. Quem rouba será identificado.</p>
-    </div>
+  <footer class="text-center py-4 mt-auto w-100" style="border-top: 4px solid var(--text-primary); color: var(--text-primary); background: var(--bg-primary);">
+    <p class="mb-0 fw-bold px-3" style="font-family: 'Space Grotesk', sans-serif;">MineWx © 2026. Lembre-se: Você está jogando na casa de alguém. Tire os sapatos.</p>
+  </footer>
 
-    <div class="rule">
-      <h3>3 ∘ Nada de buracos ou estruturas aleatórias em áreas públicas.</h3>
-      <p>Preserve a estética e funcionalidade das vilas, estradas e praças.</p>
-    </div>
-
-    <div class="rule">
-      <h3>4 ∘ Respeito acima de tudo.</h3>
-      <p>Convivência, empatia e bom senso são prioridades absolutas.</p>
-    </div>
-
-    <div class="rule">
-      <h3>5 ∘ Sistema de Terrenos (Claims).</h3>
-      <p>Proteja sua área com ferramentas de proteção. Quantidade limitada e expansão planejada após contribuições.</p>
-    </div>
-
-    <div class="rule">
-      <h3>6 ∘ Estilo e Harmonia.</h3>
-      <p>Siga o guia arquitetônico e a paleta oficial para manter coesão visual em cada bairro.</p>
-    </div>
-
-    <div class="rule">
-      <h3>7 ∘ Preservação do Mundo.</h3>
-      <p>Proibido mineração excessiva em trilhas principais. Refloreste áreas impactadas.</p>
-    </div>
-
-    <div class="rule">
-      <h3>8 ∘ Comunidade e Colaboração.</h3>
-      <p>Participe de projetos coletivos e eventos sazonais para desbloquear melhorias de terreno.</p>
-    </div>
-
-    <div class="rule">
-      <h3>9 ∘ Justiça e Equilíbrio.</h3>
-      <p>Sem hacks. Grief será revertido em 48h e resultará em punição. Apelações via Discord.</p>
-    </div>
-
-    <div class="rule">
-      <h3>10 ∘ Manutenção e Limpeza.</h3>
-      <p>Áreas inativas por 60 dias podem ser reclamadas pelo servidor. Logs públicos acessíveis via /log.</p>
-    </div>
-
-    <div class="alert">
-      Viu algo errado? Denuncie com provas — o culpado será banido.<br>[Por IP, sem expectativa de perdão e sem previsão
-      para voltar.]
-    </div>
-  </main>
-
-  <footer>&copy; 2025 MineWx. Todos os direitos reservados.</footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
 </body>
-
 </html>

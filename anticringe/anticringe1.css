@@ -1,5 +1,5 @@
 /* Modern CSS Variables & Design System */
-@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,400;0,600;0,700;1,400&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Zilla+Slab:ital,wght@0,400;0,600;0,700;1,400&family=Permanent+Marker&display=swap');
 
 :root {
   --bg-primary: #F5E8D2;
@@ -381,6 +381,7 @@ a {
   margin: 1rem auto;
   animation: revolver-click-clack 8s infinite cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+
 
 @keyframes revolver-click-clack {
   0% {

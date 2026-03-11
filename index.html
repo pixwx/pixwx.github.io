@@ -161,9 +161,10 @@
     <div class="bento-grid">
 
       <!-- Social Links -->
-      <div class="bento-item col-social glass-panel d-flex flex-column" data-aos="fade-right" data-aos-delay="100">
-        <h3 class="panel-title align-self-start"><i class="ph-bold ph-link"></i> Conexões</h3>
-        <div class="radial-menu-container">
+      <div class="bento-item col-social d-flex flex-column" data-aos="fade-right" data-aos-delay="100">
+        <div class="d-none d-md-flex w-100 flex-column glass-panel">
+          <h3 class="panel-title align-self-start"><i class="ph-bold ph-link"></i> Conexões</h3>
+          <div class="radial-menu-container">
           <div class="radial-center" title="PixWx Hub" onclick="this.parentElement.classList.toggle('active')">
             <i class="ph-bold ph-asterisk"></i>
           </div>
@@ -207,7 +208,78 @@
                 d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-12h2v6h-2zM9 16c1.66 0 3 .89 3 2s-1.34 2-3 2-3-.89-3-2 1.34-2 3-2zm6 0c1.66 0 3 .89 3 2s-1.34 2-3 2-3-.89-3-2 1.34-2 3-2z" />
             </svg>
           </a>
+          </div>
         </div>
+        
+        <!-- Mobile 3D Carousel Menu -->
+        <div class="mobile-social-container flex-column align-items-center w-100 pt-3">
+          <div class="scene-3d-social">
+            <div id="social-3d-polygon" class="carousel-3d-social">
+              <!-- faces populated by JS -->
+            </div>
+          </div>
+          <!-- Controls -->
+          <div class="d-flex justify-content-center align-items-center gap-4 mt-2 mb-3">
+            <button class="btn social-btn-control" onclick="rotateSocialCarousel('left')">
+              <i class="ph-bold ph-caret-left fs-3"></i>
+            </button>
+            <button class="btn social-btn-control" onclick="rotateSocialCarousel('right')">
+              <i class="ph-bold ph-caret-right fs-3"></i>
+            </button>
+          </div>
+        </div>
+        
+        <script>
+          const mobileSocials = [
+            { name: 'YouTube', icon: '<i class="ph-fill ph-youtube-logo" style="color:#ff0000; font-size:3.5rem;"></i>', url: 'https://www.youtube.com/@PixWx' },
+            { name: 'Discord', icon: '<i class="ph-fill ph-discord-logo" style="color:#5865F2; font-size:3.5rem;"></i>', url: 'https://discord.gg/sH7dKb6M6N' },
+            { name: 'Instagram', icon: '<i class="ph-fill ph-instagram-logo" style="color:#E1306C; font-size:3.5rem;"></i>', url: 'https://www.instagram.com/pixwxx' },
+            { name: 'Twitch', icon: '<i class="ph-fill ph-twitch-logo" style="color:#9146FF; font-size:3.5rem;"></i>', url: 'https://twitch.tv/pixwx' },
+            { name: 'Spotify', icon: '<i class="ph-fill ph-spotify-logo" style="color:#1DB954; font-size:3.5rem;"></i>', url: 'https://open.spotify.com/user/albgabs' },
+            { name: 'Substack', icon: '<i class="ph-fill ph-article" style="font-size:3.5rem;"></i>', url: 'https://pixwx.substack.com' },
+            { name: 'Steam', icon: '<i class="ph-fill ph-steam-logo" style="font-size:3.5rem;"></i>', url: 'https://steamcommunity.com/id/pixwx/' },
+            { name: 'Goodreads', icon: '<i class="ph-fill ph-book-open-text" style="font-size:3.5rem;"></i>', url: 'https://www.goodreads.com/user/show/100645513-gabriel-alcantara-de-albuquerque' },
+            { name: 'Duolingo', icon: '<svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#58CC02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-12h2v6h-2zM9 16c1.66 0 3 .89 3 2s-1.34 2-3 2-3-.89-3-2 1.34-2 3-2zm6 0c1.66 0 3 .89 3 2s-1.34 2-3 2-3-.89-3-2 1.34-2 3-2z"/></svg>', url: 'https://www.duolingo.com/profile/pixwx' }
+          ];
+
+          document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('social-3d-polygon');
+            if(!container) return;
+            const angle = 360 / mobileSocials.length;
+            const radius = Math.round( (120 / 2) / Math.tan( Math.PI / mobileSocials.length ) ) + 10;
+            
+            mobileSocials.forEach((s, i) => {
+              const face = document.createElement('a');
+              face.href = s.url;
+              face.target = '_blank';
+              face.className = 'social-3d-face';
+              face.style.transform = `rotateY(${i * angle}deg) translateZ(${radius}px)`;
+              face.innerHTML = `
+                ${s.icon}
+                <div class="mt-2 fw-bold text-center" style="font-family: 'Permanent Marker', cursive; font-size:1.1rem; color:var(--text-primary); transition: color 0.3s;">${s.name}</div>
+              `;
+              container.appendChild(face);
+            });
+            // Push it back by radius so the front face stays flush
+            container.style.transformOrigin = `50% 50%`;
+            container.style.transform = `translateZ(-${radius}px)`;
+            container.dataset.radius = radius;
+          });
+
+          let currentRotY = 0;
+          function rotateSocialCarousel(dir) {
+            const container = document.getElementById('social-3d-polygon');
+            const angle = 360 / mobileSocials.length;
+            const radius = container.dataset.radius;
+            
+            if (dir === 'left') {
+              currentRotY += angle;
+            } else {
+              currentRotY -= angle;
+            }
+            container.style.transform = `translateZ(-${radius}px) rotateY(${currentRotY}deg)`;
+          }
+        </script>
       </div>
 
       <!-- Substack Notes Embed -->
@@ -1113,6 +1185,12 @@
     // 6. Goodreads Fetcher via Local JSON
     let goodreadsData = null;
     let currentGoodreadsTab = 'lendo';
+    let lidosRenderLimit = 6;
+    
+    window.loadMoreLidos = function() {
+      lidosRenderLimit += 6;
+      renderGoodreadsBooks();
+    }
 
     window.switchBooks = function (tab) {
       if (!goodreadsData) return;
@@ -1139,28 +1217,44 @@
       const container = document.getElementById('goodreads-books');
       if (!container || !goodreadsData) return;
 
-      const books = goodreadsData[currentGoodreadsTab] || [];
+      const booksList = goodreadsData[currentGoodreadsTab] || [];
+      const books = currentGoodreadsTab === 'lidos' ? booksList.slice(0, lidosRenderLimit) : booksList;
 
       if (books.length > 0) {
         let html = '';
         books.forEach(b => {
-          html += `
-            <a href="${b.link}" target="_blank" class="grunge-book-hover position-relative d-inline-block">
-              <img src="${b.image}" alt="${b.title}" style="height: 160px; border: 4px solid var(--text-primary); box-shadow: 6px 6px 0 var(--text-primary);">
-              <div class="grunge-book-tooltip text-center">
-                <div class="fw-bold">${b.title}</div>
-                <div style="font-size: 0.7rem; opacity: 0.8; font-family: 'Space Grotesk', sans-serif;">${b.author || 'Autor'} ${b.year ? '(' + b.year + ')' : ''}</div>
+          let progressTooltip = '';
+          let progressBar = '';
+          if (b.progress && currentGoodreadsTab === 'lendo') {
+            progressTooltip = `<div class="mt-2 fw-bold p-1" style="background: var(--bg-primary); border: 2px solid var(--text-primary); color: var(--text-primary); font-size: 0.75rem;">${b.progress}% Lido</div>`;
+            progressBar = `
+              <div class="w-100 mt-3 position-relative" style="border: 2px solid var(--text-primary); height: 12px; background: var(--bg-primary); box-shadow: 2px 2px 0 var(--text-primary); max-width: 100px;">
+                <div style="height:100%; width:${b.progress}%; background: var(--accent-primary);"></div>
               </div>
-            </a>
+            `;
+          }
+
+          html += `
+            <div class="d-flex flex-column align-items-center">
+              <a href="${b.link}" target="_blank" class="grunge-book-hover position-relative d-inline-block">
+                <img src="${b.image}" alt="${b.title}" style="height: 160px; border: 4px solid var(--text-primary); box-shadow: 6px 6px 0 var(--text-primary);">
+                <div class="grunge-book-tooltip text-center">
+                  <div class="fw-bold">${b.title}</div>
+                  <div style="font-size: 0.7rem; opacity: 0.8; font-family: 'Space Grotesk', sans-serif;">${b.author || 'Autor'} ${b.year ? '(' + b.year + ')' : ''}</div>
+                  ${progressTooltip}
+                </div>
+              </a>
+              ${progressBar}
+            </div>
            `;
         });
         
-        if (currentGoodreadsTab === 'lidos') {
+        if (currentGoodreadsTab === 'lidos' && lidosRenderLimit < booksList.length) {
           html += `
             <div class="w-100 mt-2 d-flex justify-content-center">
-              <a href="https://www.goodreads.com/user/show/100645513-gabriel-alcantara-de-albuquerque" target="_blank" class="btn btn-sm fw-bold px-3 py-2 text-uppercase d-flex align-items-center gap-1" style="background-color: var(--text-primary); color: var(--bg-primary); border: 2px solid var(--text-primary); border-radius: 0; box-shadow: 4px 4px 0 var(--accent-primary); font-family: 'Space Grotesk', sans-serif; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
-                <i class="ph-bold ph-books"></i> Ver todos os meus livros
-              </a>
+              <button onclick="window.loadMoreLidos()" class="btn btn-sm fw-bold px-3 py-2 text-uppercase d-flex align-items-center gap-1" style="background-color: var(--text-primary); color: var(--bg-primary); border: 2px solid var(--text-primary); border-radius: 0; box-shadow: 4px 4px 0 var(--accent-primary); font-family: 'Space Grotesk', sans-serif; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
+                <i class="ph-bold ph-plus"></i> Ver mais...
+              </button>
             </div>
           `;
         }
@@ -1209,7 +1303,7 @@
             }).filter(b => b.title);
           };
           const lendo = await getShelfBooks('currently-reading', 3);
-          const lidos = await getShelfBooks('read', 6);
+          const lidos = await getShelfBooks('read', 100);
           if (lendo.length === 0 && lidos.length === 0) throw new Error("No data extracted from XML proxy");
           goodreadsData = { lendo, lidos };
           renderGoodreadsBooks();

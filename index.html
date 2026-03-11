@@ -219,11 +219,11 @@
             </div>
           </div>
           <!-- Controls -->
-          <div class="d-flex justify-content-center align-items-center gap-4 mt-2 mb-3">
-            <button class="btn social-btn-control" onclick="rotateSocialCarousel('left')">
+          <div class="d-flex justify-content-center align-items-center gap-4 mt-5 mb-2" style="position: relative; z-index: 20;">
+            <button class="btn social-btn-control" onclick="rotateSocialCarousel('left')" aria-label="Anterior">
               <i class="ph-bold ph-caret-left fs-3"></i>
             </button>
-            <button class="btn social-btn-control" onclick="rotateSocialCarousel('right')">
+            <button class="btn social-btn-control" onclick="rotateSocialCarousel('right')" aria-label="Próximo">
               <i class="ph-bold ph-caret-right fs-3"></i>
             </button>
           </div>
@@ -242,7 +242,42 @@
             { name: 'Duolingo', icon: '<svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#58CC02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-12h2v6h-2zM9 16c1.66 0 3 .89 3 2s-1.34 2-3 2-3-.89-3-2 1.34-2 3-2zm6 0c1.66 0 3 .89 3 2s-1.34 2-3 2-3-.89-3-2 1.34-2 3-2z"/></svg>', url: 'https://www.duolingo.com/profile/pixwx' }
           ];
 
+          let currentCarouselIndex = 0;
+          let currentRotY = 0;
+          let touchStartX = 0;
+          let touchEndX = 0;
+
+          function handleCarouselSwipe() {
+            const swipeThreshold = 40;
+            if (touchEndX < touchStartX - swipeThreshold) {
+              rotateSocialCarousel('right');
+            }
+            if (touchEndX > touchStartX + swipeThreshold) {
+              rotateSocialCarousel('left');
+            }
+          }
+
+          function updateActiveFace() {
+            const faces = document.querySelectorAll('.social-3d-face');
+            faces.forEach((face, idx) => {
+              if (idx === currentCarouselIndex) {
+                face.classList.add('active-face');
+              } else {
+                face.classList.remove('active-face');
+              }
+            });
+          }
+
           document.addEventListener('DOMContentLoaded', () => {
+            const scene = document.querySelector('.scene-3d-social');
+            if (scene) {
+              scene.addEventListener('touchstart', e => touchStartX = e.changedTouches[0].screenX, { passive: true });
+              scene.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleCarouselSwipe();
+              }, { passive: true });
+            }
+
             const container = document.getElementById('social-3d-polygon');
             if(!container) return;
             const angle = 360 / mobileSocials.length;
@@ -252,21 +287,19 @@
               const face = document.createElement('a');
               face.href = s.url;
               face.target = '_blank';
-              face.className = 'social-3d-face';
-              face.style.transform = `rotateY(${i * angle}deg) translateZ(${radius}px)`;
+              face.className = 'social-3d-face' + (i === 0 ? ' active-face' : '');
+              face.style.setProperty('--base-transform', `rotateY(${i * angle}deg) translateZ(${radius}px)`);
               face.innerHTML = `
                 ${s.icon}
                 <div class="mt-2 fw-bold text-center" style="font-family: 'Permanent Marker', cursive; font-size:1.1rem; color:var(--text-primary); transition: color 0.3s;">${s.name}</div>
               `;
               container.appendChild(face);
             });
-            // Push it back by radius so the front face stays flush
             container.style.transformOrigin = `50% 50%`;
             container.style.transform = `translateZ(-${radius}px)`;
             container.dataset.radius = radius;
           });
 
-          let currentRotY = 0;
           function rotateSocialCarousel(dir) {
             const container = document.getElementById('social-3d-polygon');
             const angle = 360 / mobileSocials.length;
@@ -274,10 +307,13 @@
             
             if (dir === 'left') {
               currentRotY += angle;
+              currentCarouselIndex = (currentCarouselIndex - 1 + mobileSocials.length) % mobileSocials.length;
             } else {
               currentRotY -= angle;
+              currentCarouselIndex = (currentCarouselIndex + 1) % mobileSocials.length;
             }
             container.style.transform = `translateZ(-${radius}px) rotateY(${currentRotY}deg)`;
+            updateActiveFace();
           }
         </script>
       </div>

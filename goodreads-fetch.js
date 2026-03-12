@@ -109,7 +109,6 @@ async function main() {
         console.log("Goodreads data saved!");
     } catch (err) {
         console.error("Goodreads error:", err);
-        process.exit(1);
     }
 }
 

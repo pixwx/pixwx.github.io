@@ -92,7 +92,6 @@ async function fetchSteamXML() {
         });
     } catch (error) {
         console.error('Erro geral no Fetch da Steam:', error.message);
-        process.exit(1);
     }
 }
 

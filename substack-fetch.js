@@ -48,7 +48,6 @@ async function fetchSubstackNotes() {
         console.log(`Dados do Substack atualizados com sucesso: ${notesData.length} notes encontrados.`);
     } catch (error) {
         console.error('Erro geral no Fetch do Substack:', error.message);
-        process.exit(1);
     }
 }
 

@@ -615,16 +615,18 @@
 
       <!-- Minecraft CTA (Movido pro fim) -->
       <div class="bento-item col-mine glass-panel px-0 py-0 w-100"
-        style="grid-column: 1 / -1; display:flex;align-items:center;background: var(--accent-secondary);"
+        style="grid-column: 1 / -1; display:flex;align-items:center;background: var(--text-primary);"
         data-aos="fade-left" data-aos-delay="300">
-        <div class="w-100 text-center py-4 px-3">
-          <a href="https://pixwx.wtf/minewx/regras.html" target="_blank" class="text-decoration-none">
-            <h4 class="mt-3 mb-0"
-              style="color: var(--text-primary); font-family: 'Permanent Marker'; font-size: 1.8rem;">Nosso Servidor de
-              Minecraft</h4>
-            <div id="mine-status" class="mt-2 fw-bold"
-              style="font-size: 1rem; color: #fff; background: var(--text-primary); display:inline-block; padding: 4px 12px; border: 3px solid var(--text-primary); box-shadow: 4px 4px 0 var(--text-primary); transform: rotate(-2deg); transition: all 0.2s;">
-              <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Buscando
+        <div class="w-100 text-center py-4 px-3"
+          style="background: repeating-linear-gradient(45deg, rgba(250, 238, 215, 0.05) 25%, transparent 25%, transparent 75%, rgba(250, 238, 215, 0.05) 75%, rgba(250, 238, 215, 0.05)), repeating-linear-gradient(45deg, rgba(250, 238, 215, 0.05) 25%, var(--text-primary) 25%, var(--text-primary) 75%, rgba(250, 238, 215, 0.05) 75%, rgba(250, 238, 215, 0.05)); background-size: 20px 20px;">
+          <a href="minewx/index.html" class="text-decoration-none d-block w-100">
+            <h4 class="mt-2 mb-0"
+              style="color: var(--accent-secondary); font-family: 'Permanent Marker'; font-size: 2rem; text-shadow: 2px 2px 0 #000;">Nosso Servidor de Minecraft</h4>
+            <p class="text-white mt-2 mb-3 px-md-5" style="font-family: 'Space Grotesk', sans-serif; font-size: 0.95rem; font-weight: 500; opacity: 0.9;">O "MineWx" está numa fase de reconstrução e depende do apoio de vocês para voltar a ficar aberto 24h. Confira as metas e as recompensas de doador!</p>
+            
+            <div id="mine-status" class="mt-2 fw-bold d-inline-block text-center"
+              style="font-size: 1rem; color: #fff; background: var(--text-primary); padding: 8px 16px; border: 3px solid var(--accent-secondary); box-shadow: 4px 4px 0 var(--accent-secondary); transform: rotate(-2deg); transition: transform 0.2s;" onmouseover="this.style.transform='rotate(0deg) scale(1.05)';" onmouseout="this.style.transform='rotate(-2deg) scale(1)';">
+              <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true" style="color:var(--accent-secondary);"></span> Buscando
               Sinal...
             </div>
           </a>
@@ -1066,25 +1068,41 @@
           document.getElementById('online-count').textContent = displayCount;
           document.getElementById('online-text').innerHTML = displayCount === 1 ? 'MEMBRO<br>ONLINE' : 'MEMBROS<br>ONLINE';
 
-          realMembers.slice(0, 10).forEach(m => {
-            const div = document.createElement('div');
-            const stickClasses = ['stick-anim-1', 'stick-anim-2', 'stick-anim-3'];
-            const randomClass = stickClasses[Math.floor(Math.random() * stickClasses.length)];
-            const animDelay = (Math.random() * 2).toFixed(2) + 's';
-            div.className = 'discord-stick-figure ' + randomClass;
-            div.setAttribute('tabindex', '0');
-            div.style.animationDelay = animDelay;
-            div.innerHTML = `
-              <div class="stick-tooltip">${m.username}</div>
-              <img src="${m.avatar_url}" class="stick-head">
-              <div class="stick-body"></div>
-              <div class="stick-arm-l"></div>
-              <div class="stick-arm-r"></div>
-              <div class="stick-leg-l"></div>
-              <div class="stick-leg-r"></div>
+          if (displayCount === 0) {
+            list.innerHTML = `
+              <div class="d-flex flex-column align-items-center justify-content-center h-100" style="opacity: 0.6; color: var(--text-primary); margin-top: 15px;">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(2px 2px 0 var(--text-primary)); color: var(--accent-secondary); margin-bottom: 8px;">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="8" y1="9" x2="10" y2="11"></line>
+                  <line x1="10" y1="9" x2="8" y2="11"></line>
+                  <line x1="14" y1="9" x2="16" y2="11"></line>
+                  <line x1="16" y1="9" x2="14" y2="11"></line>
+                  <path d="M16 16s-1.5-2-4-2-4 2-4 2"></path>
+                </svg>
+                <span class="fw-bold" style="font-family: 'Permanent Marker', cursive; font-size: 0.9rem;">Cidade Fantasma</span>
+              </div>
             `;
-            list.append(div);
-          });
+          } else {
+            realMembers.slice(0, 10).forEach(m => {
+              const div = document.createElement('div');
+              const stickClasses = ['stick-anim-1', 'stick-anim-2', 'stick-anim-3'];
+              const randomClass = stickClasses[Math.floor(Math.random() * stickClasses.length)];
+              const animDelay = (Math.random() * 2).toFixed(2) + 's';
+              div.className = 'discord-stick-figure ' + randomClass;
+              div.setAttribute('tabindex', '0');
+              div.style.animationDelay = animDelay;
+              div.innerHTML = `
+                <div class="stick-tooltip">${m.username}</div>
+                <img src="${m.avatar_url}" class="stick-head">
+                <div class="stick-body"></div>
+                <div class="stick-arm-l"></div>
+                <div class="stick-arm-r"></div>
+                <div class="stick-leg-l"></div>
+                <div class="stick-leg-r"></div>
+              `;
+              list.append(div);
+            });
+          }
         }
       } catch (e) {
         console.error("Discord load error", e);
@@ -1560,7 +1578,7 @@
       const statusEl = document.getElementById('mine-status');
       if (!statusEl) return;
 
-      const serverIP = "pixwx.wtf"; // Substitua caso o IP mude no futuro
+      const serverIP = "pixwx.xyz"; // Substitua caso o IP mude no futuro
 
       try {
         const res = await fetch('https://api.mcsrvstat.us/2/' + serverIP);
@@ -1573,9 +1591,11 @@
           statusEl.innerHTML = `<i class="ph-fill ph-hard-drives me-2"></i> ONLINE (${data.players.online}/${data.players.max})`;
         } else {
           statusEl.style.backgroundColor = 'var(--text-primary)';
-          statusEl.style.color = 'var(--accent-primary)';
-          statusEl.style.transform = 'rotate(0deg)';
-          statusEl.innerHTML = '<i class="ph-fill ph-warning me-2"></i> OFFLINE TENTANDO RECONECTAR';
+          statusEl.style.color = '#fff';
+          statusEl.style.transform = 'rotate(-1deg)';
+          statusEl.style.fontSize = '0.95rem';
+          statusEl.style.whiteSpace = 'normal';
+          statusEl.innerHTML = '<span class="d-block mb-1" style="color:var(--accent-primary);"><i class="ph-fill ph-prohibit me-1"></i> SERVIDOR EM MANUTENÇÃO / PAUSADO</span><span style="font-size:0.8rem; opacity: 0.9;">Ajude a manter nosso mundo vivo doando para as metas do mês! <i class="ph-bold ph-arrow-right"></i></span>';
         }
       } catch (err) {
         statusEl.innerHTML = 'Status Desconhecido';

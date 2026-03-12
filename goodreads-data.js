@@ -13,16 +13,14 @@ window.GOODREADS_DATA = {
       "link": "https://www.goodreads.com/review/show/7320480069?utm_medium=api&utm_source=rss",
       "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1545429379l/43306993.jpg",
       "author": "Mário de Andrade",
-      "year": "1928",
-      "progress": "8"
+      "year": "1928"
     },
     {
-      "title": "A Revolução das Plantas",
-      "link": "https://www.goodreads.com/book/show/49080515-a-revolu-o-das-plantas",
-      "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1559399079l/46124853.jpg",
-      "author": "Stefano Mancuso",
-      "year": "2019",
-      "progress": "18"
+      "title": "Anna Karênina",
+      "link": "https://www.goodreads.com/review/show/7199641191?utm_medium=api&utm_source=rss",
+      "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1498099939l/35494892.jpg",
+      "author": "Leo Tolstoy",
+      "year": "1878"
     }
   ],
   "lidos": [

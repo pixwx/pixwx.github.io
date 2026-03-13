@@ -2,7 +2,7 @@
   "profile": {
     "name": "Pixwx",
     "realname": "Gabriel A. A. de A.",
-    "avatar": "https://avatars.akamai.steamstatic.com/9d494d2ae7e10b4b531d05a272c3dd4d576b021b_full.jpg",
+    "avatar": "https://avatars.fastly.steamstatic.com/9d494d2ae7e10b4b531d05a272c3dd4d576b021b_full.jpg",
     "state": "offline",
     "stateMessage": "Offline",
     "url": "https://steamcommunity.com/id/pixwx/",
@@ -19,31 +19,31 @@
     {
       "name": "Fallout Shelter",
       "hours": "32",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/588430/215588003e8684f96229d5d86dd1e837b3661a8d/capsule_184x69.jpg?t=1773174911",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/588430/215588003e8684f96229d5d86dd1e837b3661a8d/capsule_184x69.jpg?t=1773174911",
       "link": "https://steamcommunity.com/app/588430"
     },
     {
       "name": "Escape from Ever After",
       "hours": "23",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1996390/398b38b42c9b80dfa700fea90ffe5a998eab4488/capsule_184x69.jpg?t=1772259866",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1996390/398b38b42c9b80dfa700fea90ffe5a998eab4488/capsule_184x69.jpg?t=1772259866",
       "link": "https://steamcommunity.com/app/1996390"
     },
     {
       "name": "Fallout 4",
       "hours": "50",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/377160/capsule_184x69.jpg?t=1764687456",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/377160/capsule_184x69.jpg?t=1764687456",
       "link": "https://steamcommunity.com/app/377160"
     },
     {
       "name": "Avatar: Frontiers of Pandora",
       "hours": "18.9",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2840770/cc7f801396b237394d4e014e03cb0d5cac04cc22/capsule_184x69.jpg?t=1769463197",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2840770/cc7f801396b237394d4e014e03cb0d5cac04cc22/capsule_184x69.jpg?t=1769463197",
       "link": "https://steamcommunity.com/app/2840770"
     },
     {
       "name": "This War of Mine",
       "hours": "0.4",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/282070/2d8bb6908a236a5b129a2445dcc1cab37d0f7a47/capsule_184x69.jpg?t=1765218571",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/282070/2d8bb6908a236a5b129a2445dcc1cab37d0f7a47/capsule_184x69.jpg?t=1765218571",
       "link": "https://steamcommunity.com/app/282070"
     }
   ]

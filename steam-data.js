@@ -33,12 +33,6 @@ window.STEAM_DATA = {
       "hours": "18.9",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2840770/cc7f801396b237394d4e014e03cb0d5cac04cc22/capsule_184x69.jpg?t=1769463197",
       "link": "https://steamcommunity.com/app/2840770"
-    },
-    {
-      "name": "This War of Mine",
-      "hours": "0.4",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/282070/2d8bb6908a236a5b129a2445dcc1cab37d0f7a47/capsule_184x69.jpg?t=1765218571",
-      "link": "https://steamcommunity.com/app/282070"
     }
   ]
 };

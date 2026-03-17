@@ -1099,7 +1099,7 @@
     }
     loadLatestYT();
 
-    // 2. akele widget top d mostrar qm ta on no discord
+    // 2. widget top de mostrar quem ta online no discord
     async function buildDiscordWidget() {
       try {
         const GUILD_ID = '895053873281134662';
@@ -2479,7 +2479,7 @@
 
   <script src="steam-data.js"></script>
   <script src="goodreads-data.js"></script>
-  <script src="substack-data.js"></script>
+  <script src="substack-data.js" onload="if (window.renderSubstackNotes) window.renderSubstackNotes();"></script>
 </body>
 
 </html>

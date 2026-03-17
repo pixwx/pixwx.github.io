@@ -1,5 +1,17 @@
 window.SUBSTACK_NOTES = [
   {
+    "id": 228525126,
+    "date": "2026-03-16T10:00:44.287Z",
+    "body": "Ontem assisti o documentário do Louis Theroux: Por Dentro da Machosfera (Netflix). Fico perplexo como existe um mundo, um universo, totalmente animalesco dentro do Homo sapiens. Como é possível que a mesma espécie que faz pesquisa em laboratório, vai pro espaço, cria coisas incríveis, consegue também ser só um animal sem absolutamente nada que engrandece de verdade? Será que se todos fossem assim, a gente teria sequer deixado de ser coletor e caçador? Que grande bosta essa machosfera. ",
+    "likes": 1,
+    "replies": 0,
+    "restacks": 0,
+    "url": "https://substack.com/@pixwx/note/c-228525126",
+    "user_photo": "https://substack-post-media.s3.amazonaws.com/public/images/913aa8e4-fb4b-48ea-9817-c459b950781c_1024x1024.png",
+    "user_name": "Gabriel A. A. de A.",
+    "user_handle": "pixwx"
+  },
+  {
     "id": 225956794,
     "date": "2026-03-10T21:34:59.680Z",
     "body": "O Substack deixa tanto a desejar que tive que fazer um leitor no meu próprio site mesmo (e ficou BEM mais organizado/melhor)",

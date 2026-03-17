@@ -24,27 +24,15 @@ window.STEAM_DATA = {
     },
     {
       "name": "Escape from Ever After",
-      "hours": "22",
+      "hours": "23",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1996390/398b38b42c9b80dfa700fea90ffe5a998eab4488/capsule_184x69.jpg?t=1772259866",
       "link": "https://steamcommunity.com/app/1996390"
-    },
-    {
-      "name": "Fallout 4",
-      "hours": "50",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/377160/capsule_184x69.jpg?t=1764687456",
-      "link": "https://steamcommunity.com/app/377160"
     },
     {
       "name": "Avatar: Frontiers of Pandora",
       "hours": "18.9",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2840770/cc7f801396b237394d4e014e03cb0d5cac04cc22/capsule_184x69.jpg?t=1769463197",
       "link": "https://steamcommunity.com/app/2840770"
-    },
-    {
-      "name": "This War of Mine",
-      "hours": "0.4",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/282070/2d8bb6908a236a5b129a2445dcc1cab37d0f7a47/capsule_184x69.jpg?t=1765218571",
-      "link": "https://steamcommunity.com/app/282070"
     }
   ]
 };

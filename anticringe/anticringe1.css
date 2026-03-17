@@ -941,7 +941,7 @@ a {
   animation: stick-dance-3 0.7s infinite alternate cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* Bind body part animations */
+/* juntando as animações das peças do corpo */
 .discord-stick-figure .stick-head {
   animation: mosh-head 0.4s infinite alternate ease-in-out;
   animation-delay: inherit;
@@ -967,7 +967,7 @@ a {
   animation-delay: inherit;
 }
 
-/* Hover Hyper-Speed State */
+/* qdo poe mouse e fica na velcidade da luz */
 .discord-stick-figure:hover {
   z-index: 99;
   transform: scale(1.5) translateY(-20px) !important;
@@ -1012,7 +1012,7 @@ a {
   box-shadow: 6px 6px 0px var(--text-primary);
 }
 
-/* Youtube Embed */
+/* qm embedo o tube */
 .yt-wrapper {
   position: relative;
   padding-bottom: 56.25%;
@@ -1031,7 +1031,7 @@ a {
   height: 100%;
 }
 
-/* Substack Blog Section */
+/* area marota q cola os blog dsb */
 .blog-section {
   margin-top: 4rem;
 }
@@ -1142,7 +1142,7 @@ a {
   font-weight: 700;
 }
 
-/* Modal styles for the reader */
+/* stilo bolado do modal q le is post */
 .modal-content.glass-modal {
   background: var(--bg-secondary);
   border: 4px solid var(--text-primary);
@@ -1213,7 +1213,7 @@ a {
   margin-bottom: 1rem;
 }
 
-/* Loader */
+/* a qla rodela marota */
 .loader {
   border: 0;
   width: 50px;
@@ -1247,7 +1247,7 @@ a {
   }
 }
 
-/* Footer */
+/* pe da pagina */
 footer {
   margin-top: 5rem;
   padding: 2rem 0;
@@ -1257,7 +1257,7 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Star Wars Bio */
+/* biozao pique str wrs */
 #starwars-container {
   display: none;
   position: fixed;
@@ -1267,7 +1267,7 @@ footer {
   height: 100vh;
   background: #000;
   z-index: 1050;
-  /* Above bootstrap navbar */
+  /* fic por cima d nav q vem do bootzin */
   overflow: hidden;
   background-image:
     radial-gradient(white, rgba(255, 255, 255, .2) 1px, transparent 2px),
@@ -1377,7 +1377,7 @@ footer {
   }
 }
 
-/* Grunge / Borderlands Hover Effects */
+/* efaitnhover pegada borderlands brab */
 
 .grunge-book-hover {
   transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -1458,19 +1458,19 @@ footer {
 }
 
 /* -------------------------------------
-   MOBILE & RESPONSIVE REFINEMENTS
+   AJEITADA P MOBILE E QLQR TELA
    ------------------------------------- */
 
 @media (max-width: 768px) {
 
-  /* Prevent horizontal scroll from absolutely positioned elements */
+  /* arrumando p n fz o celular ir pro lado (scroll) atoa */
   body,
   html {
     overflow-x: hidden;
     width: 100%;
   }
 
-  /* Profile Header Mobile Optimization */
+  /* optimiza o topo pro cel */
   .profile-name {
     font-size: 1.8rem;
     flex-wrap: wrap;
@@ -1489,7 +1489,7 @@ footer {
     padding: 0 10px;
   }
 
-  /* Bento Grid Mobile Gutters */
+  /* ajeitando os buraquim do bento nu cl */
   .bento-grid {
     gap: 1rem;
     padding: 0 5px;
@@ -1500,15 +1500,15 @@ footer {
     padding-right: 10px !important;
   }
 
-  /* Removed Legacy Steam Box Mobile Adjustments as Bootstrap layout is used */
+  /* ranca as css veio do box d stm pq o bs ja ajuda aq */
 
-  /* Footer Adjustments */
+  /* arruma do pe d pgna */
   footer {
     padding: 2rem 10px !important;
     margin-top: 3rem !important;
   }
 
-  /* Radial Menu Scaling for Mobile */
+  /* cmo o menu radical fika grand no cl */
   .radial-menu-container {
     width: 200px;
     height: 200px;
@@ -1524,7 +1524,7 @@ footer {
     font-size: 1.5rem;
   }
 
-  /* Reset tooltips on mobile so they don't break width */
+  /* reseta tooltip p cll p n quebra a tgela d tdo */
   .radial-btn::after {
     display: none !important;
   }
@@ -1543,7 +1543,7 @@ footer {
     transform: rotate(var(--rot)) translateY(-95px) rotate(var(--rev)) scale(1.1) !important;
   }
 
-  /* In mobile, show the title in a central fixed spot instead of next to each floating button */
+  /* invez do btn fica os ttlo no meiao pro cll */
   .radial-menu-container.active::before {
     content: "Redes Sociais";
     position: absolute;
@@ -1563,7 +1563,7 @@ footer {
     z-index: 100;
   }
 
-  /* Prevent discord stick figures from stacking out of bounds */
+  /* segur os bonequim do dscrd p c n vasao td */
   .member-list {
     min-height: 120px;
     gap: 8px;
@@ -1601,10 +1601,10 @@ footer {
   100% { transform: rotate(-10deg) scale(0.95); box-shadow: 4px 4px 0 var(--accent-primary); }
 }
 
-/* 📱 MOBILE / TOUCH DEVICES 2026 UX FIXES (NO-HOVER FALLBACK) */
+/* 📱 arrumando os clique de tela d cll 2026 (qdo n tem hover) */
 @media (hover: none) and (pointer: coarse) {
   
-  /* 1. Goodreads Books: Show info persistently without touching */
+  /* 1. lvrin do goodreads: mostra td sem precisa passa o dedo */
   .grunge-book-hover {
     display: flex !important;
     flex-direction: column;
@@ -1637,9 +1637,9 @@ footer {
     filter: none;
   }
 
-  /* 2. Discord Members: Trigger Moshpit and Tooltip on Tap/Focus */
+  /* 2. lekada do discord: estora o moshpit e a dika qdo clica e foca */
   .discord-stick-figure {
-    outline: none; /* Removes nasty browser default tap blue box */
+    outline: none; /* ranca aql borda azul podre q o navgadao poe default */
   }
   .discord-stick-figure:active,
   .discord-stick-figure:focus {
@@ -1667,4 +1667,4 @@ footer {
   .discord-stick-figure:focus .stick-leg-r {
     animation-duration: 0.1s !important;
   }
-}
+}

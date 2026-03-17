@@ -767,7 +767,7 @@
     </div>
     <div class="offcanvas-body" style="font-family: 'Zilla Slab', serif; font-size: 1.3rem; font-weight: bold;">
       <ul class="list-unstyled d-flex flex-column gap-3 mt-3">
-        <li><a href="javascript:void(0)" onclick="closeMenuAndStartStarWars()" class="text-dark text-decoration-none">
+        <li><a href="javascript:void(0)" onclick="closeMenuAndReadBioNormal()" class="text-dark text-decoration-none">
             <i class="ph-fill ph-user"></i> Biografia Completa</a></li>
         <li><a href="https://pixwx.substack.com/" target="_blank" class="text-dark text-decoration-none"><i
               class="ph-fill ph-article"></i> Meus Artigos</a></li>
@@ -2392,6 +2392,17 @@
         setTimeout(promptStarWars, 400); // aguarda fechar o menu esquerdo para exibir
       } else {
         promptStarWars();
+      }
+    }
+
+    function closeMenuAndReadBioNormal() {
+      const menuEl = document.getElementById('menuLateral');
+      const bsOffcanvas = window.bootstrap ? bootstrap.Offcanvas.getInstance(menuEl) : null;
+      if (bsOffcanvas) {
+        bsOffcanvas.hide();
+        setTimeout(readBioNormal, 400); // aguarda fechar o menu esquerdo para exibir a bio normal
+      } else {
+        readBioNormal();
       }
     }
 

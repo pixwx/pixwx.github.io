@@ -923,7 +923,9 @@
     <div class="sw-fade"></div>
     <section class="sw-board">
       <div id="sw-content" class="sw-content">
-        <h1 class="sw-title">Episódio I</h1>
+          <div class="sw-title-container">
+            <h1 class="sw-title">Episódio W</h1>
+          </div>
         <h2 class="sw-subtitle">DISTÚRBIO DO EU</h2>
         <p>Sou o Gabriel, nascido e criado, com muito orgulho, em Belém do Pará, morei em Fortaleza, Rio de Janeiro e
           Santa Maria (pra estudar na UFSM). Desde 2019, tô morando temporariamente em Portugal.</p>
@@ -2362,12 +2364,14 @@
       document.getElementById('starwars-container').style.display = 'none';
       document.body.style.overflow = 'auto'; // allow scrolling again
 
-      const audio = document.getElementById('sw-audio');
-      if (audio) {
-        fadeOutAudio(audio, 500);
+      const sw_audio = document.getElementById('sw-audio');
+      if (sw_audio) {
+        sw_audio.pause();
+        sw_audio.currentTime = 0;
       }
       if (typeof ussrAudio !== 'undefined' && ussrAudio) {
-        fadeOutAudio(ussrAudio, 500);
+        ussrAudio.pause();
+        ussrAudio.currentTime = 0;
       }
 
       const eggContainer = document.getElementById('easter-egg-container');

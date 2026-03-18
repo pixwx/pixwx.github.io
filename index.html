@@ -129,7 +129,6 @@
       <div class="d-flex flex-column align-items-center mb-3">
         <h1 class="profile-name profile-realname m-0" data-realname="Gabriel Augusto Alcantara de Albuquerque">
           Gabriel A. A. de A.
-          <img class="profile-badge" src="img/icones-originais/verificado.svg" alt="Verificado">
         </h1>
         <span class="badge text-dark rounded-pill px-3 py-1 mt-2 mb-2"
           style="background-color: var(--accent-secondary); font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 0.85rem; letter-spacing: 1.5px; border: 2px solid var(--text-primary); box-shadow: 2px 2px 0 var(--text-primary);">
@@ -143,7 +142,7 @@
           style="opacity: 0.8; font-size: 0.85rem; margin-left: 5px; font-weight: bold; text-decoration: underline;">[
           biografia completa? ]</a>
       </p>
-      <span class="profile-hiatus">Em hiato criativo (mas volto no futuro)</span>
+      <span id="hiatus-counter" class="profile-hiatus">Em hiato criativo (mas volto no futuro)</span>
       <div class="mt-4">
         <a href="mailto:xenopus361@barbarbu.fr" class="btn text-white fw-bold rounded-0 px-4 py-2"
           style="background-color: var(--text-primary); border: 4px solid var(--text-primary); box-shadow: 4px 4px 0 var(--accent-secondary); text-transform: uppercase;">
@@ -323,7 +322,7 @@
       <div class="bento-item col-notes glass-panel d-flex flex-column" data-aos="fade-up" data-aos-delay="150"
         style="min-height: 250px;">
         <h3 class="panel-title mb-3 d-flex align-items-center justify-content-between">
-          <span><i class="ph-bold ph-article"></i> Tuítes que não são Tuítes</span>
+          <span><i class="ph-bold ph-article"></i> Assim Falou Zaratustra </span>
           <a href="https://pixwx.substack.com" target="_blank" class="btn btn-sm px-2 py-0 fw-bold d-none d-md-block"
             style="background-color: var(--accent-secondary); color: var(--text-primary); border: 2px solid var(--text-primary); border-radius: 0; box-shadow: 2px 2px 0 var(--text-primary); font-size: 0.75rem;">Substack
             <i class="ph-bold ph-arrow-right"></i></a>
@@ -2600,6 +2599,49 @@
       document.head.appendChild(style);
     };
 
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const hiatusSpan = document.getElementById("hiatus-counter");
+      if (!hiatusSpan) return;
+
+      // 7 de Abril de 2026, 19:30 (Horário de Portugal / WEST / UTC+1)
+      const targetDate = new Date("2026-04-07T19:30:00+01:00").getTime();
+
+      function updateCounter() {
+        const now = new Date().getTime();
+        const difference = targetDate - now;
+
+        if (difference > 0) {
+          // Contagem regressiva
+          const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+          hiatusSpan.innerHTML = `Em hiato criativo (volto em <a href="https://twitch.tv/pixwx" target="_blank" style="color: var(--text-primary); text-decoration: underline; text-transform: lowercase;">${days}d ${hours}h ${minutes}m ${seconds}s</a>)`;
+        } else {
+          // O hiato acabou!
+          const passed = now - targetDate;
+          const passedDays = Math.floor(passed / (1000 * 60 * 60 * 24));
+          const passedHours = Math.floor((passed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          
+          if(passedDays >= 30) {
+            hiatusSpan.innerHTML = `Criando sem parar desde <a href="https://twitch.tv/pixwx" target="_blank" style="color: var(--text-primary); text-decoration: underline;">7 de abril</a>`;
+          } else if(passedDays > 0) {
+            hiatusSpan.innerHTML = `O Hiato Acabou! Produzindo direto há <a href="https://twitch.tv/pixwx" target="_blank" style="color: var(--text-primary); text-decoration: underline;">${passedDays} dias</a>`;
+          } else if(passedHours > 0) {
+            hiatusSpan.innerHTML = `O Hiato Acabou! Produzindo direto há <a href="https://twitch.tv/pixwx" target="_blank" style="color: var(--text-primary); text-decoration: underline;">${passedHours} horas</a>`;
+          } else {
+            const passedMinutes = Math.floor((passed % (1000 * 60 * 60)) / (1000 * 60));
+            hiatusSpan.innerHTML = `O Hiato Acabou! Produzindo direto há <a href="https://twitch.tv/pixwx" target="_blank" style="color: var(--text-primary); text-decoration: underline;">${passedMinutes} minutos</a>`;
+          }
+        }
+      }
+
+      updateCounter();
+      setInterval(updateCounter, 1000); // 1 segundo
+    });
   </script>
 
   <script src="steam-data.js"></script>

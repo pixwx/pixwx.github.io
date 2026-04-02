@@ -1,14 +1,6 @@
 window.GOODREADS_DATA = {
   "lendo": [
     {
-      "title": "O Lobo das Estepes",
-      "link": "https://www.goodreads.com/review/show/8426792400?utm_medium=api&utm_source=rss",
-      "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1378849640l/18480188.jpg",
-      "author": "Hermann Hesse",
-      "year": "1927",
-      "progress": "83"
-    },
-    {
       "title": "Macunaíma: O herói sem nenhum caráter",
       "link": "https://www.goodreads.com/review/show/7320480069?utm_medium=api&utm_source=rss",
       "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1545429379l/43306993.jpg",
@@ -21,9 +13,23 @@ window.GOODREADS_DATA = {
       "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1498099939l/35494892.jpg",
       "author": "Leo Tolstoy",
       "year": "1878"
+    },
+    {
+      "title": "Noite na taverna E Macário",
+      "link": "https://www.goodreads.com/review/show/3259119768?utm_medium=api&utm_source=rss",
+      "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1517957325l/38396023.jpg",
+      "author": "Álvares de Azevedo",
+      "year": "1855"
     }
   ],
   "lidos": [
+    {
+      "title": "O Lobo das Estepes",
+      "link": "https://www.goodreads.com/review/show/8426792400?utm_medium=api&utm_source=rss",
+      "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1378849640l/18480188.jpg",
+      "author": "Hermann Hesse",
+      "year": "1927"
+    },
     {
       "title": "A Hora da Estrela",
       "link": "https://www.goodreads.com/review/show/7220332636?utm_medium=api&utm_source=rss",

@@ -2,9 +2,9 @@ window.STEAM_DATA = {
   "profile": {
     "name": "Pixwx",
     "realname": "Gabriel A. A. de A.",
-    "avatar": "https://avatars.akamai.steamstatic.com/9d494d2ae7e10b4b531d05a272c3dd4d576b021b_full.jpg",
-    "state": "offline",
-    "stateMessage": "Offline",
+    "avatar": "https://avatars.fastly.steamstatic.com/9d494d2ae7e10b4b531d05a272c3dd4d576b021b_full.jpg",
+    "state": "online",
+    "stateMessage": "Online",
     "url": "https://steamcommunity.com/id/pixwx/",
     "id": "pixwx",
     "memberSince": "August 7, 2021",

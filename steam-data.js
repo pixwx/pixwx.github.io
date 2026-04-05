@@ -11,7 +11,7 @@ window.STEAM_DATA = {
     "location": "Belem, Para, Brazil",
     "hours2Wk": "0.0",
     "level": "50",
-    "gamesCount": "167",
+    "gamesCount": "169",
     "friendsCount": "86",
     "screenshotsCount": "6"
   },

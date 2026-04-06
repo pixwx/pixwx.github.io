@@ -11,10 +11,17 @@ window.STEAM_DATA = {
     "location": "Belem, Para, Brazil",
     "hours2Wk": "0.0",
     "level": "50",
-    "gamesCount": "169",
+    "gamesCount": "170",
     "friendsCount": "86",
     "screenshotsCount": "6"
   },
-  "games": []
+  "games": [
+    {
+      "name": "Remnant: From the Ashes",
+      "hours": "0.3",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/617290/capsule_184x69.jpg?t=1764657526",
+      "link": "https://steamcommunity.com/app/617290"
+    }
+  ]
 };
 if(typeof window.renderSteamGames === 'function') window.renderSteamGames();

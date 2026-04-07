@@ -18,7 +18,7 @@ window.STEAM_DATA = {
   "games": [
     {
       "name": "Coromon",
-      "hours": "5.8",
+      "hours": "6.8",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1218210/4fdb1c5d600763b0f088d1aa8bfacb694cfccfee/capsule_184x69.jpg?t=1773936463",
       "link": "https://steamcommunity.com/app/1218210"
     },

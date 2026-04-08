@@ -2,7 +2,7 @@ window.STEAM_DATA = {
   "profile": {
     "name": "Pixwx",
     "realname": "Gabriel A. A. de A.",
-    "avatar": "https://avatars.fastly.steamstatic.com/9d494d2ae7e10b4b531d05a272c3dd4d576b021b_full.jpg",
+    "avatar": "https://avatars.akamai.steamstatic.com/9d494d2ae7e10b4b531d05a272c3dd4d576b021b_full.jpg",
     "state": "offline",
     "stateMessage": "Offline",
     "url": "https://steamcommunity.com/id/pixwx/",
@@ -19,13 +19,13 @@ window.STEAM_DATA = {
     {
       "name": "Coromon",
       "hours": "11.7",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1218210/4fdb1c5d600763b0f088d1aa8bfacb694cfccfee/capsule_184x69.jpg?t=1773936463",
+      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1218210/4fdb1c5d600763b0f088d1aa8bfacb694cfccfee/capsule_184x69.jpg?t=1773936463",
       "link": "https://steamcommunity.com/app/1218210"
     },
     {
       "name": "Remnant: From the Ashes",
       "hours": "0.3",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/617290/capsule_184x69.jpg?t=1764657526",
+      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/617290/capsule_184x69.jpg?t=1764657526",
       "link": "https://steamcommunity.com/app/617290"
     }
   ]

@@ -3,22 +3,22 @@ window.STEAM_DATA = {
     "name": "Pixwx",
     "realname": "Gabriel A. A. de A.",
     "avatar": "https://avatars.akamai.steamstatic.com/9d494d2ae7e10b4b531d05a272c3dd4d576b021b_full.jpg",
-    "state": "offline",
-    "stateMessage": "Offline",
+    "state": "in-game",
+    "stateMessage": "In-Game<br/>Soulmask",
     "url": "https://steamcommunity.com/id/pixwx/",
     "id": "pixwx",
     "memberSince": "August 7, 2021",
     "location": "Belem, Para, Brazil",
     "hours2Wk": "0.0",
     "level": "50",
-    "gamesCount": "173",
+    "gamesCount": "175",
     "friendsCount": "86",
     "screenshotsCount": "6"
   },
   "games": [
     {
       "name": "Coromon",
-      "hours": "13.5",
+      "hours": "13.9",
       "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1218210/4fdb1c5d600763b0f088d1aa8bfacb694cfccfee/capsule_184x69.jpg?t=1773936463",
       "link": "https://steamcommunity.com/app/1218210"
     },
@@ -29,28 +29,28 @@ window.STEAM_DATA = {
       "link": "https://steamcommunity.com/app/1244090"
     },
     {
-      "name": "Remnant: From the Ashes",
-      "hours": "0.3",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/617290/capsule_184x69.jpg?t=1764657526",
-      "link": "https://steamcommunity.com/app/617290"
-    },
-    {
-      "name": "FINAL FANTASY TACTICS - The Ivalice Chronicles",
-      "hours": "70",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1004640/12bdfff11d35dbd64055124bcdbf690f49d6ce46/capsule_184x69.jpg?t=1766385464",
-      "link": "https://steamcommunity.com/app/1004640"
-    },
-    {
       "name": "Crypt of the NecroDancer: Synchrony",
-      "hours": "3.7",
+      "hours": "5.1",
       "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2094810/capsule_184x69.jpg?t=1769869850",
       "link": "https://steamcommunity.com/app/2094810"
     },
     {
       "name": "Crypt of the NecroDancer",
-      "hours": "6.5",
+      "hours": "7.9",
       "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/247080/capsule_184x69.jpg?t=1772562444",
       "link": "https://steamcommunity.com/app/247080"
+    },
+    {
+      "name": "Soulmask",
+      "hours": "0.5",
+      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2646460/98b358bf754195aa4161a685453223246bd14290/capsule_184x69.jpg?t=1775825877",
+      "link": "https://steamcommunity.com/app/2646460"
+    },
+    {
+      "name": "Remnant: From the Ashes",
+      "hours": "0.3",
+      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/617290/capsule_184x69.jpg?t=1764657526",
+      "link": "https://steamcommunity.com/app/617290"
     }
   ]
 };

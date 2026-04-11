@@ -3,8 +3,8 @@ window.STEAM_DATA = {
     "name": "Pixwx",
     "realname": "Gabriel A. A. de A.",
     "avatar": "https://avatars.fastly.steamstatic.com/9d494d2ae7e10b4b531d05a272c3dd4d576b021b_full.jpg",
-    "state": "in-game",
-    "stateMessage": "In-Game<br/>Soulmask",
+    "state": "offline",
+    "stateMessage": "Offline",
     "url": "https://steamcommunity.com/id/pixwx/",
     "id": "pixwx",
     "memberSince": "August 7, 2021",
@@ -24,7 +24,7 @@ window.STEAM_DATA = {
     },
     {
       "name": "Soulmask",
-      "hours": "9.5",
+      "hours": "10.9",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2646460/8595c7447f607a5215d150fd233e317261ac32a7/capsule_184x69.jpg?t=1775859740",
       "link": "https://steamcommunity.com/app/2646460"
     },

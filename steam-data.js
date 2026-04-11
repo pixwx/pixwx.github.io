@@ -3,8 +3,8 @@ window.STEAM_DATA = {
     "name": "Pixwx",
     "realname": "Gabriel A. A. de A.",
     "avatar": "https://avatars.fastly.steamstatic.com/9d494d2ae7e10b4b531d05a272c3dd4d576b021b_full.jpg",
-    "state": "offline",
-    "stateMessage": "Offline",
+    "state": "in-game",
+    "stateMessage": "In-Game<br/>Crypt of the NecroDancer",
     "url": "https://steamcommunity.com/id/pixwx/",
     "id": "pixwx",
     "memberSince": "August 7, 2021",
@@ -29,16 +29,16 @@ window.STEAM_DATA = {
       "link": "https://steamcommunity.com/app/2646460"
     },
     {
-      "name": "Crypt of the NecroDancer",
-      "hours": "8.4",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/247080/capsule_184x69.jpg?t=1772562444",
-      "link": "https://steamcommunity.com/app/247080"
-    },
-    {
       "name": "Crypt of the NecroDancer: Synchrony",
       "hours": "5.6",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2094810/capsule_184x69.jpg?t=1769869850",
       "link": "https://steamcommunity.com/app/2094810"
+    },
+    {
+      "name": "Crypt of the NecroDancer",
+      "hours": "8.4",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/247080/capsule_184x69.jpg?t=1772562444",
+      "link": "https://steamcommunity.com/app/247080"
     },
     {
       "name": "Sea of Stars",

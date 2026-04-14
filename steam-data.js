@@ -3,8 +3,8 @@ window.STEAM_DATA = {
     "name": "Pixwx",
     "realname": "Gabriel A. A. de A.",
     "avatar": "https://avatars.fastly.steamstatic.com/9d494d2ae7e10b4b531d05a272c3dd4d576b021b_full.jpg",
-    "state": "offline",
-    "stateMessage": "Offline",
+    "state": "in-game",
+    "stateMessage": "In-Game<br/>Slay the Spire 2",
     "url": "https://steamcommunity.com/id/pixwx/",
     "id": "pixwx",
     "memberSince": "August 7, 2021",
@@ -18,7 +18,7 @@ window.STEAM_DATA = {
   "games": [
     {
       "name": "Slay the Spire 2",
-      "hours": "18.4",
+      "hours": "20",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2868840/fb0ad136e9eaa4297a1ab3440d88ecb7209f44a2/capsule_184x69.jpg?t=1773851542",
       "link": "https://steamcommunity.com/app/2868840"
     },
@@ -31,7 +31,7 @@ window.STEAM_DATA = {
     {
       "name": "Soulmask",
       "hours": "12.9",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2646460/8595c7447f607a5215d150fd233e317261ac32a7/capsule_184x69.jpg?t=1776078441",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2646460/8595c7447f607a5215d150fd233e317261ac32a7/capsule_184x69.jpg?t=1776154391",
       "link": "https://steamcommunity.com/app/2646460"
     },
     {

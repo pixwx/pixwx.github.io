@@ -18,7 +18,7 @@ window.STEAM_DATA = {
   "games": [
     {
       "name": "Slay the Spire 2",
-      "hours": "24",
+      "hours": "28",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2868840/fb0ad136e9eaa4297a1ab3440d88ecb7209f44a2/capsule_184x69.jpg?t=1773851542",
       "link": "https://steamcommunity.com/app/2868840"
     },

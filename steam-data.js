@@ -25,7 +25,7 @@ window.STEAM_DATA = {
     {
       "name": "Soulmask",
       "hours": "19.1",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2646460/8595c7447f607a5215d150fd233e317261ac32a7/capsule_184x69.jpg?t=1776329295",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2646460/8595c7447f607a5215d150fd233e317261ac32a7/capsule_184x69.jpg?t=1776398867",
       "link": "https://steamcommunity.com/app/2646460"
     },
     {

@@ -35,22 +35,22 @@
       "link": "https://steamcommunity.com/app/1218210"
     },
     {
-      "name": "Graveyard Keeper",
-      "hours": "7.2",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/599140/cd8cb8097f236a6cfcaa2a08381f31775693fac1/capsule_184x69.jpg?t=1776259988",
-      "link": "https://steamcommunity.com/app/599140"
-    },
-    {
       "name": "Crypt of the NecroDancer",
-      "hours": "12.4",
+      "hours": "13.8",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/247080/capsule_184x69.jpg?t=1776098044",
       "link": "https://steamcommunity.com/app/247080"
     },
     {
       "name": "Crypt of the NecroDancer: Synchrony",
-      "hours": "9.5",
+      "hours": "10.9",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2094810/capsule_184x69.jpg?t=1769869850",
       "link": "https://steamcommunity.com/app/2094810"
+    },
+    {
+      "name": "Graveyard Keeper",
+      "hours": "7.2",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/599140/cd8cb8097f236a6cfcaa2a08381f31775693fac1/capsule_184x69.jpg?t=1776259988",
+      "link": "https://steamcommunity.com/app/599140"
     }
   ]
 }

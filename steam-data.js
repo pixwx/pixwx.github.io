@@ -3,8 +3,8 @@ window.STEAM_DATA = {
     "name": "Pixwx",
     "realname": "Gabriel A. A. de A.",
     "avatar": "https://avatars.fastly.steamstatic.com/9d494d2ae7e10b4b531d05a272c3dd4d576b021b_full.jpg",
-    "state": "offline",
-    "stateMessage": "Offline",
+    "state": "in-game",
+    "stateMessage": "In-Game<br/>Slay the Spire 2",
     "url": "https://steamcommunity.com/id/pixwx/",
     "id": "pixwx",
     "memberSince": "August 7, 2021",
@@ -18,13 +18,13 @@ window.STEAM_DATA = {
   "games": [
     {
       "name": "Slay the Spire 2",
-      "hours": "37",
+      "hours": "39",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2868840/fb0ad136e9eaa4297a1ab3440d88ecb7209f44a2/capsule_184x69.jpg?t=1773851542",
       "link": "https://steamcommunity.com/app/2868840"
     },
     {
       "name": "Soulmask",
-      "hours": "19.1",
+      "hours": "19.2",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2646460/8595c7447f607a5215d150fd233e317261ac32a7/capsule_184x69.jpg?t=1776426262",
       "link": "https://steamcommunity.com/app/2646460"
     },
@@ -42,13 +42,13 @@ window.STEAM_DATA = {
     },
     {
       "name": "Crypt of the NecroDancer",
-      "hours": "11.5",
+      "hours": "11.7",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/247080/capsule_184x69.jpg?t=1776098044",
       "link": "https://steamcommunity.com/app/247080"
     },
     {
       "name": "Crypt of the NecroDancer: Synchrony",
-      "hours": "8.7",
+      "hours": "8.8",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2094810/capsule_184x69.jpg?t=1769869850",
       "link": "https://steamcommunity.com/app/2094810"
     }

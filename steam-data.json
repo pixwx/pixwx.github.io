@@ -18,7 +18,7 @@
   "games": [
     {
       "name": "Slay the Spire 2",
-      "hours": "49",
+      "hours": "50",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2868840/fb0ad136e9eaa4297a1ab3440d88ecb7209f44a2/capsule_184x69.jpg?t=1773851542",
       "link": "https://steamcommunity.com/app/2868840"
     },
@@ -36,13 +36,13 @@
     },
     {
       "name": "Crypt of the NecroDancer",
-      "hours": "14.6",
+      "hours": "14.8",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/247080/capsule_184x69.jpg?t=1776098044",
       "link": "https://steamcommunity.com/app/247080"
     },
     {
       "name": "Crypt of the NecroDancer: Synchrony",
-      "hours": "11.7",
+      "hours": "11.9",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2094810/capsule_184x69.jpg?t=1769869850",
       "link": "https://steamcommunity.com/app/2094810"
     },

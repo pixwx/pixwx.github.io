@@ -18,7 +18,7 @@ window.STEAM_DATA = {
   "games": [
     {
       "name": "Slay the Spire 2",
-      "hours": "61",
+      "hours": "63",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2868840/fb0ad136e9eaa4297a1ab3440d88ecb7209f44a2/capsule_184x69.jpg?t=1776735385",
       "link": "https://steamcommunity.com/app/2868840"
     },
@@ -27,12 +27,6 @@ window.STEAM_DATA = {
       "hours": "19.7",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2646460/8595c7447f607a5215d150fd233e317261ac32a7/capsule_184x69.jpg?t=1776426262",
       "link": "https://steamcommunity.com/app/2646460"
-    },
-    {
-      "name": "Coromon",
-      "hours": "16.1",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1218210/4fdb1c5d600763b0f088d1aa8bfacb694cfccfee/capsule_184x69.jpg?t=1773936463",
-      "link": "https://steamcommunity.com/app/1218210"
     },
     {
       "name": "Crypt of the NecroDancer",
@@ -45,6 +39,12 @@ window.STEAM_DATA = {
       "hours": "12.1",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2094810/capsule_184x69.jpg?t=1769869850",
       "link": "https://steamcommunity.com/app/2094810"
+    },
+    {
+      "name": "Coromon",
+      "hours": "16.1",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1218210/4fdb1c5d600763b0f088d1aa8bfacb694cfccfee/capsule_184x69.jpg?t=1773936463",
+      "link": "https://steamcommunity.com/app/1218210"
     },
     {
       "name": "Graveyard Keeper",

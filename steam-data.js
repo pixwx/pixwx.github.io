@@ -3,22 +3,22 @@ window.STEAM_DATA = {
     "name": "Pixwx",
     "realname": "Gabriel A. A. de A.",
     "avatar": "https://avatars.fastly.steamstatic.com/9d494d2ae7e10b4b531d05a272c3dd4d576b021b_full.jpg",
-    "state": "offline",
-    "stateMessage": "Offline",
+    "state": "in-game",
+    "stateMessage": "In-Game<br/>Vampire Crawlers",
     "url": "https://steamcommunity.com/id/pixwx/",
     "id": "pixwx",
     "memberSince": "August 7, 2021",
     "location": "Belem, Para, Brazil",
     "hours2Wk": "0.0",
     "level": "50",
-    "gamesCount": "177",
+    "gamesCount": "178",
     "friendsCount": "86",
     "screenshotsCount": "6"
   },
   "games": [
     {
       "name": "Slay the Spire 2",
-      "hours": "65",
+      "hours": "68",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2868840/fb0ad136e9eaa4297a1ab3440d88ecb7209f44a2/capsule_184x69.jpg?t=1776735385",
       "link": "https://steamcommunity.com/app/2868840"
     },

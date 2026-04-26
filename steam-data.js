@@ -3,8 +3,8 @@ window.STEAM_DATA = {
     "name": "Pixwx",
     "realname": "Gabriel A. A. de A.",
     "avatar": "https://avatars.fastly.steamstatic.com/9d494d2ae7e10b4b531d05a272c3dd4d576b021b_full.jpg",
-    "state": "online",
-    "stateMessage": "Online",
+    "state": "offline",
+    "stateMessage": "Offline",
     "url": "https://steamcommunity.com/id/pixwx/",
     "id": "pixwx",
     "memberSince": "August 7, 2021",
@@ -24,7 +24,7 @@ window.STEAM_DATA = {
     },
     {
       "name": "Ori and the Will of the Wisps",
-      "hours": "10.2",
+      "hours": "15.2",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1057090/capsule_184x69.jpg?t=1759530749",
       "link": "https://steamcommunity.com/app/1057090"
     },
@@ -47,10 +47,10 @@ window.STEAM_DATA = {
       "link": "https://steamcommunity.com/app/2094810"
     },
     {
-      "name": "9 Kings",
-      "hours": "3.1",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2784470/52914cecbaa148fd0533aff3c5297306757cd4a0/capsule_184x69.jpg?t=1776848403",
-      "link": "https://steamcommunity.com/app/2784470"
+      "name": "Ravenswatch",
+      "hours": "3.2",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2071280/7c03b1bafb313fb04331fa735ec4101b2f812286/capsule_184x69.jpg?t=1775553806",
+      "link": "https://steamcommunity.com/app/2071280"
     }
   ]
 };

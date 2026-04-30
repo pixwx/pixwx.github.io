@@ -29,6 +29,18 @@ window.STEAM_DATA = {
       "link": "https://steamcommunity.com/app/1057090"
     },
     {
+      "name": "9 Kings",
+      "hours": "8.8",
+      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2784470/52914cecbaa148fd0533aff3c5297306757cd4a0/capsule_184x69.jpg?t=1776848403",
+      "link": "https://steamcommunity.com/app/2784470"
+    },
+    {
+      "name": "Ravenswatch",
+      "hours": "5.2",
+      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2071280/7c03b1bafb313fb04331fa735ec4101b2f812286/capsule_184x69.jpg?t=1775553806",
+      "link": "https://steamcommunity.com/app/2071280"
+    },
+    {
       "name": "Crypt of the NecroDancer",
       "hours": "15.0",
       "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/247080/capsule_184x69.jpg?t=1776098044",
@@ -39,18 +51,6 @@ window.STEAM_DATA = {
       "hours": "12.1",
       "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2094810/capsule_184x69.jpg?t=1769869850",
       "link": "https://steamcommunity.com/app/2094810"
-    },
-    {
-      "name": "Ravenswatch",
-      "hours": "5.2",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2071280/7c03b1bafb313fb04331fa735ec4101b2f812286/capsule_184x69.jpg?t=1775553806",
-      "link": "https://steamcommunity.com/app/2071280"
-    },
-    {
-      "name": "9 Kings",
-      "hours": "4.9",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2784470/52914cecbaa148fd0533aff3c5297306757cd4a0/capsule_184x69.jpg?t=1776848403",
-      "link": "https://steamcommunity.com/app/2784470"
     }
   ]
 };

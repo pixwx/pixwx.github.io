@@ -18,7 +18,7 @@ window.STEAM_DATA = {
   "games": [
     {
       "name": "9 Kings",
-      "hours": "30",
+      "hours": "32",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2784470/52914cecbaa148fd0533aff3c5297306757cd4a0/capsule_184x69.jpg?t=1776848403",
       "link": "https://steamcommunity.com/app/2784470"
     },
@@ -47,10 +47,10 @@ window.STEAM_DATA = {
       "link": "https://steamcommunity.com/app/3265700"
     },
     {
-      "name": "Crypt of the NecroDancer: Synchrony",
-      "hours": "12.1",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2094810/capsule_184x69.jpg?t=1769869850",
-      "link": "https://steamcommunity.com/app/2094810"
+      "name": "9 Kings Demo",
+      "hours": "0.5",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3122250/52914cecbaa148fd0533aff3c5297306757cd4a0/capsule_184x69.jpg?t=1776848404",
+      "link": "https://steamcommunity.com/app/3122250"
     }
   ]
 };

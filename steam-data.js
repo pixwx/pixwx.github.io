@@ -24,21 +24,21 @@ window.STEAM_DATA = {
     },
     {
       "name": "Ravenswatch",
-      "hours": "22",
+      "hours": "25",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2071280/7c03b1bafb313fb04331fa735ec4101b2f812286/capsule_184x69.jpg?t=1775553806",
       "link": "https://steamcommunity.com/app/2071280"
-    },
-    {
-      "name": "Slay the Spire 2",
-      "hours": "75",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2868840/fb0ad136e9eaa4297a1ab3440d88ecb7209f44a2/capsule_184x69.jpg?t=1776735385",
-      "link": "https://steamcommunity.com/app/2868840"
     },
     {
       "name": "Ori and the Will of the Wisps",
       "hours": "15.2",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1057090/capsule_184x69.jpg?t=1759530749",
       "link": "https://steamcommunity.com/app/1057090"
+    },
+    {
+      "name": "Slay the Spire 2",
+      "hours": "75",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2868840/fb0ad136e9eaa4297a1ab3440d88ecb7209f44a2/capsule_184x69.jpg?t=1776735385",
+      "link": "https://steamcommunity.com/app/2868840"
     },
     {
       "name": "Vampire Crawlers",

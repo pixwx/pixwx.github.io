@@ -35,16 +35,16 @@ window.STEAM_DATA = {
       "link": "https://steamcommunity.com/app/1057090"
     },
     {
+      "name": "SUPER BOMBERMAN COLLECTION",
+      "hours": "3.0",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3756010/2f13460dabac4a70c30871087066c771b20e5daf/capsule_184x69.jpg?t=1773123075",
+      "link": "https://steamcommunity.com/app/3756010"
+    },
+    {
       "name": "Slay the Spire 2",
       "hours": "75",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2868840/fb0ad136e9eaa4297a1ab3440d88ecb7209f44a2/capsule_184x69.jpg?t=1776735385",
       "link": "https://steamcommunity.com/app/2868840"
-    },
-    {
-      "name": "SUPER BOMBERMAN COLLECTION",
-      "hours": "2.5",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3756010/2f13460dabac4a70c30871087066c771b20e5daf/capsule_184x69.jpg?t=1773123075",
-      "link": "https://steamcommunity.com/app/3756010"
     }
   ]
 };

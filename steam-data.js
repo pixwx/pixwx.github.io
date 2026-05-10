@@ -30,7 +30,7 @@ window.STEAM_DATA = {
     },
     {
       "name": "SUPER BOMBERMAN COLLECTION",
-      "hours": "6.2",
+      "hours": "9.7",
       "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3756010/2f13460dabac4a70c30871087066c771b20e5daf/capsule_184x69.jpg?t=1773123075",
       "link": "https://steamcommunity.com/app/3756010"
     },

@@ -2,7 +2,7 @@
   "profile": {
     "name": "Pixwx",
     "realname": "Gabriel A. A. de A.",
-    "avatar": "https://avatars.akamai.steamstatic.com/9d494d2ae7e10b4b531d05a272c3dd4d576b021b_full.jpg",
+    "avatar": "https://avatars.fastly.steamstatic.com/9d494d2ae7e10b4b531d05a272c3dd4d576b021b_full.jpg",
     "state": "offline",
     "stateMessage": "Offline",
     "url": "https://steamcommunity.com/id/pixwx/",
@@ -18,20 +18,20 @@
   "games": [
     {
       "name": "Ravenswatch",
-      "hours": "67",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2071280/7c03b1bafb313fb04331fa735ec4101b2f812286/capsule_184x69.jpg?t=1778174186",
+      "hours": "69",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2071280/7c03b1bafb313fb04331fa735ec4101b2f812286/capsule_184x69.jpg?t=1778174186",
       "link": "https://steamcommunity.com/app/2071280"
     },
     {
       "name": "SUPER BOMBERMAN COLLECTION",
       "hours": "41",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3756010/2f13460dabac4a70c30871087066c771b20e5daf/capsule_184x69.jpg?t=1773123075",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3756010/2f13460dabac4a70c30871087066c771b20e5daf/capsule_184x69.jpg?t=1773123075",
       "link": "https://steamcommunity.com/app/3756010"
     },
     {
       "name": "9 Kings",
-      "hours": "37",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2784470/52914cecbaa148fd0533aff3c5297306757cd4a0/capsule_184x69.jpg?t=1778497510",
+      "hours": "39",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2784470/52914cecbaa148fd0533aff3c5297306757cd4a0/capsule_184x69.jpg?t=1778497510",
       "link": "https://steamcommunity.com/app/2784470"
     }
   ]

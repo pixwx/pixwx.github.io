@@ -18,7 +18,7 @@ window.STEAM_DATA = {
   "games": [
     {
       "name": "Ravenswatch",
-      "hours": "100",
+      "hours": "102",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2071280/7c03b1bafb313fb04331fa735ec4101b2f812286/capsule_184x69.jpg?t=1778174186",
       "link": "https://steamcommunity.com/app/2071280"
     },
@@ -41,16 +41,16 @@ window.STEAM_DATA = {
       "link": "https://steamcommunity.com/app/373420"
     },
     {
+      "name": "PUBG: BATTLEGROUNDS",
+      "hours": "3.7",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/578080/14f42ab797699a9c9f137fda66582d8776da4330/capsule_184x69.jpg?t=1778634253",
+      "link": "https://steamcommunity.com/app/578080"
+    },
+    {
       "name": "Slay the Spire",
       "hours": "0.8",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/646570/capsule_184x69.jpg?t=1774015376",
       "link": "https://steamcommunity.com/app/646570"
-    },
-    {
-      "name": "PUBG: BATTLEGROUNDS",
-      "hours": "2.8",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/578080/14f42ab797699a9c9f137fda66582d8776da4330/capsule_184x69.jpg?t=1778634253",
-      "link": "https://steamcommunity.com/app/578080"
     }
   ]
 };

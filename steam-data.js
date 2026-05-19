@@ -18,7 +18,7 @@ window.STEAM_DATA = {
   "games": [
     {
       "name": "Ravenswatch",
-      "hours": "106",
+      "hours": "107",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2071280/7c03b1bafb313fb04331fa735ec4101b2f812286/capsule_184x69.jpg?t=1778174186",
       "link": "https://steamcommunity.com/app/2071280"
     },
@@ -30,7 +30,7 @@ window.STEAM_DATA = {
     },
     {
       "name": "9 Kings",
-      "hours": "54",
+      "hours": "55",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2784470/52914cecbaa148fd0533aff3c5297306757cd4a0/capsule_184x69.jpg?t=1778778696",
       "link": "https://steamcommunity.com/app/2784470"
     },

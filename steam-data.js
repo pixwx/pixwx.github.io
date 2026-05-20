@@ -30,7 +30,7 @@ window.STEAM_DATA = {
     },
     {
       "name": "9 Kings",
-      "hours": "71",
+      "hours": "72",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2784470/52914cecbaa148fd0533aff3c5297306757cd4a0/capsule_184x69.jpg?t=1778778696",
       "link": "https://steamcommunity.com/app/2784470"
     },

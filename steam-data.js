@@ -23,16 +23,16 @@ window.STEAM_DATA = {
       "link": "https://steamcommunity.com/app/2071280"
     },
     {
+      "name": "9 Kings",
+      "hours": "80",
+      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2784470/52914cecbaa148fd0533aff3c5297306757cd4a0/capsule_184x69.jpg?t=1778778696",
+      "link": "https://steamcommunity.com/app/2784470"
+    },
+    {
       "name": "SUPER BOMBERMAN COLLECTION",
       "hours": "42",
       "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3756010/2f13460dabac4a70c30871087066c771b20e5daf/capsule_184x69.jpg?t=1773123075",
       "link": "https://steamcommunity.com/app/3756010"
-    },
-    {
-      "name": "9 Kings",
-      "hours": "76",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2784470/52914cecbaa148fd0533aff3c5297306757cd4a0/capsule_184x69.jpg?t=1778778696",
-      "link": "https://steamcommunity.com/app/2784470"
     },
     {
       "name": "Divinity: Original Sin Enhanced Edition",

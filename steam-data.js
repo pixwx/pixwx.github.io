@@ -2,7 +2,7 @@ window.STEAM_DATA = {
   "profile": {
     "name": "Pixwx",
     "realname": "Gabriel A. A. de A.",
-    "avatar": "https://avatars.akamai.steamstatic.com/9d494d2ae7e10b4b531d05a272c3dd4d576b021b_full.jpg",
+    "avatar": "https://avatars.fastly.steamstatic.com/9d494d2ae7e10b4b531d05a272c3dd4d576b021b_full.jpg",
     "state": "offline",
     "stateMessage": "Offline",
     "url": "https://steamcommunity.com/id/pixwx/",
@@ -19,37 +19,37 @@ window.STEAM_DATA = {
     {
       "name": "9 Kings",
       "hours": "85",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2784470/52914cecbaa148fd0533aff3c5297306757cd4a0/capsule_184x69.jpg?t=1778778696",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2784470/52914cecbaa148fd0533aff3c5297306757cd4a0/capsule_184x69.jpg?t=1778778696",
       "link": "https://steamcommunity.com/app/2784470"
     },
     {
       "name": "Ravenswatch",
       "hours": "108",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2071280/7c03b1bafb313fb04331fa735ec4101b2f812286/capsule_184x69.jpg?t=1778174186",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2071280/7c03b1bafb313fb04331fa735ec4101b2f812286/capsule_184x69.jpg?t=1778174186",
       "link": "https://steamcommunity.com/app/2071280"
     },
     {
       "name": "SUPER BOMBERMAN COLLECTION",
       "hours": "42",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3756010/2f13460dabac4a70c30871087066c771b20e5daf/capsule_184x69.jpg?t=1773123075",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3756010/2f13460dabac4a70c30871087066c771b20e5daf/capsule_184x69.jpg?t=1773123075",
       "link": "https://steamcommunity.com/app/3756010"
     },
     {
       "name": "Divinity: Original Sin Enhanced Edition",
       "hours": "7.8",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/373420/capsule_184x69.jpg?t=1765505119",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/373420/capsule_184x69.jpg?t=1765505119",
       "link": "https://steamcommunity.com/app/373420"
     },
     {
       "name": "PUBG: BATTLEGROUNDS",
       "hours": "3.7",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/578080/14f42ab797699a9c9f137fda66582d8776da4330/capsule_184x69.jpg?t=1778634253",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/578080/14f42ab797699a9c9f137fda66582d8776da4330/capsule_184x69.jpg?t=1778634253",
       "link": "https://steamcommunity.com/app/578080"
     },
     {
       "name": "Slay the Spire",
       "hours": "0.8",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/646570/capsule_184x69.jpg?t=1774015376",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/646570/capsule_184x69.jpg?t=1774015376",
       "link": "https://steamcommunity.com/app/646570"
     }
   ]

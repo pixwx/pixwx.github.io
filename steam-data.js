@@ -30,7 +30,7 @@ window.STEAM_DATA = {
     },
     {
       "name": "SUPER BOMBERMAN COLLECTION",
-      "hours": "42",
+      "hours": "43",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3756010/2f13460dabac4a70c30871087066c771b20e5daf/capsule_184x69.jpg?t=1773123075",
       "link": "https://steamcommunity.com/app/3756010"
     },
@@ -48,7 +48,7 @@ window.STEAM_DATA = {
     },
     {
       "name": "Slay the Spire",
-      "hours": "0.8",
+      "hours": "0.9",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/646570/capsule_184x69.jpg?t=1774015376",
       "link": "https://steamcommunity.com/app/646570"
     }

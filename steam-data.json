@@ -17,16 +17,16 @@
   },
   "games": [
     {
+      "name": "Ravenswatch",
+      "hours": "126",
+      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2071280/7c03b1bafb313fb04331fa735ec4101b2f812286/capsule_184x69.jpg?t=1779901516",
+      "link": "https://steamcommunity.com/app/2071280"
+    },
+    {
       "name": "9 Kings",
       "hours": "95",
       "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2784470/52914cecbaa148fd0533aff3c5297306757cd4a0/capsule_184x69.jpg?t=1779786088",
       "link": "https://steamcommunity.com/app/2784470"
-    },
-    {
-      "name": "Ravenswatch",
-      "hours": "121",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2071280/7c03b1bafb313fb04331fa735ec4101b2f812286/capsule_184x69.jpg?t=1779901516",
-      "link": "https://steamcommunity.com/app/2071280"
     },
     {
       "name": "Divinity: Original Sin Enhanced Edition",

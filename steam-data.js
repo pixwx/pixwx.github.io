@@ -11,14 +11,14 @@ window.STEAM_DATA = {
     "location": "Belem, Para, Brazil",
     "hours2Wk": "0.0",
     "level": "50",
-    "gamesCount": "183",
-    "friendsCount": "91",
+    "gamesCount": "184",
+    "friendsCount": "90",
     "screenshotsCount": "6"
   },
   "games": [
     {
       "name": "Ravenswatch",
-      "hours": "158",
+      "hours": "161",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2071280/7c03b1bafb313fb04331fa735ec4101b2f812286/capsule_184x69.jpg?t=1780057302",
       "link": "https://steamcommunity.com/app/2071280"
     },
@@ -35,6 +35,12 @@ window.STEAM_DATA = {
       "link": "https://steamcommunity.com/app/373420"
     },
     {
+      "name": "Darksiders Genesis",
+      "hours": "1.4",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/710920/capsule_184x69.jpg?t=1754079110",
+      "link": "https://steamcommunity.com/app/710920"
+    },
+    {
       "name": "PUBG: BATTLEGROUNDS",
       "hours": "3.7",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/578080/14f42ab797699a9c9f137fda66582d8776da4330/capsule_184x69.jpg?t=1778634253",
@@ -45,12 +51,6 @@ window.STEAM_DATA = {
       "hours": "43",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3756010/2f13460dabac4a70c30871087066c771b20e5daf/capsule_184x69.jpg?t=1773123075",
       "link": "https://steamcommunity.com/app/3756010"
-    },
-    {
-      "name": "Slay the Spire",
-      "hours": "0.9",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/646570/capsule_184x69.jpg?t=1774015376",
-      "link": "https://steamcommunity.com/app/646570"
     }
   ]
 };

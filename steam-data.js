@@ -3,8 +3,8 @@ window.STEAM_DATA = {
     "name": "Pixwx",
     "realname": "Gabriel A. A. de A.",
     "avatar": "https://avatars.akamai.steamstatic.com/9d494d2ae7e10b4b531d05a272c3dd4d576b021b_full.jpg",
-    "state": "in-game",
-    "stateMessage": "In-Game<br/>Divinity: Original Sin Enhanced Edition",
+    "state": "offline",
+    "stateMessage": "Offline",
     "url": "https://steamcommunity.com/id/pixwx/",
     "id": "pixwx",
     "memberSince": "August 7, 2021",
@@ -30,7 +30,7 @@ window.STEAM_DATA = {
     },
     {
       "name": "Divinity: Original Sin Enhanced Edition",
-      "hours": "14.0",
+      "hours": "18.4",
       "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/373420/capsule_184x69.jpg?t=1765505119",
       "link": "https://steamcommunity.com/app/373420"
     },
@@ -41,16 +41,16 @@ window.STEAM_DATA = {
       "link": "https://steamcommunity.com/app/710920"
     },
     {
+      "name": "Core Keeper",
+      "hours": "1.4",
+      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1621690/5b19828e142f23d88e5213280d8e226408dabbbf/capsule_184x69.jpg?t=1779981713",
+      "link": "https://steamcommunity.com/app/1621690"
+    },
+    {
       "name": "SUPER BOMBERMAN COLLECTION",
       "hours": "43",
       "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3756010/2f13460dabac4a70c30871087066c771b20e5daf/capsule_184x69.jpg?t=1773123075",
       "link": "https://steamcommunity.com/app/3756010"
-    },
-    {
-      "name": "Grand Theft Auto V Enhanced",
-      "hours": "17.1",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3240220/a318bd9affe8eee32984b18794b273c256e9b2d6/capsule_184x69.jpg?t=1765479644",
-      "link": "https://steamcommunity.com/app/3240220"
     }
   ]
 };

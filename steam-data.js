@@ -4,7 +4,7 @@ window.STEAM_DATA = {
     "realname": "Gabriel A. A. de A.",
     "avatar": "https://avatars.akamai.steamstatic.com/9d494d2ae7e10b4b531d05a272c3dd4d576b021b_full.jpg",
     "state": "in-game",
-    "stateMessage": "In-Game<br/>Core Keeper",
+    "stateMessage": "In-Game<br/>Divinity: Original Sin Enhanced Edition",
     "url": "https://steamcommunity.com/id/pixwx/",
     "id": "pixwx",
     "memberSince": "August 7, 2021",
@@ -24,21 +24,21 @@ window.STEAM_DATA = {
     },
     {
       "name": "Divinity: Original Sin Enhanced Edition",
-      "hours": "39",
+      "hours": "40",
       "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/373420/capsule_184x69.jpg?t=1765505119",
       "link": "https://steamcommunity.com/app/373420"
+    },
+    {
+      "name": "Core Keeper",
+      "hours": "11.7",
+      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1621690/5b19828e142f23d88e5213280d8e226408dabbbf/capsule_184x69.jpg?t=1780488019",
+      "link": "https://steamcommunity.com/app/1621690"
     },
     {
       "name": "9 Kings",
       "hours": "95",
       "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2784470/52914cecbaa148fd0533aff3c5297306757cd4a0/capsule_184x69.jpg?t=1779786088",
       "link": "https://steamcommunity.com/app/2784470"
-    },
-    {
-      "name": "Core Keeper",
-      "hours": "8.8",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1621690/5b19828e142f23d88e5213280d8e226408dabbbf/capsule_184x69.jpg?t=1780488019",
-      "link": "https://steamcommunity.com/app/1621690"
     },
     {
       "name": "Slay the Spire",

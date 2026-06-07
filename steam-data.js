@@ -3,8 +3,8 @@ window.STEAM_DATA = {
     "name": "Pixwx",
     "realname": "Gabriel A. A. de A.",
     "avatar": "https://avatars.akamai.steamstatic.com/9d494d2ae7e10b4b531d05a272c3dd4d576b021b_full.jpg",
-    "state": "in-game",
-    "stateMessage": "In-Game<br/>Divinity: Original Sin Enhanced Edition",
+    "state": "offline",
+    "stateMessage": "Offline",
     "url": "https://steamcommunity.com/id/pixwx/",
     "id": "pixwx",
     "memberSince": "August 7, 2021",
@@ -24,7 +24,7 @@ window.STEAM_DATA = {
     },
     {
       "name": "Divinity: Original Sin Enhanced Edition",
-      "hours": "40",
+      "hours": "46",
       "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/373420/capsule_184x69.jpg?t=1765505119",
       "link": "https://steamcommunity.com/app/373420"
     },

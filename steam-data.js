@@ -30,7 +30,7 @@ window.STEAM_DATA = {
     },
     {
       "name": "Core Keeper",
-      "hours": "12.8",
+      "hours": "13.8",
       "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1621690/5b19828e142f23d88e5213280d8e226408dabbbf/capsule_184x69.jpg?t=1780488019",
       "link": "https://steamcommunity.com/app/1621690"
     },

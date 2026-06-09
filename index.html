@@ -2606,8 +2606,8 @@
       const hiatusSpan = document.getElementById("hiatus-counter");
       if (!hiatusSpan) return;
 
-      // 7 de Abril de 2026, 19:30 (Horário de Portugal / WEST / UTC+1)
-      const targetDate = new Date("2026-04-07T19:30:00+01:00").getTime();
+      // 16 de Junho de 2026, 19:00 (Horário de Portugal / WEST / UTC+1)
+      const targetDate = new Date("2026-06-16T19:00:00+01:00").getTime();
 
       function updateCounter() {
         const now = new Date().getTime();
@@ -2627,7 +2627,7 @@
           const passedHours = Math.floor((passed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
           
           if(passedDays >= 30) {
-            hiatusSpan.innerHTML = `Criando sem parar desde <a href="https://twitch.tv/pixwx" target="_blank" style="color: var(--text-primary); text-decoration: underline;">7 de abril</a>`;
+            hiatusSpan.innerHTML = `Criando sem parar desde <a href="https://twitch.tv/pixwx" target="_blank" style="color: var(--text-primary); text-decoration: underline;">16 de junho</a>`;
           } else if(passedDays > 0) {
             hiatusSpan.innerHTML = `O Hiato Acabou! Produzindo direto há <a href="https://twitch.tv/pixwx" target="_blank" style="color: var(--text-primary); text-decoration: underline;">${passedDays} dias</a>`;
           } else if(passedHours > 0) {

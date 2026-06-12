@@ -3,8 +3,8 @@ window.STEAM_DATA = {
     "name": "Pixwx",
     "realname": "Gabriel A. A. de A.",
     "avatar": "https://avatars.fastly.steamstatic.com/9d494d2ae7e10b4b531d05a272c3dd4d576b021b_full.jpg",
-    "state": "online",
-    "stateMessage": "Online",
+    "state": "in-game",
+    "stateMessage": "In-Game<br/>Minecraft Dungeons",
     "url": "https://steamcommunity.com/id/pixwx/",
     "id": "pixwx",
     "memberSince": "August 7, 2021",
@@ -36,7 +36,7 @@ window.STEAM_DATA = {
     },
     {
       "name": "Slay the Spire",
-      "hours": "10.9",
+      "hours": "12.9",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/646570/capsule_184x69.jpg?t=1774015376",
       "link": "https://steamcommunity.com/app/646570"
     },
@@ -47,10 +47,10 @@ window.STEAM_DATA = {
       "link": "https://steamcommunity.com/app/710920"
     },
     {
-      "name": "Gravity Circuit",
-      "hours": "0.3",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/858710/capsule_184x69.jpg?t=1780932500",
-      "link": "https://steamcommunity.com/app/858710"
+      "name": "Minecraft Dungeons",
+      "hours": "0.8",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1672970/capsule_184x69.jpg?t=1717003107",
+      "link": "https://steamcommunity.com/app/1672970"
     }
   ]
 };

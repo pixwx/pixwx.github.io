@@ -4,7 +4,7 @@ window.STEAM_DATA = {
     "realname": "Gabriel A. A. de A.",
     "avatar": "https://avatars.fastly.steamstatic.com/9d494d2ae7e10b4b531d05a272c3dd4d576b021b_full.jpg",
     "state": "in-game",
-    "stateMessage": "In-Game<br/>Minecraft Dungeons",
+    "stateMessage": "In-Game<br/>Balatro",
     "url": "https://steamcommunity.com/id/pixwx/",
     "id": "pixwx",
     "memberSince": "August 7, 2021",
@@ -41,16 +41,16 @@ window.STEAM_DATA = {
       "link": "https://steamcommunity.com/app/646570"
     },
     {
+      "name": "Balatro",
+      "hours": "1.4",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2379780/554b5f66f60e80b43f910cba21d23af16ed897be/capsule_184x69.jpg?t=1781107931",
+      "link": "https://steamcommunity.com/app/2379780"
+    },
+    {
       "name": "Darksiders Genesis",
       "hours": "1.4",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/710920/capsule_184x69.jpg?t=1754079110",
       "link": "https://steamcommunity.com/app/710920"
-    },
-    {
-      "name": "Minecraft Dungeons",
-      "hours": "0.8",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1672970/capsule_184x69.jpg?t=1717003107",
-      "link": "https://steamcommunity.com/app/1672970"
     }
   ]
 };

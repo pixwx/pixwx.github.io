@@ -23,16 +23,16 @@ window.STEAM_DATA = {
       "link": "https://steamcommunity.com/app/373420"
     },
     {
+      "name": "Slay the Spire",
+      "hours": "19.3",
+      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/646570/capsule_184x69.jpg?t=1774015376",
+      "link": "https://steamcommunity.com/app/646570"
+    },
+    {
       "name": "Core Keeper",
       "hours": "18.5",
       "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1621690/5b19828e142f23d88e5213280d8e226408dabbbf/capsule_184x69.jpg?t=1780488019",
       "link": "https://steamcommunity.com/app/1621690"
-    },
-    {
-      "name": "Slay the Spire",
-      "hours": "16.8",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/646570/capsule_184x69.jpg?t=1774015376",
-      "link": "https://steamcommunity.com/app/646570"
     },
     {
       "name": "Balatro",

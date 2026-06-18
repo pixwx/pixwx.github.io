@@ -3,8 +3,8 @@ window.STEAM_DATA = {
     "name": "Pixwx",
     "realname": "Gabriel A. A. de A.",
     "avatar": "https://avatars.fastly.steamstatic.com/9d494d2ae7e10b4b531d05a272c3dd4d576b021b_full.jpg",
-    "state": "in-game",
-    "stateMessage": "In-Game<br/>Slay the Spire",
+    "state": "offline",
+    "stateMessage": "Offline",
     "url": "https://steamcommunity.com/id/pixwx/",
     "id": "pixwx",
     "memberSince": "August 7, 2021",
@@ -24,7 +24,7 @@ window.STEAM_DATA = {
     },
     {
       "name": "Slay the Spire",
-      "hours": "19.8",
+      "hours": "22",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/646570/capsule_184x69.jpg?t=1774015376",
       "link": "https://steamcommunity.com/app/646570"
     },

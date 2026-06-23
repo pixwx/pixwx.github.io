@@ -29,12 +29,6 @@
       "link": "https://steamcommunity.com/app/373420"
     },
     {
-      "name": "Core Keeper",
-      "hours": "18.5",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1621690/5b19828e142f23d88e5213280d8e226408dabbbf/capsule_184x69.jpg?t=1780488019",
-      "link": "https://steamcommunity.com/app/1621690"
-    },
-    {
       "name": "Minecraft Dungeons",
       "hours": "4.2",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1672970/capsule_184x69.jpg?t=1717003107",
@@ -45,6 +39,12 @@
       "hours": "4.2",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2379780/554b5f66f60e80b43f910cba21d23af16ed897be/capsule_184x69.jpg?t=1781540048",
       "link": "https://steamcommunity.com/app/2379780"
+    },
+    {
+      "name": "Core Keeper",
+      "hours": "18.5",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1621690/5b19828e142f23d88e5213280d8e226408dabbbf/capsule_184x69.jpg?t=1780488019",
+      "link": "https://steamcommunity.com/app/1621690"
     },
     {
       "name": "Battlefield™ 6",

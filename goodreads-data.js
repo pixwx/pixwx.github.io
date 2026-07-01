@@ -42,7 +42,7 @@ window.GOODREADS_DATA = {
       "link": "https://www.goodreads.com/review/show/7215033160?utm_medium=api&utm_source=rss",
       "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1425930848l/25107273.jpg",
       "author": "Stephen  King",
-      "year": "2000"
+      "year": ""
     },
     {
       "title": "O Duplo",

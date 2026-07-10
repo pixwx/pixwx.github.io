@@ -3,8 +3,8 @@ window.STEAM_DATA = {
     "name": "Pixwx",
     "realname": "Gabriel A. A. de A.",
     "avatar": "https://avatars.akamai.steamstatic.com/9d494d2ae7e10b4b531d05a272c3dd4d576b021b_full.jpg",
-    "state": "in-game",
-    "stateMessage": "In-Game<br/>Kingdom Two Crowns",
+    "state": "offline",
+    "stateMessage": "Offline",
     "url": "https://steamcommunity.com/id/pixwx/",
     "id": "pixwx",
     "memberSince": "August 7, 2021",
@@ -24,7 +24,7 @@ window.STEAM_DATA = {
     },
     {
       "name": "Kingdom Two Crowns",
-      "hours": "4.0",
+      "hours": "4.9",
       "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/701160/a6b90c7c7f4c869587a8fa91234ae0367526567d/capsule_184x69.jpg?t=1783610889",
       "link": "https://steamcommunity.com/app/701160"
     },

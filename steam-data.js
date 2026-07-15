@@ -2,9 +2,9 @@ window.STEAM_DATA = {
   "profile": {
     "name": "Pixwx",
     "realname": "Gabriel A. A. de A.",
-    "avatar": "https://avatars.akamai.steamstatic.com/9d494d2ae7e10b4b531d05a272c3dd4d576b021b_full.jpg",
-    "state": "in-game",
-    "stateMessage": "In-Game<br/>Kingdom Two Crowns",
+    "avatar": "https://avatars.fastly.steamstatic.com/9d494d2ae7e10b4b531d05a272c3dd4d576b021b_full.jpg",
+    "state": "offline",
+    "stateMessage": "Offline",
     "url": "https://steamcommunity.com/id/pixwx/",
     "id": "pixwx",
     "memberSince": "August 7, 2021",
@@ -18,38 +18,38 @@ window.STEAM_DATA = {
   "games": [
     {
       "name": "Kingdom Two Crowns",
-      "hours": "35",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/701160/a6b90c7c7f4c869587a8fa91234ae0367526567d/capsule_184x69.jpg?t=1783610889",
+      "hours": "37",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/701160/a6b90c7c7f4c869587a8fa91234ae0367526567d/capsule_184x69.jpg?t=1783610889",
       "link": "https://steamcommunity.com/app/701160"
     },
     {
       "name": "Slay the Spire",
       "hours": "56",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/646570/capsule_184x69.jpg?t=1774015376",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/646570/capsule_184x69.jpg?t=1774015376",
       "link": "https://steamcommunity.com/app/646570"
     },
     {
       "name": "FINAL FANTASY VII REMAKE INTERGRADE",
       "hours": "0.6",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1462040/capsule_184x69.jpg?t=1773895755",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1462040/capsule_184x69.jpg?t=1773895755",
       "link": "https://steamcommunity.com/app/1462040"
     },
     {
       "name": "XCOM 2",
       "hours": "0.5",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/268500/capsule_184x69.jpg?t=1772813016",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/268500/capsule_184x69.jpg?t=1772813016",
       "link": "https://steamcommunity.com/app/268500"
     },
     {
       "name": "Total War: WARHAMMER III",
       "hours": "0.4",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1142710/capsule_184x69.jpg?t=1779441058",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1142710/capsule_184x69.jpg?t=1779441058",
       "link": "https://steamcommunity.com/app/1142710"
     },
     {
       "name": "Castlevania: Lords of Shadow – Mirror of Fate HD",
       "hours": "0.4",
-      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/282530/capsule_184x69.jpg?t=1737487279",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/282530/capsule_184x69.jpg?t=1737487279",
       "link": "https://steamcommunity.com/app/282530"
     }
   ]

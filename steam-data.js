@@ -3,8 +3,8 @@ window.STEAM_DATA = {
     "name": "Pixwx",
     "realname": "Gabriel A. A. de A.",
     "avatar": "https://avatars.fastly.steamstatic.com/9d494d2ae7e10b4b531d05a272c3dd4d576b021b_full.jpg",
-    "state": "offline",
-    "stateMessage": "Offline",
+    "state": "in-game",
+    "stateMessage": "In-Game<br/>XCOM 2",
     "url": "https://steamcommunity.com/id/pixwx/",
     "id": "pixwx",
     "memberSince": "August 7, 2021",
@@ -30,7 +30,7 @@ window.STEAM_DATA = {
     },
     {
       "name": "XCOM 2",
-      "hours": "3.8",
+      "hours": "4.3",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/268500/capsule_184x69.jpg?t=1772813016",
       "link": "https://steamcommunity.com/app/268500"
     },

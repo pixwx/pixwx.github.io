@@ -23,28 +23,22 @@ window.STEAM_DATA = {
       "link": "https://steamcommunity.com/app/701160"
     },
     {
+      "name": "XCOM 2",
+      "hours": "7.5",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/268500/capsule_184x69.jpg?t=1772813016",
+      "link": "https://steamcommunity.com/app/268500"
+    },
+    {
       "name": "Slay the Spire",
       "hours": "56",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/646570/capsule_184x69.jpg?t=1774015376",
       "link": "https://steamcommunity.com/app/646570"
     },
     {
-      "name": "XCOM 2",
-      "hours": "6.9",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/268500/capsule_184x69.jpg?t=1772813016",
-      "link": "https://steamcommunity.com/app/268500"
-    },
-    {
       "name": "Total War: WARHAMMER III",
       "hours": "0.4",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1142710/capsule_184x69.jpg?t=1784197039",
       "link": "https://steamcommunity.com/app/1142710"
-    },
-    {
-      "name": "Contra Anniversary Collection",
-      "hours": "0.4",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1018020/capsule_184x69.jpg?t=1747196462",
-      "link": "https://steamcommunity.com/app/1018020"
     },
     {
       "name": "Darkest Dungeon®",

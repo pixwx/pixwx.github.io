@@ -101,7 +101,7 @@ window.GOODREADS_DATA = {
       "year": "2008"
     },
     {
-      "title": "Gente Pobre",
+      "title": "Gente pobre",
       "link": "https://www.goodreads.com/review/show/2922356504?utm_medium=api&utm_source=rss",
       "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1633177277l/8293728.jpg",
       "author": "Fyodor Dostoevsky",

@@ -2,48 +2,48 @@ window.STEAM_DATA = {
   "profile": {
     "name": "Pixwx",
     "realname": "Gabriel A. A. de A.",
-    "avatar": "https://avatars.fastly.steamstatic.com/9d494d2ae7e10b4b531d05a272c3dd4d576b021b_full.jpg",
-    "state": "offline",
-    "stateMessage": "Offline",
+    "avatar": "https://avatars.akamai.steamstatic.com/9d494d2ae7e10b4b531d05a272c3dd4d576b021b_full.jpg",
+    "state": "in-game",
+    "stateMessage": "In-Game<br/>Kingdom Two Crowns",
     "url": "https://steamcommunity.com/id/pixwx/",
     "id": "pixwx",
     "memberSince": "August 7, 2021",
     "location": "Belem, Para, Brazil",
     "hours2Wk": "0.0",
-    "level": "50",
-    "gamesCount": "202",
-    "friendsCount": "89",
-    "screenshotsCount": "6"
+    "level": "0",
+    "gamesCount": "0",
+    "friendsCount": "0",
+    "screenshotsCount": "0"
   },
   "games": [
     {
       "name": "Kingdom Two Crowns",
       "hours": "43",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/701160/a6b90c7c7f4c869587a8fa91234ae0367526567d/capsule_184x69.jpg?t=1783610889",
+      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/701160/a6b90c7c7f4c869587a8fa91234ae0367526567d/capsule_184x69.jpg?t=1783610889",
       "link": "https://steamcommunity.com/app/701160"
     },
     {
       "name": "XCOM 2",
       "hours": "7.5",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/268500/capsule_184x69.jpg?t=1772813016",
+      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/268500/capsule_184x69.jpg?t=1772813016",
       "link": "https://steamcommunity.com/app/268500"
     },
     {
       "name": "Slay the Spire",
       "hours": "56",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/646570/capsule_184x69.jpg?t=1774015376",
+      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/646570/capsule_184x69.jpg?t=1774015376",
       "link": "https://steamcommunity.com/app/646570"
     },
     {
       "name": "Total War: WARHAMMER III",
       "hours": "0.4",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1142710/capsule_184x69.jpg?t=1784197039",
+      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1142710/capsule_184x69.jpg?t=1784197039",
       "link": "https://steamcommunity.com/app/1142710"
     },
     {
       "name": "Darkest Dungeon®",
       "hours": "0.1",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/262060/capsule_184x69.jpg?t=1769780578",
+      "logo": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/262060/capsule_184x69.jpg?t=1769780578",
       "link": "https://steamcommunity.com/app/262060"
     }
   ]

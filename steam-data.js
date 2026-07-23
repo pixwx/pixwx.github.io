@@ -29,16 +29,16 @@ window.STEAM_DATA = {
       "link": "https://steamcommunity.com/app/268500"
     },
     {
-      "name": "Slay the Spire",
-      "hours": "56",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/646570/capsule_184x69.jpg?t=1774015376",
-      "link": "https://steamcommunity.com/app/646570"
-    },
-    {
       "name": "Total War: WARHAMMER III",
       "hours": "0.4",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1142710/capsule_184x69.jpg?t=1784197039",
       "link": "https://steamcommunity.com/app/1142710"
+    },
+    {
+      "name": "Slay the Spire",
+      "hours": "56",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/646570/capsule_184x69.jpg?t=1774015376",
+      "link": "https://steamcommunity.com/app/646570"
     },
     {
       "name": "Darkest Dungeon®",

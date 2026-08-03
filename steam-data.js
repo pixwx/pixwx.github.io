@@ -17,16 +17,16 @@ window.STEAM_DATA = {
   },
   "games": [
     {
-      "name": "Kingdom Two Crowns",
-      "hours": "49",
-      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/701160/a6b90c7c7f4c869587a8fa91234ae0367526567d/capsule_184x69.jpg?t=1783610889",
-      "link": "https://steamcommunity.com/app/701160"
-    },
-    {
       "name": "Project Zomboid",
       "hours": "663",
       "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/108600/capsule_184x69.jpg?t=1785324125",
       "link": "https://steamcommunity.com/app/108600"
+    },
+    {
+      "name": "Kingdom Two Crowns",
+      "hours": "49",
+      "logo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/701160/a6b90c7c7f4c869587a8fa91234ae0367526567d/capsule_184x69.jpg?t=1783610889",
+      "link": "https://steamcommunity.com/app/701160"
     },
     {
       "name": "Slay the Spire 2",
